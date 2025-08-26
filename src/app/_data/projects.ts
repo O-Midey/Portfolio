@@ -48,7 +48,6 @@ export const projects = [
     status: "Completed",
     liveLink: "https://omotoshodavid.vercel.app",
     codeLink: "https://github.com/O-Midey/portfolio-v2",
-    image:
-      "https://res.cloudinary.https://res.cloudinary.com/daypv7q8r/image/upload/v1756208970/Screenshot_2025-08-26_at_12.40.14_ife1bh.png/daypv7q8r/image/upload/v1685146875/portfolio_zrw2lp.png",
+    image: "https://res.cloudinary.com/daypv7q8r/image/upload/v1756210571/Screenshot_2025-08-26_at_12.40.14_pzbddh.png"
   },
 ];
