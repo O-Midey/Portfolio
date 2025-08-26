@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import ProjectCard from "../_components/ProjectCard";
+import ProjectCard from "../projects/ProjectCard";
 import { projects } from "../_data/projects";
 import { Code2, Sparkles, Rocket, Eye, ExternalLink } from "lucide-react";
 import Image from "next/image";

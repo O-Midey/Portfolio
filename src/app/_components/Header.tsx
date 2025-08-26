@@ -29,6 +29,7 @@ export default function Header() {
               href="https://github.com/o-midey"
               target="_blank"
               rel="noreferrer"
+              className="hover:scale-107 transition-transform"
             >
               <Github size={20} />
             </a>
@@ -36,6 +37,7 @@ export default function Header() {
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noreferrer"
+              className="hover:scale-105 transition-transform"
             >
               <Linkedin size={20} />
             </a>
@@ -43,6 +45,7 @@ export default function Header() {
               href="https://twitter.com/meeedzy"
               target="_blank"
               rel="noreferrer"
+              className="hover:scale-105 transition-transform"
             >
               <Twitter size={20} />
             </a>

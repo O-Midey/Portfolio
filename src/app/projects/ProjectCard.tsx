@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "lucide-react";
-import AnimatedDiv from "./AnimatedDiv";
+import AnimatedDiv from "../_components/AnimatedDiv";
 
 interface Project {
   title: string;
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             project.status === "Completed"
               ? "bg-green-100 text-green-700"
               : project.status === "In Progress"
-              ? "bg-blue-100 text-blue-700"
+              ? "bg-yellow-200 text-yellow-900"
               : "bg-yellow-100 text-yellow-700"
           }`}
         >

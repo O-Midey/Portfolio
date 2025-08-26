@@ -1,4 +1,4 @@
-import ExperienceCard from "../_components/ExperienceCard";
+import ExperienceCard from "../experience/ExperienceCard";
 import { experiences } from "../_data/experience";
 
 export default function ExperiencePage() {

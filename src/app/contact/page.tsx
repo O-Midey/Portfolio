@@ -140,7 +140,7 @@ export default function Contact() {
 
             {/* Call to Action */}
             <div className="text-center">
-              <div className="bg-black text-white rounded-2xl p-8 sm:p-12 shadow-xl shadow-black/20 relative overflow-hidden">
+              <div className="bg-black/90 text-white rounded-2xl p-8 sm:p-12 shadow-xl shadow-black/20 relative overflow-hidden">
                 {/* Background decoration */}
                 <div className="absolute top-4 right-4 opacity-10">
                   <Sparkles className="w-16 h-16" />
