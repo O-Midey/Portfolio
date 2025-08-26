@@ -108,7 +108,7 @@ export default function AboutPage() {
 
             {/* CTA Section */}
             <div className="text-center">
-              <div className="bg-black text-white rounded-2xl p-8 sm:p-12 shadow-xl shadow-black/20">
+              <div className="bg-black/80 text-white rounded-2xl p-8 sm:p-12 shadow-xl shadow-black/20">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-4">
                   Let&apos;s Build Something Amazing
                 </h3>
