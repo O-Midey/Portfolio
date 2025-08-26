@@ -32,6 +32,6 @@ Deployed on **Vercel** 🚀
 ### 1️⃣ Clone the repo
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone https://github.com/O-Midey/Portfolio.git
 cd <your-repo>
 ```
