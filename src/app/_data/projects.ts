@@ -7,7 +7,7 @@ export const projects = [
       "A full-stack Web3 voting application using Solidity, Ethers.js, and Next.js.",
     tech: ["Solidity", "Ethers.js", "Next.js", "React Toast"],
     status: "Completed",
-    liveLink: "https://github.com/mide/voting-dapp",
+    liveLink: "https://simple-voting-d-app-sccd.vercel.app/",
     codeLink: "https://github.com/O-Midey/SimpleVoting-DApp",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1754324462/Screenshot_2025-08-04_at_17.19.48_hxo67v.png",
