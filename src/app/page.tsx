@@ -1,103 +1,114 @@
-import Image from "next/image";
 
-export default function Home() {
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  ArrowRight,
+  Code,
+  Star,
+  Briefcase,
+} from "lucide-react";
+import AnimatedDiv from "./_components/AnimatedDiv";
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <AnimatedDiv className="space-y-16">
+      {/* Hero Section */}
+      <div className="text-center py-20 min-h-screen flex flex-col items-center justify-center gap-6 px-4 lg:px-8">
+        <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 tracking-tight leading-none">
+          Omotosho David A.
+        </h1>
+        <p className="text-2xl md:text-3xl text-gray-600 mb-12 max-w-3xl mx-auto font-light tracking-wide">
+          Full-Stack Developer & Blockchain Engineer
+        </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <div className="flex items-center justify-center gap-8 mb-16">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/o-midey"
             target="_blank"
-            rel="noopener noreferrer"
+            className="p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-300 hover:scale-110"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <Github size={24} className="text-gray-700" />
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://linkedin.com/in/yourusername"
             target="_blank"
-            rel="noopener noreferrer"
+            className="p-3 bg-gray-100 rounded-full hover:bg-blue-100 transition-all duration-300 hover:scale-110"
           >
-            Read our docs
+            <Linkedin size={24} className="text-blue-600" />
+          </a>
+          <a
+            href="https://twitter.com/meeedzy"
+            target="_blank"
+            className="p-3 bg-gray-100 rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-110"
+          >
+            <Twitter size={24} className="text-blue-400" />
+          </a>
+          <a
+            href="https://instagram.com/thismidey"
+            target="_blank"
+            className="p-3 bg-gray-100 rounded-full hover:bg-pink-50 transition-all duration-300 hover:scale-110"
+          >
+            <Instagram size={24} className="text-pink-500" />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/about"
+          className="group inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-lg tracking-wide shadow-lg hover:shadow-xl"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          Learn More About Me
+          <ArrowRight
+            className="transform transition-transform duration-300 group-hover:translate-x-1"
+            size={20}
           />
-          Learn
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="grid md:grid-cols-3 gap-8">
+        <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
+          <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+            <Code
+              className="text-blue-600 group-hover:scale-110 transition-transform duration-300"
+              size={28}
+            />
+          </div>
+          <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
+            Full-Stack Development
+          </h3>
+          <p className="text-gray-600 font-medium">MERN stack development</p>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
+          <div className="bg-purple-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+            <Star
+              className="text-purple-600 group-hover:scale-110 transition-transform duration-300"
+              size={28}
+            />
+          </div>
+          <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
+            Blockchain Development
+          </h3>
+          <p className="text-gray-600 font-medium">Smart Contracts & Web3</p>
+        </div>
+
+        <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
+          <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+            <Briefcase
+              className="text-green-600 group-hover:scale-110 transition-transform duration-300"
+              size={28}
+            />
+          </div>
+          <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
+            End-to-End Solutions
+          </h3>
+          <p className="text-gray-600 font-medium">
+            From DB to Smart Contracts
+          </p>
+        </div>
+      </div>
+    </AnimatedDiv>
   );
 }
