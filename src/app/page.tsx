@@ -32,7 +32,7 @@ export default function HomePage() {
             <Github size={24} className="text-gray-700" />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/omotosho-david"
             target="_blank"
             className="p-3 bg-gray-100 rounded-full hover:bg-blue-100 transition-all duration-300 hover:scale-110"
           >
