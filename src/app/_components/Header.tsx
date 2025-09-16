@@ -34,7 +34,7 @@ export default function Header() {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/omotosho-david"
               target="_blank"
               rel="noreferrer"
               className="hover:scale-105 transition-transform"
@@ -115,7 +115,7 @@ export default function Header() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/omotosho-david"
                 target="_blank"
                 rel="noreferrer"
               >

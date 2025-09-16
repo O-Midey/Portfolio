@@ -1,5 +1,13 @@
 import { skills } from "../_data/skills";
-import { MailOpen, User, Code2, ExternalLink } from "lucide-react";
+import {
+  MailOpen,
+  User,
+  Code2,
+  ExternalLink,
+  Briefcase,
+  Star,
+  Code,
+} from "lucide-react";
 import AnimatedDiv from "../_components/AnimatedDiv";
 
 export default function AboutPage() {
@@ -72,6 +80,53 @@ export default function AboutPage() {
                     😉🎧
                   </p>
                 </div>
+              </div>
+            </div>
+            {/* Quick Stats */}
+            <div className="grid md:grid-cols-3 gap-8 mb-20">
+              <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Code
+                    className="text-blue-600 group-hover:scale-110 transition-transform duration-300"
+                    size={28}
+                  />
+                </div>
+                <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
+                  Full-Stack Development
+                </h3>
+                <p className="text-gray-600 font-medium">
+                  MERN stack development
+                </p>
+              </div>
+
+              <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-purple-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Star
+                    className="text-purple-600 group-hover:scale-110 transition-transform duration-300"
+                    size={28}
+                  />
+                </div>
+                <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
+                  Blockchain Development
+                </h3>
+                <p className="text-gray-600 font-medium">
+                  Smart Contracts & Web3
+                </p>
+              </div>
+
+              <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Briefcase
+                    className="text-green-600 group-hover:scale-110 transition-transform duration-300"
+                    size={28}
+                  />
+                </div>
+                <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
+                  End-to-End Solutions
+                </h3>
+                <p className="text-gray-600 font-medium">
+                  From DB to Smart Contracts
+                </p>
               </div>
             </div>
 
