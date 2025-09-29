@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <AnimatedDiv className="space-y-16">
       {/* Hero Section */}
-      <div className="text-center py-20 min-h-screen flex flex-col items-center justify-center gap-6 px-4 lg:px-8">
+      <div className="text-center py-20 h-screen flex flex-col items-center justify-center gap-6 px-4 lg:px-8">
         <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 tracking-tight leading-none">
           Omotosho David A.
         </h1>
