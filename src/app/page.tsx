@@ -3,9 +3,9 @@ import AnimatedDiv from "./_components/AnimatedDiv";
 
 export default function HomePage() {
   return (
-    <AnimatedDiv className="space-y-16">
+    <AnimatedDiv className="space-y-16 h-screen">
       {/* Hero Section */}
-      <div className="text-center py-20 h-screen flex flex-col items-center justify-center gap-6 px-4 lg:px-8">
+      <div className="text-center py-10 flex flex-col items-center justify-center gap-6 px-4 lg:px-8">
         <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 tracking-tight leading-none">
           Omotosho David A.
         </h1>
