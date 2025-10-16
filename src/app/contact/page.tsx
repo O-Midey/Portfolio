@@ -102,7 +102,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <p className="text-gray-800 text-sm mb-auto">
-                      Follow for updates and thoughts
+                      Follow for updates and thoughts 💭
                     </p>
                   </div>
                 </a>
