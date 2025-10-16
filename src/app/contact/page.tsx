@@ -131,7 +131,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <p className="text-gray-600 text-sm mb-auto">
-                      Behind the scenes content
+                      Put a face to the name 😉
                     </p>
                   </div>
                 </a>
