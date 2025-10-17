@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "lucide-react";
-import AnimatedDiv from "../_components/AnimatedDiv";
+import AnimatedDiv from "../components/AnimatedDiv";
 
 interface Project {
   title: string;
@@ -51,14 +51,14 @@ export default function ProjectCard({ project }: { project: Project }) {
       >
         View Project <ExternalLinkIcon size={12} />
       </a>
-      <a
+      {/* <a
         href={project.codeLink}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-xs ml-5"
       >
         View Code <ExternalLinkIcon size={12} />
-      </a>
+      </a> */}
     </AnimatedDiv>
   );
 }

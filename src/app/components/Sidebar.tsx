@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import sections from "../_data/sections";
+import sections from "../data/sections";
 import NavItem from "./NavItem";
 
 export default function Sidebar() {

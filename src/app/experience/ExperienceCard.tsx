@@ -1,7 +1,7 @@
 "use client";
 import { Card, CardContent } from "../../../components/ui/card";
 import { Briefcase } from "lucide-react";
-import { Experience } from "../_data/experience";
+import { Experience } from "../data/experience";
 import { motion } from "framer-motion";
 
 export default function ExperienceCard({

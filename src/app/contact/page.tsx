@@ -6,11 +6,11 @@ import {
   Sparkles,
   Send,
 } from "lucide-react";
-import AnimatedDiv from "../_components/AnimatedDiv";
+import AnimatedDiv from "../components/AnimatedDiv";
 
 export default function Contact() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden mt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
       <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-gray-900/5 rounded-full blur-2xl sm:blur-3xl"></div>

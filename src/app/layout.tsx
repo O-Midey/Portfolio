@@ -1,5 +1,5 @@
 import "./globals.css";
-import Layout from "./_components/Layout";
+import Layout from "./components/Layout";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
+    <html lang="en" className={`${inter.className} bg-white`}>
+      <body className="bg-white">
         <Layout>{children}</Layout>
       </body>
     </html>

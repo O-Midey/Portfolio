@@ -27,7 +27,7 @@ export default function HomePage() {
       setTimeout(() => {
         setCurrentTitle((prev) => (prev + 1) % titles.length);
         setIsAnimating(false);
-      }, 500);
+      }, 200);
     }, 3000);
 
     return () => clearInterval(interval);
