@@ -8,7 +8,7 @@ import NavItem from "./NavItem";
 export default function Sidebar() {
   const pathname = usePathname();
   return (
-    <div className="w-30% hidden md:flex md:px-4 flex-shrink-0 sticky top-24 py-12">
+    <div className="w-30% hidden md:flex md:px-4 flex-shrink-0 sticky top-24  h-full">
       <nav className="space-y-1">
         {sections.map((section) => (
           <Link key={section.id} href={section.href}>
