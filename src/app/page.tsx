@@ -31,7 +31,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <AnimatedDiv className="h-screen flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
+    <AnimatedDiv className="min-h-dvh flex items-center justify-center px-4 py-4 sm:py-8 sm:px-6 lg:px-8 overflow-hidden">
       <div className="text-center flex flex-col items-center justify-center gap-4 sm:gap-10 lg:gap-8 max-w-5xl w-full">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight leading-none">
           Omotosho David A.
