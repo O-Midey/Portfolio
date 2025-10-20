@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <div
-      className="md:hidden fixed bottom-6 left-1/2 w-[80%] max-w-sm z-50 transition-all duration-300"
+      className="md:hidden fixed bottom-6 left-1/2 w-[80%] max-w-sm z-50"
       style={{
         opacity,
         transform: `translateX(-50%) scale(${scale})`,
