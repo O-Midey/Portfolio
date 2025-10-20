@@ -13,6 +13,17 @@ export const projects = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1754324462/Screenshot_2025-08-04_at_17.19.48_hxo67v.png",
   },
   {
+    title: "SwipeJobb",
+    description:
+      "Swipejobs is a modern, AI-powered staffing and job-matching platform that serves both job seekers and employers   ",
+    tech: ["`ReactJS`", "Tailwind CSS", "Framer Motion"],
+    status: "Completed",
+    liveLink: "https://swipejobb.se/",
+    codeLink: "https://github.com/O-Midey/AquaLife",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1760979777/Screenshot_2025-10-20_at_18.00.51_inclpg.png  ",
+  },
+  {
     title: "AquaLife",
     description:
       "Aqualife is a responsive donation platform built to support clean water initiatives. It features a modern design, secure payment integration, and an intuitive donation flow that makes giving simple and impactful.",
@@ -48,6 +59,7 @@ export const projects = [
     status: "Completed",
     liveLink: "https://omotoshodavid.vercel.app",
     codeLink: "https://github.com/O-Midey/portfolio-v2",
-    image: "https://res.cloudinary.com/daypv7q8r/image/upload/v1756210571/Screenshot_2025-08-26_at_12.40.14_pzbddh.png"
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1756210571/Screenshot_2025-08-26_at_12.40.14_pzbddh.png",
   },
 ];
