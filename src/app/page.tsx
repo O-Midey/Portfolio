@@ -7,17 +7,14 @@ type AnimatedDivProps = {
   children: React.ReactNode;
   className?: string;
 };
+
 const AnimatedDiv = ({ children, className }: AnimatedDivProps) => {
   return <div className={className}>{children}</div>;
 };
 
-export default function HomePage() {
-  const titles = [
-    "Full-Stack Developer",
-    "Blockchain Engineer",
-    // "Mobile App Developer",
-  ];
+const TITLES = ["Full-Stack Developer", "Blockchain Engineer"];
 
+export default function HomePage() {
   const [currentTitle, setCurrentTitle] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -25,24 +22,21 @@ export default function HomePage() {
     const interval = setInterval(() => {
       setIsAnimating(true);
       setTimeout(() => {
-        setCurrentTitle((prev) => (prev + 1) % titles.length);
+        setCurrentTitle((prev) => (prev + 1) % TITLES.length);
         setIsAnimating(false);
       }, 200);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); // ✅ dependency array stays constant
 
   return (
     <AnimatedDiv className="h-screen flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
-      {/* Hero Section */}
       <div className="text-center flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 max-w-5xl w-full">
-        {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight leading-none">
           Omotosho David A.
         </h1>
 
-        {/* Subheading*/}
         <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-3xl font-light tracking-wide h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center overflow-hidden">
           <span
             className={`transition-all duration-500 ${
@@ -55,7 +49,7 @@ export default function HomePage() {
               transformStyle: "preserve-3d",
             }}
           >
-            {titles[currentTitle]}
+            {TITLES[currentTitle]}
           </span>
         </div>
 
@@ -95,7 +89,6 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* CTA Button */}
         <a
           href="/about"
           className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-base sm:text-lg tracking-wide shadow-lg hover:shadow-xl"
