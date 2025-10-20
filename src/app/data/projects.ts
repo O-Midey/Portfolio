@@ -15,7 +15,7 @@ export const projects = [
   {
     title: "SwipeJobb",
     description:
-      "Swipejobs is a modern, AI-powered staffing and job-matching platform that serves both job seekers and employers   ",
+      "Swipejobb is a modern, AI-powered staffing and job-matching platform that serves both job seekers and employers   ",
     tech: ["ReactJS", "Tailwind CSS", "Framer Motion"],
     status: "Completed",
     liveLink: "https://swipejobb.se/",
