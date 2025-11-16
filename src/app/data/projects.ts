@@ -1,6 +1,15 @@
-// /data/projects.ts
-
 export const projects = [
+  {
+    title: "Polywallet",
+    description:
+      "Polywallet is a fully functional Web3 wallet built for the Polygon network, enabling users to create and import wallets, send MATIC and ERC-20 tokens, and track transaction history with an intuitive interface.",
+    tech: ["React", "Node.js", "Ethers.js", "Alchemy SDK", "Polygon Network"],
+    status: "In Progress",
+    liveLink: "#",
+    codeLink: "https://github.com/O-Midey/Polywallet",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330559/Screenshot_2025-11-16_at_23.01.58_x3sebk.png",
+  },
   {
     title: "Voting DApp",
     description:
@@ -13,16 +22,35 @@ export const projects = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1754324462/Screenshot_2025-08-04_at_17.19.48_hxo67v.png",
   },
   {
+    title: "Havesta",
+    description:
+      "Havesta is a full-stack AgriTech marketplace platform that connects farmers directly with customers, featuring vendor product management, secure payment processing via Paystack, and a comprehensive admin dashboard for business analytics. Built with React, Node.js, PostgreSQL, and modern web technologies.",
+    tech: [
+      "React",
+      "Node.js",
+      "Framer Motion",
+      "Postgres",
+      "Sequelize",
+      "Paystack API",
+    ],
+    status: "In Progress",
+    liveLink: "havesta.com",
+    codeLink: "havesta.com",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330995/Screenshot_2025-11-16_at_23.09.17_kvorqm.png",
+  },
+  {
     title: "SwipeJobb",
     description:
       "Swipejobs is a modern, AI-powered staffing and job-matching platform that serves both job seekers and employers   ",
-    tech: ["`ReactJS`", "Tailwind CSS", "Framer Motion"],
+    tech: ["ReactJS", "Tailwind CSS", "Framer Motion", "Websocket"],
     status: "Completed",
     liveLink: "https://swipejobb.se/",
     codeLink: "https://github.com/O-Midey/AquaLife",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1760979777/Screenshot_2025-10-20_at_18.00.51_inclpg.png  ",
   },
+
   {
     title: "AquaLife",
     description:

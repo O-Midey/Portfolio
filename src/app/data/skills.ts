@@ -10,4 +10,7 @@ export const skills = [
   "Ethers.js",
   "MongoDB",
   "TailwindCSS",
+  "Postgres",
+  "GraphQL",
+  "Express",
 ];

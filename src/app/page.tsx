@@ -12,7 +12,11 @@ const AnimatedDiv = ({ children, className }: AnimatedDivProps) => {
   return <div className={className}>{children}</div>;
 };
 
-const TITLES = ["Full-Stack Developer", "Blockchain Engineer"];
+const TITLES = [
+  "Frontend Developer",
+  "Full Stack Developer",
+  "Blockchain Engineer",
+];
 
 export default function HomePage() {
   const [currentTitle, setCurrentTitle] = useState(0);
