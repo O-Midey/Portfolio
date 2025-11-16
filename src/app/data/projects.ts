@@ -34,7 +34,7 @@ export const projects = [
       "Paystack API",
     ],
     status: "In Progress",
-    liveLink: "havesta.com",
+    liveLink: "https://havesta.com",
     codeLink: "havesta.com",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330995/Screenshot_2025-11-16_at_23.09.17_kvorqm.png",
