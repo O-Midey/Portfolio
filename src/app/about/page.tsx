@@ -1,183 +1,119 @@
 import { skillGroups } from "../data/skills";
-import {
-  MailOpen,
-  Code2,
-  ExternalLink,
-  Briefcase,
-  Star,
-  Code,
-} from "lucide-react";
+import { MailOpen, ExternalLink, ArrowRight } from "lucide-react";
 import AnimatedDiv from "../components/AnimatedDiv";
 
 export default function AboutPage() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
-      <div className="absolute top-10 sm:top-20 right-4 sm:right-10 w-48 sm:w-72 h-48 sm:h-72 bg-gray-900/5 rounded-full blur-2xl sm:blur-3xl"></div>
-      <div className="absolute bottom-10 sm:bottom-20 left-4 sm:left-10 w-64 sm:w-96 h-64 sm:h-96 bg-black/3 rounded-full blur-2xl sm:blur-3xl"></div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+    <section className="relative min-h-screen bg-white dark:bg-gray-950">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <AnimatedDiv>
-          {/* Hero Section */}
-          <div className="mb-12 sm:mb-16">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">about me</p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tighter leading-none mb-4">
+          {/* Header */}
+          <div className="mb-14">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">about me ✦</p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Full-Stack &
               <br />
-              <span className="text-gray-400">Blockchain Dev.</span>
+              <span className="text-gray-400 dark:text-gray-500">Blockchain Dev. ⛓️</span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 dark:text-gray-500 font-light max-w-sm leading-relaxed">
               Building end-to-end products — from databases to smart contracts.
             </p>
           </div>
 
-          {/* Main Content */}
-          <div className="max-w-5xl mx-auto">
-            {/* Story */}
-            <div className="mb-16 sm:mb-20">
-              <div className="space-y-6 sm:space-y-8">
-                <p className="text-gray-700 text-md md:text-lg  leading-relaxed font-light">
-                  I&apos;m a full-stack developer who builds end-to-end
-                  solutions using the{" "}
-                  <span className="font-bold text-gray-900">MERN stack</span>{" "}
-                  and creates decentralized applications with{" "}
-                  <span className="font-bold text-gray-900">Solidity</span>,{" "}
-                  <span className="font-bold text-gray-900">Hardhat</span>, and{" "}
-                  <span className="font-bold text-gray-900">Ethers.js</span>.
-                </p>
+          {/* Stats row */}
+          <div className="grid grid-cols-3 gap-4 mb-14 border-y border-gray-100 dark:border-gray-800 py-8">
+            {[
+              { value: "7+", label: "Projects shipped" },
+              { value: "3+", label: "Web3 apps" },
+              { value: "2+", label: "Years building" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white tracking-tight">{stat.value}</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500 font-light mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div> */}}
 
-                <p className="text-gray-700 text-md md:text-lg  leading-relaxed font-light">
-                  From database design to smart contracts, I deliver complete
-                  solutions that bridge traditional web development with
-                  blockchain technology. I approach every project with precision
-                  and creativity, whether I&apos;m architecting scalable
-                  databases or writing secure smart contracts.
-                </p>
+          {/* Story */}
+          <div className="mb-14 space-y-5">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-6">background 📍</p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+              I&apos;m a full-stack developer who builds end-to-end solutions
+              using the{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">MERN stack</span>{" "}
+              and creates decentralized applications with{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Solidity</span>,{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Hardhat</span>, and{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Ethers.js</span>.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+              From database design to smart contracts, I deliver complete
+              solutions that bridge traditional web development with blockchain
+              technology — approaching every project with precision and
+              creativity.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+              When I&apos;m not coding, I&apos;m usually vibing to some good
+              Afrobeats 🎶✨ — check out my playlist{" "}
+              <a
+                className="text-gray-900 dark:text-white font-medium underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-900 dark:hover:decoration-white transition-all duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://open.spotify.com/user/31jibew2j4bcfy3edf6ezxorcbxu/playlists"
+              >
+                here
+              </a>
+              .
+            </p>
+          </div>
 
-                <p className="text-gray-700 text-md md:text-lg  leading-relaxed font-light">
-                  Each line of code is an opportunity to build something
-                  meaningful that users will love. When I&apos;m not coding,
-                  I&apos;m usually vibing to some good Afrobeats. There&apos;s
-                  something about the energy that keeps me motivated during
-                  those late-night development sessions 🎶✨
-                </p>
-
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-lg shadow-black/5">
-                  <p className="text-gray-700 text-md md:text-lg  leading-relaxed font-light">
-                    You can check out my playlist{" "}
-                    <a
-                      className="text-gray-900 hover:text-black font-semibold underline decoration-2 underline-offset-4 decoration-gray-300 hover:decoration-gray-900 transition-all duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href="https://open.spotify.com/user/31jibew2j4bcfy3edf6ezxorcbxu/playlists"
-                    >
-                      here
-                    </a>
-                    😉🎧
+          {/* Skills */}
+          <div className="mb-14">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-6">tech stack 🛠️</p>
+            <div className="space-y-5">
+              {skillGroups.map((group) => (
+                <div key={group.label} className="flex gap-4 items-start">
+                  <p className="text-xs text-gray-400 dark:text-gray-500 font-mono w-20 shrink-0 pt-1.5">
+                    {group.label}
                   </p>
-                </div>
-              </div>
-            </div>
-            {/* Quick Stats */}
-            <div className="grid md:grid-cols-3 gap-8 mb-20">
-              <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <Code
-                    className="text-blue-600 group-hover:scale-110 transition-transform duration-300"
-                    size={28}
-                  />
-                </div>
-                <h3 className="font-black text-4xl text-gray-900 mb-2 tracking-tight">7+</h3>
-                <p className="text-gray-700 font-semibold mb-1">Projects Shipped</p>
-                <p className="text-gray-500 text-sm">Full-stack & Web3 apps</p>
-              </div>
-
-              <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="bg-purple-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <Star
-                    className="text-purple-600 group-hover:scale-110 transition-transform duration-300"
-                    size={28}
-                  />
-                </div>
-                <h3 className="font-black text-4xl text-gray-900 mb-2 tracking-tight">3+</h3>
-                <p className="text-gray-700 font-semibold mb-1">Web3 Apps</p>
-                <p className="text-gray-500 text-sm">Smart contracts & DApps</p>
-              </div>
-
-              <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
-                <div className="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                  <Briefcase
-                    className="text-green-600 group-hover:scale-110 transition-transform duration-300"
-                    size={28}
-                  />
-                </div>
-                <h3 className="font-black text-4xl text-gray-900 mb-2 tracking-tight">2+</h3>
-                <p className="text-gray-700 font-semibold mb-1">Years Experience</p>
-                <p className="text-gray-500 text-sm">Building production apps</p>
-              </div>
-            </div>
-
-            {/* Skills Section */}
-            <div className="mb-16 sm:mb-20">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900/5 border border-gray-200 rounded-full mb-6">
-                  <Code2 className="w-3 sm:w-4 h-3 sm:h-4 text-gray-700" />
-                  <span className="text-xs sm:text-sm font-medium text-gray-700 tracking-wide uppercase">
-                    Tech Stack
-                  </span>
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
-                  Skills & Technologies
-                </h2>
-              </div>
-
-              <div className="space-y-6">
-                {skillGroups.map((group) => (
-                  <div key={group.label} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg shadow-black/5">
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{group.label}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {group.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className={`px-3 py-1.5 font-mono font-medium text-xs sm:text-sm rounded-full hover:scale-105 transition-all duration-200 cursor-default ${group.color}`}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-mono rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <div className="text-center">
-              <div className="bg-black/90 text-white rounded-2xl p-8 sm:p-12 shadow-xl shadow-black/20">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                  Let&apos;s Build Something Amazing
-                </h3>
-                <p className="text-gray-200 text-lg sm:text-xl font-light mb-8 max-w-2xl mx-auto">
-                  Ready to bring your ideas to life? Let&apos;s discuss your
-                  next project.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="mailto:talk2adeoluwa2310@gmail.com"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full font-light hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-                  >
-                    <MailOpen className="w-4 h-4" />
-                    Get In Touch
-                  </a>
-                  <a
-                    href="/projects"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full font-light hover:bg-white/10 transition-all duration-300"
-                  >
-                    <ExternalLink className="w-4 h-4 " />
-                    View My Work
-                  </a>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="border-t border-gray-100 dark:border-gray-800 pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
+              <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-2">
+                what&apos;s next
+              </p>
+              <p className="text-gray-900 dark:text-white font-semibold text-lg">Let&apos;s build something. 👏</p>
+            </div>
+            <div className="flex gap-3">
+              <a
+                href="mailto:talk2adeoluwa2310@gmail.com"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-700 transition-all duration-200 hover:scale-105"
+              >
+                <MailOpen className="w-3.5 h-3.5" />
+                Get in touch
+              </a>
+              <a
+                href="/projects"
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 text-gray-700 text-sm font-medium rounded-full hover:bg-gray-50 transition-all duration-200"
+              >
+                My work
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </AnimatedDiv>

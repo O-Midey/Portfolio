@@ -31,7 +31,7 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
       <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 ${tape} rounded-sm z-10 opacity-80`} />
 
       {/* Card */}
-      <div className="bg-white border border-gray-200 shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3">
+      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3">
 
         {/* Polaroid image */}
         {project.image && (
@@ -51,7 +51,7 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
         {/* Content */}
         <div className="px-1 pt-1 flex flex-col gap-2">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="font-bold text-gray-900 text-base leading-tight">
+            <h3 className="font-bold text-gray-900 dark:text-white text-base leading-tight">
               {project.title}
             </h3>
             <span className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full font-medium ${
@@ -63,14 +63,14 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             </span>
           </div>
 
-          <p className="text-gray-500 text-xs leading-relaxed line-clamp-3">{project.description}</p>
+          <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed line-clamp-3">{project.description}</p>
 
           {/* Tech tags — look like stickers */}
           <div className="flex flex-wrap gap-1.5">
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-0.5 bg-white border border-gray-200 text-gray-600 text-[10px] font-mono rounded shadow-sm"
+                className="px-2 py-0.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 text-[10px] font-mono rounded shadow-sm"
               >
                 {tech}
               </span>
@@ -81,7 +81,7 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 hover:text-gray-900 underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
           >
             View Project <ExternalLinkIcon size={11} />
           </a>
@@ -99,18 +99,18 @@ function ProjectsSection(): JSX.Element {
     <AnimatedDiv>
       <section className="relative min-h-screen overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-white" />
+        <div className="absolute inset-0 bg-white dark:bg-gray-950" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
 
           {/* Header */}
           <div className="mb-14 sm:mb-20">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">my work</p>
-            <h1 className="text-5xl sm:text-7xl font-black text-gray-900 tracking-tighter leading-none">
-              Projects
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">my work 💼</p>
+            <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
+              Projects 🛠️
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
-              Full-stack apps, Web3 tools, and everything in between.
+              Full-stack apps, Web3 tools, and everything in between 🚀
             </p>
           </div>
 

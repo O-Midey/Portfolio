@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-/* [#06eecb] */
+@variant dark (&:where(.dark, .dark *));
 
 body {
-  @apply bg-cover bg-center bg-no-repeat;
-  background-color: black;
+  background-color: white;
 }
