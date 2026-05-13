@@ -2,6 +2,7 @@
 export const skills = [
   "JavaScript",
   "TypeScript",
+  "Golang",
   "React",
   "Next.js",
   "Node.js",
