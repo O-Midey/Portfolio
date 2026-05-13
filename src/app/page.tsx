@@ -41,7 +41,7 @@ export default function HomePage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
             Omotosho
           </h1>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-400 dark:text-[#444] tracking-tighter leading-none">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-400 dark:text-[#999] tracking-tighter leading-none">
             David A.
           </h1>
         </div>
