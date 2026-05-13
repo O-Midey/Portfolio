@@ -33,7 +33,7 @@ export default function Contact() {
               <br />
               <span className="text-gray-400 dark:text-[#999]">Touch.</span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-400 font-light max-w-lg leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 font-light max-w-lg leading-relaxed">
               Open to new opportunities and interesting projects ✨
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function Contact() {
                     <span className="text-sm font-medium text-gray-900 dark:text-white">{label}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-gray-400 dark:text-[#999] group-hover:text-gray-600 dark:group-hover:text-[#ccc] transition-colors duration-200">
+                    <span className="text-xs font-mono text-gray-500 dark:text-[#999] group-hover:text-gray-800 dark:group-hover:text-[#ccc] transition-colors duration-200">
                       {handle}
                     </span>
                     <ArrowRight className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-600 dark:group-hover:text-[#ccc] group-hover:translate-x-0.5 transition-all duration-200" />
