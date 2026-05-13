@@ -12,7 +12,7 @@ const rotations = ["-rotate-1", "rotate-1", "-rotate-2", "rotate-2", "-rotate-1"
 // Tape colors
 const tapeColors = [
   "bg-yellow-200/70",
-  "bg-blue-200/70",
+  "bg-gray-200/70",
   "bg-pink-200/70",
   "bg-green-200/70",
   "bg-purple-200/70",
@@ -31,7 +31,7 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
       <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 ${tape} rounded-sm z-10 opacity-80`} />
 
       {/* Card */}
-      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3">
+      <div className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3">
 
         {/* Polaroid image */}
         {project.image && (
@@ -63,14 +63,14 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             </span>
           </div>
 
-          <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed line-clamp-3">{project.description}</p>
+          <p className="text-gray-500 dark:text-[#888] text-xs leading-relaxed line-clamp-3">{project.description}</p>
 
           {/* Tech tags — look like stickers */}
           <div className="flex flex-wrap gap-1.5">
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-0.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 text-[10px] font-mono rounded shadow-sm"
+                className="px-2 py-0.5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-gray-600 dark:text-[#888] text-[10px] font-mono rounded shadow-sm"
               >
                 {tech}
               </span>
@@ -81,7 +81,7 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 dark:text-[#888] hover:text-gray-900 dark:hover:text-white underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
           >
             View Project <ExternalLinkIcon size={11} />
           </a>
@@ -99,7 +99,7 @@ function ProjectsSection(): JSX.Element {
     <AnimatedDiv>
       <section className="relative min-h-screen overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-white dark:bg-gray-950" />
+        <div className="absolute inset-0 bg-white dark:bg-[#111]" />
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
 

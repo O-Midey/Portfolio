@@ -27,7 +27,7 @@ export default function Sidebar() {
       </div>
 
       {/* Divider */}
-      <div className="h-px bg-gray-100 dark:bg-gray-800 mx-3 mb-6" />
+      <div className="h-px bg-gray-100 dark:bg-[#1a1a1a] mx-3 mb-6" />
 
       {/* Nav Links */}
       <nav className="space-y-1">
@@ -39,8 +39,8 @@ export default function Sidebar() {
               <div
                 className={`relative flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 ${
                   isActive
-                    ? "text-gray-900 dark:text-white font-semibold bg-gray-50 dark:bg-gray-800"
-                    : "text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+                    ? "text-gray-900 dark:text-white font-semibold bg-gray-50 dark:bg-[#1a1a1a]"
+                    : "text-gray-400 hover:text-gray-700 dark:hover:text-[#ccc] hover:bg-gray-50 dark:hover:bg-gray-800/50"
                 }`}
               >
                 <span
@@ -58,7 +58,7 @@ export default function Sidebar() {
 
       {/* Bottom */}
       <div className="mt-auto pb-8 px-3">
-        <div className="h-px bg-gray-100 dark:bg-gray-800 mb-6" />
+        <div className="h-px bg-gray-100 dark:bg-[#1a1a1a] mb-6" />
 
         {/* Theme toggle */}
         {mounted && (

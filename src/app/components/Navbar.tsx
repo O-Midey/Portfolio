@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[88%] max-w-sm z-50">
       <nav className="relative" aria-label="Mobile navigation">
-        <div className="bg-white/90 dark:bg-gray-900/90 border border-gray-200/50 dark:border-gray-700/50 shadow-xl backdrop-blur-md overflow-hidden rounded-[30px]">
+        <div className="bg-white/90 dark:bg-[#111]/90 border border-gray-200/50 dark:border-[#2a2a2a]/50 shadow-xl backdrop-blur-md overflow-hidden rounded-[30px]">
           <div className="w-full px-2 py-1.5 flex items-center justify-around">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -43,7 +43,7 @@ export default function Navbar() {
                     className={`w-4 h-4 transition-all duration-300 ${
                       isActive
                         ? "text-white dark:text-gray-900"
-                        : "text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        : "text-gray-500 dark:text-[#888] group-hover:text-gray-900 dark:group-hover:text-white"
                     }`}
                     strokeWidth={isActive ? 2.5 : 2}
                   />
@@ -51,7 +51,7 @@ export default function Navbar() {
                     className={`text-[9px] font-medium transition-all duration-300 ${
                       isActive
                         ? "text-white dark:text-gray-900"
-                        : "text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        : "text-gray-500 dark:text-[#888] group-hover:text-gray-900 dark:group-hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -67,11 +67,11 @@ export default function Navbar() {
                 className="group flex flex-col items-center gap-1 px-3 py-1.5 rounded-2xl hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition-all duration-300 active:scale-95"
               >
                 {theme === "dark" ? (
-                  <Sun className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" strokeWidth={2} />
+                  <Sun className="w-4 h-4 text-gray-500 dark:text-[#888] group-hover:text-gray-900 dark:group-hover:text-white transition-colors" strokeWidth={2} />
                 ) : (
                   <Moon className="w-4 h-4 text-gray-500 group-hover:text-gray-900 transition-colors" strokeWidth={2} />
                 )}
-                <span className="text-[9px] font-medium text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                <span className="text-[9px] font-medium text-gray-500 dark:text-[#888] group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                   {theme === "dark" ? "Light" : "Dark"}
                 </span>
               </button>

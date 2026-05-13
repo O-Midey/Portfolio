@@ -4,7 +4,7 @@ import AnimatedDiv from "../components/AnimatedDiv";
 
 export default function AboutPage() {
   return (
-    <section className="relative min-h-screen bg-white dark:bg-gray-950">
+    <section className="relative min-h-screen bg-white dark:bg-[#111]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <AnimatedDiv>
           {/* Header */}
@@ -13,15 +13,15 @@ export default function AboutPage() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Full-Stack &
               <br />
-              <span className="text-gray-400 dark:text-gray-500">Blockchain Dev. ⛓️</span>
+              <span className="text-gray-400 dark:text-[#666]">Blockchain Dev. ⛓️</span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-400 dark:text-gray-500 font-light max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 dark:text-[#666] font-light max-w-sm leading-relaxed">
               Building end-to-end products — from databases to smart contracts.
             </p>
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-4 mb-14 border-y border-gray-100 dark:border-gray-800 py-8">
+          <div className="grid grid-cols-3 gap-4 mb-14 border-y border-gray-100 dark:border-[#2a2a2a] py-8">
             {[
               { value: "7+", label: "Projects shipped" },
               { value: "3+", label: "Web3 apps" },
@@ -29,15 +29,15 @@ export default function AboutPage() {
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white tracking-tight">{stat.value}</p>
-                <p className="text-xs text-gray-400 dark:text-gray-500 font-light mt-1">{stat.label}</p>
+                <p className="text-xs text-gray-400 dark:text-[#666] font-light mt-1">{stat.label}</p>
               </div>
             ))}
-          </div> */}}
+          </div>
 
           {/* Story */}
           <div className="mb-14 space-y-5">
             <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-6">background 📍</p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-gray-600 dark:text-[#888] text-sm sm:text-base leading-relaxed font-light">
               I&apos;m a full-stack developer who builds end-to-end solutions
               using the{" "}
               <span className="font-semibold text-gray-900 dark:text-white">MERN stack</span>{" "}
@@ -46,17 +46,17 @@ export default function AboutPage() {
               <span className="font-semibold text-gray-900 dark:text-white">Hardhat</span>, and{" "}
               <span className="font-semibold text-gray-900 dark:text-white">Ethers.js</span>.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-gray-600 dark:text-[#888] text-sm sm:text-base leading-relaxed font-light">
               From database design to smart contracts, I deliver complete
               solutions that bridge traditional web development with blockchain
               technology — approaching every project with precision and
               creativity.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-gray-600 dark:text-[#888] text-sm sm:text-base leading-relaxed font-light">
               When I&apos;m not coding, I&apos;m usually vibing to some good
               Afrobeats 🎶✨ — check out my playlist{" "}
               <a
-                className="text-gray-900 dark:text-white font-medium underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600 hover:decoration-gray-900 dark:hover:decoration-white transition-all duration-200"
+                className="text-gray-900 dark:text-white font-medium underline underline-offset-4 decoration-gray-300 dark:decoration-[#444] hover:decoration-gray-900 dark:hover:decoration-white transition-all duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://open.spotify.com/user/31jibew2j4bcfy3edf6ezxorcbxu/playlists"
@@ -73,14 +73,14 @@ export default function AboutPage() {
             <div className="space-y-5">
               {skillGroups.map((group) => (
                 <div key={group.label} className="flex gap-4 items-start">
-                  <p className="text-xs text-gray-400 dark:text-gray-500 font-mono w-20 shrink-0 pt-1.5">
+                  <p className="text-xs text-gray-400 dark:text-[#666] font-mono w-20 shrink-0 pt-1.5">
                     {group.label}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {group.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs font-mono rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 cursor-default"
+                        className="px-3 py-1 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-gray-700 dark:text-[#aaa] text-xs font-mono rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 cursor-default"
                       >
                         {skill}
                       </span>
@@ -92,7 +92,7 @@ export default function AboutPage() {
           </div>
 
           {/* CTA */}
-          <div className="border-t border-gray-100 dark:border-gray-800 pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="border-t border-gray-100 dark:border-[#2a2a2a] pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div>
               <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-2">
                 what&apos;s next
