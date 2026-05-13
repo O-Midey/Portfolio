@@ -5,8 +5,9 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
-  title: "Omotosho David ",
+  title: "Omotosho Ayomide ",
   description: "Full-Stack Developer & Blockchain Engineer",
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({
