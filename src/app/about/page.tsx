@@ -7,6 +7,7 @@ import {
   Briefcase,
   Star,
   Code,
+  Download,
 } from "lucide-react";
 import AnimatedDiv from "../components/AnimatedDiv";
 
@@ -33,12 +34,36 @@ export default function AboutPage() {
               Full-Stack Developer &{" "}
               <span className="block">Blockchain Engineer</span>
             </h1>
+
+            {/* Resume Download */}
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
+            </a>
           </div>
 
           {/* Main Content */}
           <div className="max-w-5xl mx-auto">
-            {/* Story Section */}
-            <div className="mb-16 sm:mb-20">
+            {/* Profile Photo + Story */}
+            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start mb-16 sm:mb-20">
+              {/* Photo */}
+              <div className="flex-shrink-0 mx-auto md:mx-0">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden shadow-lg">
+                  <img
+                    src="/profile.jpg"
+                    alt="Omotosho David"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                </div>
+              </div>
+              {/* Story */}
               <div className="space-y-6 sm:space-y-8">
                 <p className="text-gray-700 text-md md:text-lg  leading-relaxed font-light">
                   I&apos;m a full-stack developer who builds end-to-end
@@ -91,12 +116,9 @@ export default function AboutPage() {
                     size={28}
                   />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
-                  Full-Stack Development
-                </h3>
-                <p className="text-gray-600 font-medium">
-                  MERN stack development
-                </p>
+                <h3 className="font-black text-4xl text-gray-900 mb-2 tracking-tight">7+</h3>
+                <p className="text-gray-700 font-semibold mb-1">Projects Shipped</p>
+                <p className="text-gray-500 text-sm">Full-stack & Web3 apps</p>
               </div>
 
               <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
@@ -106,12 +128,9 @@ export default function AboutPage() {
                     size={28}
                   />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
-                  Blockchain Development
-                </h3>
-                <p className="text-gray-600 font-medium">
-                  Smart Contracts & Web3
-                </p>
+                <h3 className="font-black text-4xl text-gray-900 mb-2 tracking-tight">3+</h3>
+                <p className="text-gray-700 font-semibold mb-1">Web3 Apps</p>
+                <p className="text-gray-500 text-sm">Smart contracts & DApps</p>
               </div>
 
               <div className="bg-white border border-gray-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 group">
@@ -121,12 +140,9 @@ export default function AboutPage() {
                     size={28}
                   />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3 tracking-tight">
-                  End-to-End Solutions
-                </h3>
-                <p className="text-gray-600 font-medium">
-                  From DB to Smart Contracts
-                </p>
+                <h3 className="font-black text-4xl text-gray-900 mb-2 tracking-tight">2+</h3>
+                <p className="text-gray-700 font-semibold mb-1">Years Experience</p>
+                <p className="text-gray-500 text-sm">Building production apps</p>
               </div>
             </div>
 

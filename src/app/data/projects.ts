@@ -24,7 +24,7 @@ export const projects = [
   {
     title: "Voting DApp",
     description:
-      "A full-stack Web3 voting application using Solidity, Ethers.js, and Next.js.",
+      "A decentralized voting application built on Ethereum, allowing users to create proposals, cast votes, and view real-time results — all secured on-chain. Features wallet connection via MetaMask, smart contract interaction through Ethers.js, and a clean Next.js frontend with live transaction feedback.",
     tech: ["Solidity", "Ethers.js", "Next.js", "React Toast"],
     status: "Completed",
     liveLink: "https://simple-voting-d-app-sccd.vercel.app/",
@@ -44,7 +44,7 @@ export const projects = [
       "Sequelize",
       "Paystack API",
     ],
-    status: "In Progress",
+    status: "Completed",
     liveLink: "https://havesta.com",
     codeLink: "havesta.com",
     image:

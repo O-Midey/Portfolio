@@ -94,10 +94,10 @@ export default function HomePage() {
         </div>
 
         <a
-          href="/about"
+          href="/projects"
           className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-base sm:text-lg tracking-wide shadow-lg hover:shadow-xl"
         >
-          Learn More About Me
+          View My Work
           <ArrowRight
             className="transform transition-transform duration-300 group-hover:translate-x-1"
             size={18}
