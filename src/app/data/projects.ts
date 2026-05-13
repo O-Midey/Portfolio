@@ -11,6 +11,17 @@ export const projects = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330559/Screenshot_2025-11-16_at_23.01.58_x3sebk.png",
   },
   {
+    title: "Mankorie Global",
+    description:
+      "A professional energy and infrastructure company website built with Next.js. Mankorie Global Energy showcases integrated solar, electrical, and security solutions with a clean service-focused layout, client testimonials, and a streamlined consultation flow — serving residential and commercial clients across Nigeria.",
+    tech: ["Next.JS", "Tailwind CSS", "Zustand"],
+    status: "Completed",
+    liveLink: "https://mankorieglobal.com",
+    codeLink: "https://github.com/O-Midey/mankorie-global",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682616/Screenshot_2026-05-13_at_15.29.53_t97jgt.png",
+  },
+  {
     title: "Voting DApp",
     description:
       "A full-stack Web3 voting application using Solidity, Ethers.js, and Next.js.",
@@ -37,7 +48,7 @@ export const projects = [
     liveLink: "https://havesta.com",
     codeLink: "havesta.com",
     image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330995/Screenshot_2025-11-16_at_23.09.17_kvorqm.png",
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682597/Screenshot_2026-05-13_at_15.29.36_vlmkji.png",
   },
   {
     title: "SwipeJobb",
@@ -68,17 +79,7 @@ export const projects = [
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1756156742/Screenshot_2025-08-25_at_21.55.03_mhphsq.png",
   },
-  {
-    title: "Shop Luxe",
-    description:
-      "A modern e-commerce web application built with Next.js, Tailwind CSS and Zustand. Shop Luxe provides a sleek shopping experience with responsive design, product listings, detailed pages, cart functionality, and a streamlined checkout flow.",
-    tech: ["Next.JS", "Zustand", "Tailwind CSS"],
-    status: "In Progress",
-    liveLink: "https://shop-luxe-theta.vercel.app/",
-    codeLink: "https://github.com/O-Midey/shop-luxe",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1756156754/Screenshot_2025-07-18_at_03.16.51_htwwo5.png",
-  },
+
   {
     title: "Portfolio Website",
     description:
