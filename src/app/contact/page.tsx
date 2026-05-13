@@ -31,30 +31,15 @@ export default function Contact() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <AnimatedDiv>
           {/* Hero Section */}
-          <div className="text-center mb-12 sm:mb-20">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900/5 border border-gray-200 rounded-full mb-6 sm:mb-8">
-              <MessageCircle className="w-3 sm:w-4 h-3 sm:h-4 text-gray-700" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700 tracking-wide uppercase">
-                Contact
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-6 sm:mb-8 tracking-tighter leading-none px-2">
-              Get in Touch
+          <div className="mb-12 sm:mb-20">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">contact</p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tighter leading-none mb-4">
+              Get in
+              <br />
+              <span className="text-gray-400">Touch.</span>
             </h1>
-
-            <p className="text-xl sm:text-xl md:text-2xl text-gray-600 font-light max-w-4xl mx-auto leading-relaxed px-4">
-              I&apos;m always interested in hearing about{" "}
-              <span className="text-gray-900 font-semibold">
-                new opportunities
-              </span>{" "}
-              and{" "}
-              <span className="text-gray-900 font-semibold">
-                interesting projects
-              </span>
-              .
-              <br className="hidden sm:block" />
-              Let&apos;s collaborate and build something amazing together!
+            <p className="text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
+              Open to new opportunities and interesting projects.
             </p>
           </div>
 

@@ -1,7 +1,6 @@
 import { skillGroups } from "../data/skills";
 import {
   MailOpen,
-  User,
   Code2,
   ExternalLink,
   Briefcase,
@@ -21,20 +20,16 @@ export default function AboutPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <AnimatedDiv>
           {/* Hero Section */}
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-900/5 border border-gray-200 rounded-full mb-6 sm:mb-8">
-              <User className="w-3 sm:w-4 h-3 sm:h-4 text-gray-700" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700 tracking-wide uppercase">
-                About Me
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-gray-900 mb-6 sm:mb-8 tracking-tighter leading-none px-2">
-              Full-Stack Developer &{" "}
-              <span className="block">Blockchain Engineer</span>
+          <div className="mb-12 sm:mb-16">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">about me</p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tighter leading-none mb-4">
+              Full-Stack &
+              <br />
+              <span className="text-gray-400">Blockchain Dev.</span>
             </h1>
-
-
+            <p className="text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
+              Building end-to-end products — from databases to smart contracts.
+            </p>
           </div>
 
           {/* Main Content */}

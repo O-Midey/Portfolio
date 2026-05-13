@@ -28,13 +28,11 @@ export default function HomePage() {
         <p className="text-xs sm:text-sm font-mono tracking-[0.2em] text-gray-400 uppercase">
           Hey, I&apos;m
         </p>
-
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 tracking-tighter leading-none">
           Omotosho
           <br />
           <span className="text-gray-500">David A.</span>
         </h1>
-
         <div className="flex items-center gap-3 h-8 sm:h-10">
           <span className="w-6 h-px bg-gray-300" />
           <span
@@ -48,11 +46,10 @@ export default function HomePage() {
           </span>
           <span className="w-6 h-px bg-gray-300" />
         </div>
-
         <p className="text-sm sm:text-base text-gray-400 font-light max-w-sm sm:max-w-md leading-relaxed tracking-wide">
-          I build full-stack web apps and Web3 tools —{" "}
+          I design and build full-stack web applications and Web3 tools —{" "}
           <span className="text-gray-600 font-medium">
-            from databases to smart contracts and blockchain infrastructures.
+            handling everything from the database layer to on-chain logic.
           </span>
         </p>
 
@@ -103,7 +100,6 @@ export default function HomePage() {
             />
           </a>
         </div>
-
         <a
           href="/projects"
           className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-base sm:text-lg tracking-wide shadow-lg hover:shadow-xl"
