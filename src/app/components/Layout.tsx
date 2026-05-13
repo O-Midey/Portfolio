@@ -5,7 +5,7 @@ import ThemeProvider from "./ThemeProvider";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
-      <div className="bg-white dark:bg-[#111] transition-colors duration-300">
+      <div className="bg-[#fafafa] dark:bg-[#111] transition-colors duration-300">
         <Navbar />
         <div className="md:flex">
           <Sidebar />

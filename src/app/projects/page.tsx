@@ -120,7 +120,7 @@ function ScrapbookCard({
 function ProjectsSection(): JSX.Element {
   return (
     <AnimatedDiv>
-      <section className="relative min-h-screen bg-white dark:bg-[#111]">
+      <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#111]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
           {/* Header */}
           <div className="mb-14 sm:mb-20">

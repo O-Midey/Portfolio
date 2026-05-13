@@ -15,7 +15,7 @@ export default function Sidebar() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="hidden md:flex fixed top-0 left-0 h-screen w-52 px-4 pt-10 flex-col bg-white dark:bg-[#111] border-r border-gray-100 dark:border-[#1a1a1a] z-40">
+    <div className="hidden md:flex fixed top-0 left-0 h-screen w-52 px-4 pt-10 flex-col bg-[#fafafa] dark:bg-[#111] border-r border-gray-100 dark:border-[#1a1a1a] z-40">
       {/* Identity */}
       <div className="mb-8 px-3">
         <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-1">

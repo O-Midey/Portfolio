@@ -27,7 +27,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <AnimatedDiv className="h-dvh overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#111]">
+    <AnimatedDiv className="h-dvh overflow-hidden flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-[#fafafa] dark:bg-[#111]">
       <div className="text-center flex flex-col items-center justify-center gap-4 sm:gap-8 max-w-5xl w-full">
         {/* Greeting */}
         <p className="text-xs sm:text-sm font-mono tracking-[0.2em] text-gray-400 uppercase">
