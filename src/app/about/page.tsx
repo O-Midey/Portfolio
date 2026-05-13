@@ -10,7 +10,7 @@ export default function AboutPage() {
           {/* Header */}
           <div className="mb-14">
             <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">
-              about me ✦
+              about me 🤗
             </p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Full-Stack &
@@ -19,7 +19,7 @@ export default function AboutPage() {
                 Blockchain Dev. ⛓️
               </span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-400 dark:text-[#999] font-light max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 dark:text-[#999] font-light max-w-lg leading-relaxed">
               Building end-to-end products — from databases to smart contracts.
             </p>
           </div>

@@ -7,7 +7,15 @@ import Image from "next/image";
 import { ExternalLinkIcon } from "lucide-react";
 
 // Slight rotations to give each card a pinned/tossed feel
-const rotations = ["-rotate-1", "rotate-1", "-rotate-2", "rotate-2", "-rotate-1", "rotate-1", "rotate-0"];
+const rotations = [
+  "-rotate-1",
+  "rotate-1",
+  "-rotate-2",
+  "rotate-2",
+  "-rotate-1",
+  "rotate-1",
+  "rotate-0",
+];
 
 // Tape colors
 const tapeColors = [
@@ -20,23 +28,34 @@ const tapeColors = [
   "bg-yellow-200/70",
 ];
 
-function ScrapbookCard({ project, index }: { project: Project; index: number }) {
+function ScrapbookCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   const [loaded, setLoaded] = useState(false);
   const rotation = rotations[index % rotations.length];
   const tape = tapeColors[index % tapeColors.length];
 
   return (
-    <div className={`group relative ${rotation} hover:rotate-0 transition-all duration-300 hover:scale-[1.02] hover:z-10`}>
+    <div
+      className={`group relative ${rotation} hover:rotate-0 transition-all duration-300 hover:scale-[1.02] hover:z-10`}
+    >
       {/* Tape strip at top */}
-      <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 ${tape} rounded-sm z-10 opacity-80`} />
+      <div
+        className={`absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-6 ${tape} rounded-sm z-10 opacity-80`}
+      />
 
       {/* Card */}
       <div className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3">
-
         {/* Polaroid image */}
         {project.image && (
           <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
-            {!loaded && <div className="absolute inset-0 animate-pulse bg-gray-200" />}
+            {!loaded && (
+              <div className="absolute inset-0 animate-pulse bg-gray-200" />
+            )}
             <Image
               src={project.image.trim()}
               alt={project.title}
@@ -54,16 +73,20 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             <h3 className="font-bold text-gray-900 dark:text-white text-base leading-tight">
               {project.title}
             </h3>
-            <span className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full font-medium ${
-              project.status === "Completed"
-                ? "bg-green-100 text-green-700"
-                : "bg-amber-100 text-amber-700"
-            }`}>
+            <span
+              className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full font-medium ${
+                project.status === "Completed"
+                  ? "bg-green-100 text-green-700"
+                  : "bg-amber-100 text-amber-700"
+              }`}
+            >
               {project.status}
             </span>
           </div>
 
-          <p className="text-gray-500 dark:text-[#bbb] text-xs leading-relaxed line-clamp-3">{project.description}</p>
+          <p className="text-gray-500 dark:text-[#bbb] text-xs leading-relaxed line-clamp-3">
+            {project.description}
+          </p>
 
           {/* Tech tags — look like stickers */}
           <div className="flex flex-wrap gap-1.5">
@@ -97,20 +120,18 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
 function ProjectsSection(): JSX.Element {
   return (
     <AnimatedDiv>
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-white dark:bg-[#111]" />
-
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-
+      <section className="relative min-h-screen bg-white dark:bg-[#111]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
           {/* Header */}
           <div className="mb-14 sm:mb-20">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">my work 💼</p>
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">
+              my work
+            </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
-              Projects 🛠️
+              Projects
             </h1>
-            <p className="mt-4 text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
-              Full-stack apps, Web3 tools, and everything in between 🚀
+            <p className="mt-4 text-sm sm:text-base text-gray-400 font-light max-w-lg leading-relaxed">
+              Full-stack apps, Web3 tools, and everything in between.
             </p>
           </div>
 
@@ -127,9 +148,5 @@ function ProjectsSection(): JSX.Element {
 }
 
 export default function Projects(): JSX.Element {
-  return (
-    <main className="min-h-screen">
-      <ProjectsSection />
-    </main>
-  );
+  return <ProjectsSection />;
 }

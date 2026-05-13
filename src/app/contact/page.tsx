@@ -33,7 +33,7 @@ export default function Contact() {
               <br />
               <span className="text-gray-400 dark:text-[#999]">Touch.</span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 font-light max-w-lg leading-relaxed">
               Open to new opportunities and interesting projects ✨
             </p>
           </div>

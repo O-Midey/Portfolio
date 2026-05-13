@@ -51,7 +51,7 @@ export default function HomePage() {
           </span>
           <span className="w-6 h-px bg-gray-300" />
         </div>
-        <p className="text-sm sm:text-base text-gray-400 dark:text-[#999] font-light max-w-sm sm:max-w-md leading-relaxed tracking-wide">
+        <p className="text-sm sm:text-base text-gray-400 dark:text-[#999] font-light max-w-lg leading-relaxed tracking-wide">
           I design and build full-stack web applications and Web3 tools —{" "}
           <span className="text-gray-600 dark:text-[#aaa] font-medium">
             handling everything from the database layer to on-chain logic.
