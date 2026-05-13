@@ -57,9 +57,6 @@ export default function AboutPage() {
                     src="/profile.jpg"
                     alt="Omotosho David"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = "none";
-                    }}
                   />
                 </div>
               </div>
