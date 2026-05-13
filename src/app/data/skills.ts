@@ -1,4 +1,3 @@
-// data/skills.ts
 export const skills = [
   "JavaScript",
   "TypeScript",
@@ -14,4 +13,27 @@ export const skills = [
   "Postgres",
   "GraphQL",
   "Express",
+];
+
+export const skillGroups = [
+  {
+    label: "Languages",
+    color: "bg-blue-50 text-blue-800 border border-blue-100",
+    skills: ["JavaScript", "TypeScript", "Golang", "Solidity"],
+  },
+  {
+    label: "Frontend",
+    color: "bg-purple-50 text-purple-800 border border-purple-100",
+    skills: ["React", "Next.js", "TailwindCSS"],
+  },
+  {
+    label: "Backend",
+    color: "bg-green-50 text-green-800 border border-green-100",
+    skills: ["Node.js", "Express", "GraphQL", "Postgres", "MongoDB"],
+  },
+  {
+    label: "Blockchain",
+    color: "bg-orange-50 text-orange-800 border border-orange-100",
+    skills: ["Solidity", "Hardhat", "Ethers.js"],
+  },
 ];

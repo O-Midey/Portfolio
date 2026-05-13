@@ -1,4 +1,4 @@
-import { skills } from "../data/skills";
+import { skillGroups } from "../data/skills";
 import {
   MailOpen,
   User,
@@ -137,20 +137,22 @@ export default function AboutPage() {
                 </h2>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-lg shadow-black/5">
-                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-                  {skills.map((skill, index) => (
-                    <span
-                      key={skill}
-                      className="px-3 sm:px-4 py-1.5 sm:py-2 font-mono font-medium bg-gray-900 text-white text-xs sm:text-sm rounded-full shadow-sm hover:bg-black hover:scale-105 transition-all duration-300 cursor-default"
-                      style={{
-                        animationDelay: `${index * 50}ms`,
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="space-y-6">
+                {skillGroups.map((group) => (
+                  <div key={group.label} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg shadow-black/5">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">{group.label}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className={`px-3 py-1.5 font-mono font-medium text-xs sm:text-sm rounded-full hover:scale-105 transition-all duration-200 cursor-default ${group.color}`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 

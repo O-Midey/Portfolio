@@ -102,39 +102,22 @@ function ProjectsSection(): JSX.Element {
           </div>
 
           {/* Projects Grid */}
-          <div className="space-y-8 sm:space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {projects.map((project: Project, index: number) => (
               <div
                 key={index}
                 className="group relative"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                }}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Floating number - desktop only */}
-                <div className="absolute -left-12 xl:-left-16 top-6 sm:top-8 text-6xl sm:text-8xl font-black text-gray-100 select-none group-hover:text-gray-200 transition-colors duration-500 hidden lg:block">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
-                <div className="relative transform transition-all duration-500 sm:duration-700 hover:translate-y-[-4px] sm:hover:translate-y-[-8px] hover:rotate-0 sm:hover:rotate-1">
-                  {/* Shadow effect on hover */}
-                  <div className="absolute -inset-2 sm:-inset-4 bg-black/5 rounded-2xl sm:rounded-3xl blur-lg sm:blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-
-                  <div className="relative bg-white border border-gray-200 rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg shadow-black/5 hover:shadow-lg sm:hover:shadow-xl hover:shadow-black/10 transition-all duration-300">
-                    {/* Project Image Preview */}
+                <div className="relative transform transition-all duration-500 hover:translate-y-[-6px]">
+                  <div className="absolute -inset-2 bg-black/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="relative bg-white border border-gray-200 rounded-2xl shadow-md shadow-black/5 hover:shadow-xl hover:shadow-black/10 transition-all duration-300 overflow-hidden flex flex-col">
                     {project.image && <ProjectImage project={project} />}
-
-                    {/* Project Card Content */}
-                    <div className={project.image ? "p-0" : ""}>
+                    <div className="flex-1">
                       <ProjectCard project={project} />
                     </div>
                   </div>
                 </div>
-
-                {/* Connecting line */}
-                {index < projects.length - 1 && (
-                  <div className="absolute left-1/2 -bottom-4 sm:-bottom-6 w-px h-8 sm:h-12 bg-gradient-to-b from-gray-300 to-transparent transform -translate-x-1/2"></div>
-                )}
               </div>
             ))}
           </div>

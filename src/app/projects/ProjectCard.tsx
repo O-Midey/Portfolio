@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         href={project.liveLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-xs"
+        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-xs font-medium rounded-full hover:bg-gray-700 transition-all duration-200 hover:scale-105"
       >
         View Project <ExternalLinkIcon size={12} />
       </a>

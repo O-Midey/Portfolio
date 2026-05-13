@@ -1,22 +1,10 @@
 "use client";
 
+import AnimatedDiv from "./components/AnimatedDiv";
 import { Github, Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
-type AnimatedDivProps = {
-  children: React.ReactNode;
-  className?: string;
-};
-
-const AnimatedDiv = ({ children, className }: AnimatedDivProps) => {
-  return <div className={className}>{children}</div>;
-};
-
-const TITLES = [
-  "Frontend Developer",
-  "Full Stack Developer",
-  "Blockchain Engineer",
-];
+const TITLES = ["Full Stack Developer", "Blockchain Engineer", "Web3 Builder"];
 
 export default function HomePage() {
   const [currentTitle, setCurrentTitle] = useState(0);
@@ -30,13 +18,12 @@ export default function HomePage() {
         setIsAnimating(false);
       }, 200);
     }, 3000);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
     <AnimatedDiv className="min-h-dvh flex items-center justify-center px-4 py-4 sm:py-8 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="text-center flex flex-col items-center justify-center gap-4 sm:gap-10 lg:gap-8 max-w-5xl w-full">
+      <div className="text-center flex flex-col items-center justify-center gap-4 sm:gap-8 max-w-5xl w-full">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 tracking-tight leading-none">
           Omotosho David A.
         </h1>
@@ -57,39 +44,43 @@ export default function HomePage() {
           </span>
         </div>
 
+        <p className="text-base sm:text-lg text-gray-500 font-light max-w-xl leading-relaxed">
+          I build full-stack web apps and Web3 tools — from databases to smart contracts.
+        </p>
+
         {/* Social Links */}
-        <div className="flex items-center justify-center gap-4 sm:gap-6 lg:gap-8 sm:my-6 lg:my-8">
+        <div className="flex items-center justify-center gap-4 sm:gap-6">
           <a
             href="https://github.com/o-midey"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-gray-200 transition-all duration-300 hover:scale-110"
+            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300 hover:scale-110 group"
           >
-            <Github size={20} className="text-gray-700 sm:w-6 sm:h-6" />
+            <Github size={20} className="text-gray-700 group-hover:text-white sm:w-6 sm:h-6 transition-colors" />
           </a>
           <a
             href="https://linkedin.com/in/omotosho-david"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-blue-100 transition-all duration-300 hover:scale-110"
+            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-110 group"
           >
-            <Linkedin size={20} className="text-blue-600 sm:w-6 sm:h-6" />
+            <Linkedin size={20} className="text-blue-600 group-hover:text-white sm:w-6 sm:h-6 transition-colors" />
           </a>
           <a
             href="https://twitter.com/meeedzy"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-blue-50 transition-all duration-300 hover:scale-110"
+            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-sky-500 transition-all duration-300 hover:scale-110 group"
           >
-            <Twitter size={20} className="text-blue-400 sm:w-6 sm:h-6" />
+            <Twitter size={20} className="text-sky-500 group-hover:text-white sm:w-6 sm:h-6 transition-colors" />
           </a>
           <a
             href="https://instagram.com/thismidey"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-pink-50 transition-all duration-300 hover:scale-110"
+            className="p-2.5 sm:p-3 bg-gray-100 rounded-full hover:bg-pink-500 transition-all duration-300 hover:scale-110 group"
           >
-            <Instagram size={20} className="text-pink-500 sm:w-6 sm:h-6" />
+            <Instagram size={20} className="text-pink-500 group-hover:text-white sm:w-6 sm:h-6 transition-colors" />
           </a>
         </div>
 
