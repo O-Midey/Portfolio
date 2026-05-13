@@ -12,7 +12,9 @@ export default function HomePage() {
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
   useEffect(() => {
@@ -64,33 +66,33 @@ export default function HomePage() {
             href="https://github.com/o-midey"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-gray-900 dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
+            className="p-2.5 sm:p-3 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#111] dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
           >
             <Github
               size={20}
-              className="text-gray-700 group-hover:text-white sm:w-6 sm:h-6 transition-colors"
+              className="text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black sm:w-6 sm:h-6 transition-colors"
             />
           </a>
           <a
             href="https://linkedin.com/in/omotosho-david"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-gray-900 dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
+            className="p-2.5 sm:p-3 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#0077B5] transition-all duration-300 hover:scale-110 group"
           >
             <Linkedin
               size={20}
-              className="text-gray-600 group-hover:text-white sm:w-6 sm:h-6 transition-colors"
+              className="text-[#0077B5] group-hover:text-white sm:w-6 sm:h-6 transition-colors"
             />
           </a>
           <a
             href="https://twitter.com/meeedzy"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 sm:p-3 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-gray-900 dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
+            className="p-2.5 sm:p-3 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#111] dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
           >
             <Twitter
               size={20}
-              className="text-gray-500 group-hover:text-white sm:w-6 sm:h-6 transition-colors"
+              className="text-gray-700 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black sm:w-6 sm:h-6 transition-colors"
             />
           </a>
           <a
@@ -107,7 +109,7 @@ export default function HomePage() {
         </div>
         <a
           href="/projects"
-          className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-base sm:text-lg tracking-wide shadow-lg hover:shadow-xl"
+          className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#111] dark:bg-white dark:text-black text-white rounded-xl hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 font-mono text-sm sm:text-base shadow-lg hover:shadow-xl uppercase"
         >
           View My Work 🚀
           <ArrowRight
