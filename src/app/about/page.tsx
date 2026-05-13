@@ -49,34 +49,21 @@ export default function AboutPage() {
               background 📍
             </p>
             <p className="text-gray-600 dark:text-[#bbb] text-sm sm:text-base leading-relaxed font-light">
-              I&apos;m a full-stack developer who builds end-to-end solutions
-              using the{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
-                MERN stack
-              </span>{" "}
-              and creates decentralized applications with{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
-                Solidity
-              </span>
-              ,{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
-                Hardhat
-              </span>
-              , and{" "}
-              <span className="font-semibold text-gray-900 dark:text-white">
-                Ethers.js
-              </span>
-              .
+              I&apos;m a developer building full-stack products and Web3 tools — from AgriTech
+              marketplaces to Ethereum wallets, working across the entire stack with{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">React</span>,{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Node.js</span>,{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Postgres</span>,{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Solidity</span>, and more recently{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">Golang</span>.
             </p>
             <p className="text-gray-600 dark:text-[#bbb] text-sm sm:text-base leading-relaxed font-light">
-              From database design to smart contracts, I deliver complete
-              solutions that bridge traditional web development with blockchain
-              technology — approaching every project with precision and
-              creativity.
+              I&apos;m drawn to Web3 because it&apos;s one of the few spaces where software can
+              genuinely shift how people own and exchange value. That&apos;s the kind of work
+              I want to be part of.
             </p>
             <p className="text-gray-600 dark:text-[#bbb] text-sm sm:text-base leading-relaxed font-light">
-              When I&apos;m not coding, I&apos;m usually vibing to some good
-              Afrobeats 🎶✨ — check out my playlist{" "}
+              When I&apos;m not coding, I&apos;m vibing to Afrobeats 🎶✨ — check out my playlist{" "}
               <a
                 className="text-gray-900 dark:text-white font-medium underline underline-offset-4 decoration-gray-300 dark:decoration-[#444] hover:decoration-gray-900 dark:hover:decoration-white transition-all duration-200"
                 target="_blank"
