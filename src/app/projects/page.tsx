@@ -131,7 +131,7 @@ function ProjectsSection(): JSX.Element {
               Projects
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-400 font-light max-w-lg leading-relaxed">
-              Full-stack apps, Web3 tools, and everything in between.
+              Full-stack apps, Web3 tools, and everything in between 👷🏽‍♂️
             </p>
           </div>
 

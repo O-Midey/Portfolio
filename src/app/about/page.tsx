@@ -20,7 +20,8 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-sm sm:text-base text-gray-400 dark:text-[#999] font-light max-w-lg leading-relaxed">
-              Building end-to-end products — from databases to smart contracts.
+              Building end-to-end products — from databases to blaockchain
+              infrastructures 👨🏽‍💻
             </p>
           </div>
 
@@ -127,7 +128,7 @@ export default function AboutPage() {
             <div className="flex gap-3">
               <a
                 href="mailto:talk2adeoluwa2310@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-700 transition-all duration-200 hover:scale-105"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111] text-white text-sm font-medium rounded-full hover:bg-[#333] transition-all duration-200 hover:scale-105"
               >
                 <MailOpen className="w-3.5 h-3.5" />
                 Get in touch
