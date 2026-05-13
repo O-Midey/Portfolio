@@ -36,12 +36,12 @@ export default function HomePage() {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
           Omotosho
           <br />
-          <span className="text-gray-500 dark:text-[#888]">David A.</span>
+          <span className="text-gray-500 dark:text-[#bbb]">David A.</span>
         </h1>
         <div className="flex items-center gap-3 h-8 sm:h-10">
           <span className="w-6 h-px bg-gray-300" />
           <span
-            className={`text-base sm:text-lg md:text-xl font-medium tracking-wide text-gray-500 dark:text-[#888] transition-all duration-500 ${
+            className={`text-base sm:text-lg md:text-xl font-medium tracking-wide text-gray-500 dark:text-[#bbb] transition-all duration-500 ${
               isAnimating
                 ? "opacity-0 -translate-y-3 blur-sm"
                 : "opacity-100 translate-y-0 blur-0"
@@ -51,7 +51,7 @@ export default function HomePage() {
           </span>
           <span className="w-6 h-px bg-gray-300" />
         </div>
-        <p className="text-sm sm:text-base text-gray-400 dark:text-[#666] font-light max-w-sm sm:max-w-md leading-relaxed tracking-wide">
+        <p className="text-sm sm:text-base text-gray-400 dark:text-[#999] font-light max-w-sm sm:max-w-md leading-relaxed tracking-wide">
           I design and build full-stack web applications and Web3 tools —{" "}
           <span className="text-gray-600 dark:text-[#aaa] font-medium">
             handling everything from the database layer to on-chain logic.

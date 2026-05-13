@@ -31,7 +31,7 @@ export default function Contact() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Get in
               <br />
-              <span className="text-gray-400 dark:text-[#666]">Touch.</span>
+              <span className="text-gray-400 dark:text-[#999]">Touch.</span>
             </h1>
             <p className="text-sm sm:text-base text-gray-400 font-light max-w-sm leading-relaxed">
               Open to new opportunities and interesting projects ✨
@@ -51,14 +51,14 @@ export default function Contact() {
                   className="group flex items-center justify-between py-3.5 border-b border-gray-100 dark:border-[#2a2a2a] hover:border-gray-300 dark:hover:border-[#444] transition-colors duration-200"
                 >
                   <div className="flex items-center gap-4">
-                    <Icon className="w-4 h-4 text-gray-400 dark:text-[#666] group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200" />
+                    <Icon className="w-4 h-4 text-gray-400 dark:text-[#999] group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200" />
                     <span className="text-sm font-medium text-gray-900 dark:text-white">{label}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-gray-400 dark:text-[#666] group-hover:text-gray-600 dark:group-hover:text-[#aaa] transition-colors duration-200">
+                    <span className="text-xs font-mono text-gray-400 dark:text-[#999] group-hover:text-gray-600 dark:group-hover:text-[#ccc] transition-colors duration-200">
                       {handle}
                     </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-600 dark:group-hover:text-[#aaa] group-hover:translate-x-0.5 transition-all duration-200" />
+                    <ArrowRight className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-600 dark:group-hover:text-[#ccc] group-hover:translate-x-0.5 transition-all duration-200" />
                   </div>
                 </a>
               ))}
@@ -76,37 +76,37 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-gray-400 dark:text-[#666] uppercase tracking-widest mb-2">Name</label>
+                    <label className="block text-xs font-mono text-gray-400 dark:text-[#999] uppercase tracking-widest mb-2">Name</label>
                     <input
                       type="text"
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="Your name"
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#555] focus:bg-white dark:focus:bg-[#1a1a1a] transition rounded-xl"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#666] focus:bg-white dark:focus:bg-[#1a1a1a] transition rounded-xl"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-gray-400 dark:text-[#666] uppercase tracking-widest mb-2">Email</label>
+                    <label className="block text-xs font-mono text-gray-400 dark:text-[#999] uppercase tracking-widest mb-2">Email</label>
                     <input
                       type="email"
                       required
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="your@email.com"
-                      className="w-full px-4 py-3 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#555] focus:bg-white dark:focus:bg-[#1a1a1a] transition rounded-xl"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#666] focus:bg-white dark:focus:bg-[#1a1a1a] transition rounded-xl"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-gray-400 dark:text-[#666] uppercase tracking-widest mb-2">Message</label>
+                  <label className="block text-xs font-mono text-gray-400 dark:text-[#999] uppercase tracking-widest mb-2">Message</label>
                   <textarea
                     required
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell me about your project or idea..."
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#555] focus:bg-white dark:focus:bg-[#1a1a1a] transition rounded-xl resize-none"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#666] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#666] focus:bg-white dark:focus:bg-[#1a1a1a] transition rounded-xl resize-none"
                   />
                 </div>
                 <button

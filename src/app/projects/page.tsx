@@ -63,14 +63,14 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             </span>
           </div>
 
-          <p className="text-gray-500 dark:text-[#888] text-xs leading-relaxed line-clamp-3">{project.description}</p>
+          <p className="text-gray-500 dark:text-[#bbb] text-xs leading-relaxed line-clamp-3">{project.description}</p>
 
           {/* Tech tags — look like stickers */}
           <div className="flex flex-wrap gap-1.5">
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-0.5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-gray-600 dark:text-[#888] text-[10px] font-mono rounded shadow-sm"
+                className="px-2 py-0.5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-gray-600 dark:text-[#bbb] text-[10px] font-mono rounded shadow-sm"
               >
                 {tech}
               </span>
@@ -81,7 +81,7 @@ function ScrapbookCard({ project, index }: { project: Project; index: number }) 
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 dark:text-[#888] hover:text-gray-900 dark:hover:text-white underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 dark:text-[#bbb] hover:text-gray-900 dark:hover:text-white underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
           >
             View Project <ExternalLinkIcon size={11} />
           </a>
