@@ -6,9 +6,6 @@ import sections from "../data/sections";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-import { useThemeWipe } from "./ThemeWipeProvider";
-
-const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function ScrambleLabel({ label }: { label: string }) {
   const [output, setOutput] = useState(label);
@@ -49,36 +46,9 @@ function ScrambleLabel({ label }: { label: string }) {
   );
 }
 
-function LiveClock() {
-  const [time, setTime] = useState("");
+import { useThemeWipe } from "./ThemeWipeProvider";
 
-  useEffect(() => {
-    const tick = () =>
-      setTime(
-        new Date().toLocaleTimeString("en-GB", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        }),
-      );
-    tick();
-    const t = setInterval(tick, 1000);
-    return () => clearInterval(t);
-  }, []);
-
-  return (
-    <div className="px-3 mb-4">
-      <p className="text-[9px] font-mono tracking-[0.2em] text-gray-400 dark:text-[#555] uppercase mb-0.5">
-        local time
-      </p>
-      <p className="text-xs font-mono text-gray-500 dark:text-[#666] tabular-nums">
-        {time}
-      </p>
-    </div>
-  );
-}
-
-export default function Sidebar() {
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
   const pathname = usePathname();
   const { theme } = useTheme();
   const { triggerWipe } = useThemeWipe();
