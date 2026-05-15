@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Navbar />
           <div className="md:flex">
             <Sidebar />
-            <main className="flex-1 md:ml-14 min-h-screen pb-28 md:pb-0 max-w-5xl">
+            <main className="flex-1 md:ml-14 min-h-screen pb-28 md:pb-0">
               {children}
             </main>
           </div>

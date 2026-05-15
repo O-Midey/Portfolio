@@ -38,7 +38,7 @@ export default function AboutPage() {
 
         {/* Header */}
         <div className="mb-10">
-          <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">about me</p>
+          <p className="text-xs font-mono tracking-[0.2em] text-gray-500 uppercase mb-3">about me</p>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
             Full-Stack &<br />
             <span className="text-gray-400 dark:text-[#999]">Blockchain Dev.</span>
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 className={`transition-all duration-500 ${i < visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
               >
                 <p className="text-xs font-mono text-emerald-500 mb-1">{`// ${s.heading}`}</p>
-                <p className="text-sm text-gray-700 dark:text-[#bbb] leading-relaxed">{s.body}</p>
+                <p className="text-sm text-gray-800 dark:text-[#bbb] leading-relaxed font-mono">{s.body}</p>
                 {s.link && (
                   <a href={s.link.href} target="_blank" rel="noopener noreferrer"
                     className="text-xs font-mono text-gray-400 dark:text-[#666] hover:text-gray-900 dark:hover:text-white underline underline-offset-4 transition-colors mt-1 inline-block">
@@ -80,15 +80,15 @@ export default function AboutPage() {
 
         {/* Skills */}
         <div className="mb-12">
-          <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-6">tech stack 🛠️</p>
+          <p className="text-xs font-mono tracking-[0.2em] text-gray-500 uppercase mb-6">tech stack 🛠️</p>
           <div className="space-y-5">
             {skillGroups.map((group) => (
               <div key={group.label} className="flex gap-4 items-start">
-                <p className="text-xs text-gray-400 dark:text-[#999] font-mono w-20 shrink-0 pt-1.5">{group.label}</p>
+                <p className="text-xs text-gray-500 dark:text-[#999] font-mono w-20 shrink-0 pt-1.5">{group.label}</p>
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <span key={skill}
-                      className="px-3 py-1 bg-gray-50 dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-gray-700 dark:text-[#aaa] text-xs font-mono rounded-full hover:bg-gray-100 dark:hover:bg-[#222] transition-colors duration-200 cursor-default">
+                      className="px-3 py-1 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-300 dark:border-[#2a2a2a] text-gray-700 dark:text-[#aaa] text-xs font-mono rounded-full hover:bg-gray-200 dark:hover:bg-[#222] transition-colors duration-200 cursor-default">
                       {skill}
                     </span>
                   ))}

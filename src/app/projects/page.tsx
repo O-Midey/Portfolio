@@ -84,7 +84,7 @@ function ScrapbookCard({
             </span>
           </div>
 
-          <p className="text-gray-500 dark:text-[#bbb] text-xs leading-relaxed line-clamp-3">
+          <p className="text-gray-600 dark:text-[#bbb] text-xs leading-relaxed line-clamp-3">
             {project.description}
           </p>
 
@@ -121,18 +121,17 @@ function ProjectsSection(): JSX.Element {
   return (
     <AnimatedDiv>
       <section className="relative min-h-screen bg-white dark:bg-[#111]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
           {/* Header */}
           <div className="mb-14 sm:mb-20">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-400 uppercase mb-3">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-500 uppercase mb-3">
               my work 🛠️
             </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
               Projects
             </h1>
-            <p className="mt-4 text-sm sm:text-base text-gray-400 font-light max-w-lg leading-relaxed">
-              Full-stack apps, Web3 tools, and everything in betweenthe get in
-              top 👷🏽‍♂️
+            <p className="mt-4 text-sm sm:text-base text-gray-600 font-light max-w-lg leading-relaxed">
+              Full-stack apps, Web3 tools, and everything in between 👷🏽‍♂️
             </p>
           </div>
 

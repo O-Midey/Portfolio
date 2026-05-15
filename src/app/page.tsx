@@ -97,7 +97,7 @@ export default function HomePage() {
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-10 justify-center items-center">
         {/* Left: text */}
         <div className="flex flex-col items-center text-center md:items-start md:text-left gap-6 max-w-lg">
-          <p className="text-xs font-mono tracking-[0.25em] text-gray-400 dark:text-[#555] uppercase">
+          <p className="text-xs font-mono tracking-[0.25em] text-gray-500 dark:text-[#555] uppercase">
             Hey, I&apos;m 👋
           </p>
 
@@ -122,15 +122,15 @@ export default function HomePage() {
           </div>
 
           {/* Typing animation */}
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-px bg-gray-200 dark:bg-[#333]" />
-            <span className="text-sm font-mono tracking-widest text-gray-500 dark:text-[#919191] uppercase typing-cursor min-w-[18ch]">
+          <div className="flex items-center gap-3 w-full">
+            <span className="flex-1 h-px bg-gray-500 dark:bg-[#333]" />
+            <span className="text-sm font-mono tracking-widest text-gray-600 dark:text-[#919191] uppercase typing-cursor whitespace-nowrap">
               {displayed}
             </span>
-            <span className="w-8 h-px bg-gray-200 dark:bg-[#333]" />
+            <span className="flex-1 h-px bg-gray-500 dark:bg-[#333]" />
           </div>
 
-          <p className="text-sm sm:text-base text-gray-500 dark:text-[#888] font-light leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-[#888] font-light leading-relaxed">
             I build products end-to-end —{" "}
             <span className="text-gray-800 dark:text-[#ccc] font-medium">
               shipping real apps across the full stack and on-chain.

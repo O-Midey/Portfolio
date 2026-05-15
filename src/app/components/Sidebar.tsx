@@ -19,11 +19,14 @@ function ScrambleLabel({ label }: { label: string }) {
     clearInterval(frame.current);
     frame.current = window.setInterval(() => {
       setOutput(
-        label.split("").map((char, i) => {
-          if (char === " ") return " ";
-          if (i < iteration) return label[i];
-          return CHARS[Math.floor(Math.random() * CHARS.length)];
-        }).join("")
+        label
+          .split("")
+          .map((char, i) => {
+            if (char === " ") return " ";
+            if (i < iteration) return label[i];
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          })
+          .join(""),
       );
       if (iteration >= label.length) clearInterval(frame.current);
       iteration += 0.5;
@@ -50,7 +53,14 @@ function LiveClock() {
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    const tick = () => setTime(new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" }));
+    const tick = () =>
+      setTime(
+        new Date().toLocaleTimeString("en-GB", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        }),
+      );
     tick();
     const t = setInterval(tick, 1000);
     return () => clearInterval(t);
@@ -58,8 +68,12 @@ function LiveClock() {
 
   return (
     <div className="px-3 mb-4">
-      <p className="text-[9px] font-mono tracking-[0.2em] text-gray-400 dark:text-[#555] uppercase mb-0.5">local time</p>
-      <p className="text-xs font-mono text-gray-500 dark:text-[#666] tabular-nums">{time}</p>
+      <p className="text-[9px] font-mono tracking-[0.2em] text-gray-400 dark:text-[#555] uppercase mb-0.5">
+        local time
+      </p>
+      <p className="text-xs font-mono text-gray-500 dark:text-[#666] tabular-nums">
+        {time}
+      </p>
     </div>
   );
 }
@@ -83,15 +97,23 @@ export default function Sidebar() {
       <div className="absolute right-0 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-emerald-400/40 to-transparent animate-[sidebar-glow_3s_ease-in-out_infinite]" />
 
       {/* Identity — only when expanded */}
-      <div className={`pt-10 mb-8 transition-all duration-200 ${expanded ? "opacity-100 px-3" : "opacity-0 px-0 h-0 mb-0 overflow-hidden"}`}>
-        <p className="text-[9px] font-mono tracking-[0.2em] text-gray-400 uppercase mb-1">Portfolio</p>
-        <p className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">Omotosho David</p>
+      <div
+        className={`pt-10 mb-8 transition-all duration-200 ${expanded ? "opacity-100 px-3" : "opacity-0 px-0 h-0 mb-0 overflow-hidden"}`}
+      >
+        <p className="text-[9px] font-mono tracking-[0.2em] text-gray-400 uppercase mb-1">
+          Portfolio
+        </p>
+        <p className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
+          Omotosho David
+        </p>
       </div>
 
       {/* Icon-only top padding when collapsed */}
       {!expanded && <div className="pt-10" />}
 
-      <div className={`h-px bg-gray-100/50 dark:bg-[#1a1a1a]/50 mb-6 transition-all duration-200 ${expanded ? "mx-3" : "mx-1"}`} />
+      <div
+        className={`h-px bg-gray-100/50 dark:bg-[#1a1a1a]/50 mb-6 transition-all duration-200 ${expanded ? "mx-3" : "mx-1"}`}
+      />
 
       {/* Nav Links */}
       <nav className="space-y-1 flex-1">
@@ -102,7 +124,9 @@ export default function Sidebar() {
 
           return (
             <Link key={section.id} href={section.href}>
-              <div className={`relative flex items-center gap-3 py-2.5 rounded-lg transition-all duration-200 ${expanded ? "px-3" : "px-2 justify-center"} ${isActive ? "text-gray-900 dark:text-white font-semibold" : "text-gray-400 hover:text-gray-700 dark:hover:text-[#ccc]"}`}>
+              <div
+                className={`relative flex items-center gap-3 py-2.5 rounded-lg transition-all duration-200 ${expanded ? "px-3" : "px-2 justify-center"} ${isActive ? "text-gray-900 dark:text-white font-semibold" : "text-gray-400 hover:text-gray-700 dark:hover:text-[#ccc]"}`}
+              >
                 {/* Active indicator dot */}
                 {isActive && (
                   <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-emerald-400 shadow-[0_0_6px_2px_rgba(52,211,153,0.6)]" />
@@ -110,7 +134,9 @@ export default function Sidebar() {
 
                 {/* Number prefix — only when expanded */}
                 {expanded && (
-                  <span className={`text-[9px] font-mono tabular-nums ${isActive ? "text-emerald-400" : "text-gray-300 dark:text-[#444]"}`}>
+                  <span
+                    className={`text-[9px] font-mono tabular-nums ${isActive ? "text-emerald-400" : "text-gray-300 dark:text-[#444]"}`}
+                  >
                     {num}
                   </span>
                 )}
@@ -125,11 +151,10 @@ export default function Sidebar() {
       </nav>
 
       {/* Bottom */}
-      <div className={`pb-8 transition-all duration-200 ${expanded ? "px-3" : "px-1"}`}>
+      <div
+        className={`pb-8 transition-all duration-200 ${expanded ? "px-3" : "px-1"}`}
+      >
         <div className={`h-px bg-gray-100/50 dark:bg-[#1a1a1a]/50 mb-6`} />
-
-        {/* Live clock — only when expanded */}
-        {expanded && <LiveClock />}
 
         {/* Theme toggle */}
         {mounted && (
@@ -137,10 +162,17 @@ export default function Sidebar() {
             onClick={(e) => triggerWipe(e.clientX, e.clientY)}
             className={`flex items-center gap-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 group ${!expanded && "justify-center w-full"}`}
           >
-            {theme === "dark"
-              ? <Sun size={14} className="group-hover:rotate-12 transition-transform duration-200 shrink-0" />
-              : <Moon size={14} className="group-hover:-rotate-12 transition-transform duration-200 shrink-0" />
-            }
+            {theme === "dark" ? (
+              <Sun
+                size={14}
+                className="group-hover:rotate-12 transition-transform duration-200 shrink-0"
+              />
+            ) : (
+              <Moon
+                size={14}
+                className="group-hover:-rotate-12 transition-transform duration-200 shrink-0"
+              />
+            )}
             {expanded && (
               <span className="text-[10px] font-mono tracking-widest uppercase">
                 {theme === "dark" ? "Light mode" : "Dark mode"}

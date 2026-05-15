@@ -74,15 +74,6 @@ function NavItem({
         )}
       </AnimatePresence>
 
-      {/* Glowing dot above active icon */}
-      {isActive && (
-        <motion.span
-          layoutId="glow-dot"
-          className="absolute -top-1 w-1 h-1 rounded-full bg-emerald-400 shadow-[0_0_6px_2px_rgba(52,211,153,0.7)]"
-          transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        />
-      )}
-
       <Link
         href={item.href}
         onClick={handleTap}
@@ -161,14 +152,15 @@ export default function Navbar() {
           className="relative bg-white/90 dark:bg-[#111]/90 backdrop-blur-md overflow-hidden rounded-[30px] z-10"
         >
           {/* Sliding pill indicator */}
-          <div className="relative w-full px-2 py-1.5 flex items-center justify-around">
+          <div className="relative w-full px-2 py-1.5 flex items-center justify-evenly">
             {NAV_ITEMS.map((item) => (
               <NavItem key={item.href} item={item} isActive={pathname === item.href} shrunk={shrunk} />
             ))}
 
             {/* Theme toggle */}
             {mounted && (
-              <div className="relative flex flex-col items-center">
+              <div className="flex items-center">
+                <div className="w-px h-6 bg-gray-200 dark:bg-[#2a2a2a]" />
                 <motion.button
                   onClick={(e) => triggerWipe(e.clientX, e.clientY)}
                   whileTap={{ scale: 1.4 }}
