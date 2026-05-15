@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Mail, Twitter, Linkedin, Instagram, Send, ArrowRight } from "lucide-react";
+import { Mail, Twitter, Linkedin, Instagram, Send, ArrowRight, Copy, Check } from "lucide-react";
 import AnimatedDiv from "../components/AnimatedDiv";
 
+const EMAIL = "talk2adeoluwa2310@gmail.com";
+
 const socials = [
-  { label: "Email", handle: "talk2adeoluwa2310@gmail.com", href: "mailto:talk2adeoluwa2310@gmail.com", icon: Mail },
+  { label: "Email", handle: EMAIL, href: `mailto:${EMAIL}`, icon: Mail },
   { label: "LinkedIn", handle: "omotosho-david", href: "https://linkedin.com/in/omotosho-david", icon: Linkedin },
   { label: "Twitter", handle: "@meeedzy", href: "https://twitter.com/meeedzy", icon: Twitter },
   { label: "Instagram", handle: "@thismidey", href: "https://instagram.com/thismidey", icon: Instagram },
@@ -13,11 +15,20 @@ const socials = [
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    window.location.href = `mailto:talk2adeoluwa2310@gmail.com?subject=Message from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.email}`;
+    window.location.href = `mailto:${EMAIL}?subject=Message from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0AFrom: ${form.email}`;
     setSent(true);
+  }
+
+  function copyEmail(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   }
 
   return (
@@ -58,7 +69,19 @@ export default function Contact() {
                     <span className="text-xs font-mono text-gray-500 dark:text-[#999] group-hover:text-gray-800 dark:group-hover:text-[#ccc] transition-colors duration-200">
                       {handle}
                     </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-600 dark:group-hover:text-[#ccc] group-hover:translate-x-0.5 transition-all duration-200" />
+                    {label === "Email" ? (
+                      <button
+                        onClick={copyEmail}
+                        className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors duration-200"
+                        title={copied ? "Copied!" : "Copy email"}
+                      >
+                        {copied
+                          ? <Check className="w-3.5 h-3.5 text-emerald-500" />
+                          : <Copy className="w-3.5 h-3.5 text-gray-400 dark:text-[#666]" />}
+                      </button>
+                    ) : (
+                      <ArrowRight className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-600 dark:group-hover:text-[#ccc] group-hover:translate-x-0.5 transition-all duration-200" />
+                    )}
                   </div>
                 </a>
               ))}
