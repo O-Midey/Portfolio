@@ -3,8 +3,9 @@ import { Home, User, Code, Mail, Sun, Moon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useEffect, useState, useRef, useCallback } from "react";
-import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useThemeWipe } from "./ThemeWipeProvider";
 
 const NAV_ITEMS = [
   { icon: Home, label: "Home", href: "/" },
@@ -38,7 +39,6 @@ function NavItem({
   const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
   const [tooltip, setTooltip] = useState(false);
   const longPressTimer = useRef<ReturnType<typeof setTimeout>>();
-  const scale = useSpring(1, { stiffness: 400, damping: 15 });
 
   const handleTap = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -130,7 +130,8 @@ function NavItem({
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
+  const { triggerWipe } = useThemeWipe();
   const [mounted, setMounted] = useState(false);
   const [shrunk, setShrunk] = useState(false);
   const scrollTimer = useRef<ReturnType<typeof setTimeout>>();
@@ -169,7 +170,7 @@ export default function Navbar() {
             {mounted && (
               <div className="relative flex flex-col items-center">
                 <motion.button
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  onClick={(e) => triggerWipe(e.clientX, e.clientY)}
                   whileTap={{ scale: 1.4 }}
                   transition={{ type: "spring", stiffness: 500, damping: 15 }}
                   className="flex flex-col items-center gap-1 px-3 py-1.5 rounded-2xl z-10"

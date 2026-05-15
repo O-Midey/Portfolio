@@ -6,6 +6,7 @@ import sections from "../data/sections";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
+import { useThemeWipe } from "./ThemeWipeProvider";
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -65,7 +66,8 @@ function LiveClock() {
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
+  const { triggerWipe } = useThemeWipe();
   const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
@@ -132,7 +134,7 @@ export default function Sidebar() {
         {/* Theme toggle */}
         {mounted && (
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={(e) => triggerWipe(e.clientX, e.clientY)}
             className={`flex items-center gap-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 group ${!expanded && "justify-center w-full"}`}
           >
             {theme === "dark"
