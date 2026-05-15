@@ -38,7 +38,7 @@ function NavItem({
   const Icon = item.icon;
   const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
   const [tooltip, setTooltip] = useState(false);
-  const longPressTimer = useRef<ReturnType<typeof setTimeout>>();
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const handleTap = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -134,7 +134,7 @@ export default function Navbar() {
   const { triggerWipe } = useThemeWipe();
   const [mounted, setMounted] = useState(false);
   const [shrunk, setShrunk] = useState(false);
-  const scrollTimer = useRef<ReturnType<typeof setTimeout>>();
+  const scrollTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => setMounted(true), []);
 

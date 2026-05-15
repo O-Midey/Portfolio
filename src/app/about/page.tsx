@@ -62,7 +62,7 @@ export default function AboutPage() {
                 key={i}
                 className={`transition-all duration-500 ${i < visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
               >
-                <p className="text-xs font-mono text-emerald-500 mb-1">// {s.heading}</p>
+                <p className="text-xs font-mono text-emerald-500 mb-1">{`// ${s.heading}`}</p>
                 <p className="text-sm text-gray-700 dark:text-[#bbb] leading-relaxed">{s.body}</p>
                 {s.link && (
                   <a href={s.link.href} target="_blank" rel="noopener noreferrer"
