@@ -40,6 +40,14 @@ body {
   .cursor-ring {
     display: block;
   }
+  /* Keep the custom cursor on interactive elements — the UA stylesheet sets
+     pointer/default on links & buttons, which would otherwise show the native
+     cursor alongside the custom one. */
+  a,
+  button,
+  [role="button"] {
+    cursor: none;
+  }
 }
 
 .cursor-dot--hover {

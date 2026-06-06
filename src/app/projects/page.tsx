@@ -1,10 +1,12 @@
 "use client";
 import { JSX, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { projects } from "../data/projects";
 import { Project } from "../types/types";
 import AnimatedDiv from "../components/AnimatedDiv";
+import ProjectDetailPanel from "./ProjectDetailPanel";
 import Image from "next/image";
-import { ExternalLinkIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 // Slight rotations to give each card a pinned/tossed feel
 const rotations = [
@@ -31,9 +33,11 @@ const tapeColors = [
 function ScrapbookCard({
   project,
   index,
+  onSelect,
 }: {
   project: Project;
   index: number;
+  onSelect: () => void;
 }) {
   const [loaded, setLoaded] = useState(false);
   const rotation = rotations[index % rotations.length];
@@ -41,7 +45,17 @@ function ScrapbookCard({
 
   return (
     <div
-      className={`group relative ${rotation} hover:rotate-0 transition-all duration-300 hover:scale-[1.02] hover:z-10`}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.title}`}
+      onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect();
+        }
+      }}
+      className={`group relative ${rotation} rounded-sm outline-none transition-all duration-300 hover:z-10 hover:rotate-0 hover:scale-[1.02] focus-visible:ring-2 focus-visible:ring-emerald-400/60`}
     >
       {/* Tape strip at top */}
       <div
@@ -93,21 +107,20 @@ function ScrapbookCard({
             {project.tech.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-0.5 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] text-gray-600 dark:text-[#bbb] text-[10px] font-mono rounded shadow-sm"
+                className="rounded border border-emerald-200 bg-emerald-100 px-2 py-0.5 font-mono text-[11px] font-medium text-emerald-700 shadow-sm dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-700 dark:text-[#bbb] hover:text-gray-900 dark:hover:text-white underline underline-offset-2 decoration-dotted transition-colors w-fit mt-1"
-          >
-            View Project <ExternalLinkIcon size={11} />
-          </a>
+          <span className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-gray-700 underline decoration-dotted underline-offset-2 transition-colors group-hover:text-gray-900 mt-1 dark:text-[#bbb] dark:group-hover:text-white">
+            View details
+            <ArrowUpRight
+              size={11}
+              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </span>
         </div>
       </div>
 
@@ -117,7 +130,11 @@ function ScrapbookCard({
   );
 }
 
-function ProjectsSection(): JSX.Element {
+function ProjectsSection({
+  onSelect,
+}: {
+  onSelect: (index: number) => void;
+}): JSX.Element {
   return (
     <AnimatedDiv>
       <section className="relative min-h-screen bg-white dark:bg-[#111]">
@@ -138,7 +155,12 @@ function ProjectsSection(): JSX.Element {
           {/* Scrapbook grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12">
             {projects.map((project: Project, index: number) => (
-              <ScrapbookCard key={index} project={project} index={index} />
+              <ScrapbookCard
+                key={index}
+                project={project}
+                index={index}
+                onSelect={() => onSelect(index)}
+              />
             ))}
           </div>
         </div>
@@ -148,5 +170,21 @@ function ProjectsSection(): JSX.Element {
 }
 
 export default function Projects(): JSX.Element {
-  return <ProjectsSection />;
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  return (
+    <>
+      <ProjectsSection onSelect={setSelectedIndex} />
+
+      <AnimatePresence>
+        {selectedIndex !== null && (
+          <ProjectDetailPanel
+            project={projects[selectedIndex]}
+            index={selectedIndex}
+            onClose={() => setSelectedIndex(null)}
+          />
+        )}
+      </AnimatePresence>
+    </>
+  );
 }

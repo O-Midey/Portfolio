@@ -6,7 +6,12 @@ import { Github, Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
-const TITLES = ["Full Stack Developer", "Blockchain Engineer", "Web3 Builder"];
+const TITLES = [
+  "Full Stack Developer",
+  "AI Engineer",
+  "Blockchain Engineer",
+  "Web3 Builder",
+];
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&";
 
 function useScramble(target: string, trigger: boolean) {
@@ -19,11 +24,14 @@ function useScramble(target: string, trigger: boolean) {
     clearInterval(frame.current);
     frame.current = window.setInterval(() => {
       setOutput(
-        target.split("").map((char, i) => {
-          if (char === " ") return " ";
-          if (i < iteration) return target[i];
-          return CHARS[Math.floor(Math.random() * CHARS.length)];
-        }).join("")
+        target
+          .split("")
+          .map((char, i) => {
+            if (char === " ") return " ";
+            if (i < iteration) return target[i];
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          })
+          .join(""),
       );
       if (iteration >= target.length) clearInterval(frame.current);
       iteration += 0.4;
@@ -46,7 +54,9 @@ export default function HomePage() {
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
   useEffect(() => {
@@ -107,7 +117,10 @@ export default function HomePage() {
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white tracking-tighter leading-none select-none font-mono">
                 {line1}
               </h1>
-              <h1 aria-hidden className="name-glitch-layer text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-emerald-400 tracking-tighter leading-none font-mono">
+              <h1
+                aria-hidden
+                className="name-glitch-layer text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-emerald-400 tracking-tighter leading-none font-mono"
+              >
                 {line1}
               </h1>
             </div>
@@ -115,7 +128,10 @@ export default function HomePage() {
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-500 dark:text-[#999] tracking-tighter leading-none select-none font-mono">
                 {line2}
               </h1>
-              <h1 aria-hidden className="name-glitch-layer text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-rose-400 tracking-tighter leading-none font-mono">
+              <h1
+                aria-hidden
+                className="name-glitch-layer text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-rose-400 tracking-tighter leading-none font-mono"
+              >
                 {line2}
               </h1>
             </div>
@@ -142,35 +158,68 @@ export default function HomePage() {
           {/* Magnetic social buttons */}
           <div className="flex items-center gap-3">
             <MagneticButton>
-              <a href="https://github.com/o-midey" target="_blank" rel="noopener noreferrer"
-                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#111] dark:hover:bg-white transition-all duration-300 hover:scale-110 group">
-                <Github size={18} className="text-gray-600 dark:text-[#888] group-hover:text-white dark:group-hover:text-black transition-colors" />
+              <a
+                href="https://github.com/o-midey"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#111] dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
+              >
+                <Github
+                  size={18}
+                  className="text-gray-600 dark:text-[#888] group-hover:text-white dark:group-hover:text-black transition-colors"
+                />
               </a>
             </MagneticButton>
             <MagneticButton>
-              <a href="https://linkedin.com/in/omotosho-david" target="_blank" rel="noopener noreferrer"
-                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#0077B5] transition-all duration-300 hover:scale-110 group">
-                <Linkedin size={18} className="text-[#0077B5] group-hover:text-white transition-colors" />
+              <a
+                href="https://linkedin.com/in/omotosho-david"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#0077B5] transition-all duration-300 hover:scale-110 group"
+              >
+                <Linkedin
+                  size={18}
+                  className="text-[#0077B5] group-hover:text-white transition-colors"
+                />
               </a>
             </MagneticButton>
             <MagneticButton>
-              <a href="https://twitter.com/meeedzy" target="_blank" rel="noopener noreferrer"
-                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#111] dark:hover:bg-white transition-all duration-300 hover:scale-110 group">
-                <Twitter size={18} className="text-gray-600 dark:text-[#888] group-hover:text-white dark:group-hover:text-black transition-colors" />
+              <a
+                href="https://twitter.com/meeedzy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-[#111] dark:hover:bg-white transition-all duration-300 hover:scale-110 group"
+              >
+                <Twitter
+                  size={18}
+                  className="text-gray-600 dark:text-[#888] group-hover:text-white dark:group-hover:text-black transition-colors"
+                />
               </a>
             </MagneticButton>
             <MagneticButton>
-              <a href="https://instagram.com/thismidey" target="_blank" rel="noopener noreferrer"
-                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-pink-500 transition-all duration-300 hover:scale-110 group">
-                <Instagram size={18} className="text-pink-500 group-hover:text-white transition-colors" />
+              <a
+                href="https://instagram.com/thismidey"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 bg-gray-100 dark:bg-[#1a1a1a] rounded-full hover:bg-pink-500 transition-all duration-300 hover:scale-110 group"
+              >
+                <Instagram
+                  size={18}
+                  className="text-pink-500 group-hover:text-white transition-colors"
+                />
               </a>
             </MagneticButton>
           </div>
 
-          <a href="/projects"
-            className="group inline-flex items-center gap-2 w-fit px-6 py-3 bg-[#111] dark:bg-white dark:text-black text-white rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 font-mono text-xs tracking-widest uppercase">
+          <a
+            href="/projects"
+            className="group inline-flex items-center gap-2 w-fit px-6 py-3 bg-[#111] dark:bg-white dark:text-black text-white rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 font-mono text-xs tracking-widest uppercase"
+          >
             View My Work
-            <ArrowRight className="transform transition-transform duration-300 group-hover:translate-x-1" size={14} />
+            <ArrowRight
+              className="transform transition-transform duration-300 group-hover:translate-x-1"
+              size={14}
+            />
           </a>
         </div>
 
@@ -179,17 +228,23 @@ export default function HomePage() {
           {/* depth 0.03 — slowest, furthest back */}
           <div
             className="absolute -top-14 left-1/2 -translate-x-1/2 w-12 h-32 bg-emerald-400 dark:bg-emerald-500 z-0 transition-transform duration-200 ease-out"
-            style={{ transform: `translate(calc(-50% + ${mouse.x * 12}px), ${mouse.y * 12}px)` }}
+            style={{
+              transform: `translate(calc(-50% + ${mouse.x * 12}px), ${mouse.y * 12}px)`,
+            }}
           />
           {/* depth 0.06 — mid */}
           <div
             className="absolute top-[38%] -right-6 w-36 h-11 bg-rose-400 dark:bg-rose-500 z-0 transition-transform duration-200 ease-out"
-            style={{ transform: `translate(${mouse.x * 22}px, ${mouse.y * 22}px)` }}
+            style={{
+              transform: `translate(${mouse.x * 22}px, ${mouse.y * 22}px)`,
+            }}
           />
           {/* depth 0.09 — closest, fastest */}
           <div
             className="absolute bottom-55 left-2 w-20 h-20 rounded-full bg-amber-400 dark:bg-amber-500 z-0 transition-transform duration-200 ease-out"
-            style={{ transform: `translate(${mouse.x * 32}px, ${mouse.y * 32}px)` }}
+            style={{
+              transform: `translate(${mouse.x * 32}px, ${mouse.y * 32}px)`,
+            }}
           />
           {/* Photo with scanlines */}
           <div className="scanlines absolute inset-0 z-10">
@@ -201,11 +256,19 @@ export default function HomePage() {
               className="object-contain object-[center_18px] grayscale scale-110 contrast-125 brightness-110 drop-shadow-[0_20px_34px_rgba(0,0,0,0.22)]"
               style={{ clipPath: "inset(0 0 15% 0)" }}
             />
-            <Image src="/profile.png" alt="" aria-hidden fill
+            <Image
+              src="/profile.png"
+              alt=""
+              aria-hidden
+              fill
               className="object-contain object-[center_18px] grayscale scale-110 contrast-125 brightness-110 glitch-layer-top pointer-events-none"
               style={{ clipPath: "inset(0 0 15% 0)" }}
             />
-            <Image src="/profile.png" alt="" aria-hidden fill
+            <Image
+              src="/profile.png"
+              alt=""
+              aria-hidden
+              fill
               className="object-contain object-[center_18px] grayscale scale-110 contrast-125 brightness-110 glitch-layer-bottom pointer-events-none"
               style={{ clipPath: "inset(0 0 15% 0)" }}
             />
