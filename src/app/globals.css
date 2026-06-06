@@ -12,6 +12,10 @@ body {
   body {
     cursor: auto;
   }
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
 }
 
 /* Cursor trailer */
@@ -38,7 +42,7 @@ body {
     display: block;
   }
   .cursor-ring {
-    display: block;
+    display: flex;
   }
   /* Keep the custom cursor on interactive elements — the UA stylesheet sets
      pointer/default on links & buttons, which would otherwise show the native
@@ -68,6 +72,8 @@ body {
   height: 32px;
   border: 1.5px solid #111;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   z-index: 9998;
   opacity: 0.4;
@@ -77,7 +83,6 @@ body {
     opacity 0.25s,
     background 0.25s,
     border-color 0.25s;
-  display: none;
 }
 
 .cursor-ring--hover {
@@ -93,6 +98,44 @@ body {
 
 .dark .cursor-ring--hover {
   background: #fff;
+}
+
+/* Link cursor — arrow inside the filled ring (→ internal, ↗ external) */
+.cursor-arrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Solid, full-opacity ring for links so the arrow stays visible
+   (opacity on the ring would cascade to the arrow and hide it). */
+.cursor-ring--link {
+  width: 46px;
+  height: 46px;
+  opacity: 1;
+  background: #111;
+  border-color: #111;
+}
+
+.dark .cursor-ring--link {
+  background: #fff;
+  border-color: #fff;
+}
+
+.cursor-ring--link .cursor-arrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dark .cursor-arrow {
+  color: #111;
 }
 
 /* Dot grid background */

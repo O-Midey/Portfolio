@@ -61,7 +61,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
     <div
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
-      className={`hidden md:flex fixed top-0 left-0 h-screen flex-col bg-[#fafafa]/80 dark:bg-[#111]/80 backdrop-blur-sm border-r border-gray-100/50 dark:border-[#1a1a1a]/50 z-40 transition-all duration-300 ease-in-out overflow-hidden ${expanded ? "w-52 px-4" : "w-14 px-2"}`}
+      className={`hidden md:flex fixed top-0 left-0 h-screen flex-col bg-[#fafafa]/80 dark:bg-[#111]/80 backdrop-blur-sm border-r border-gray-100/50 dark:border-[#1a1a1a]/50 z-40 transition-all duration-300 ease-in-out overflow-hidden select-none ${expanded ? "w-52 px-4" : "w-14 px-2"}`}
     >
       {/* Animated gradient border on right edge */}
       <div className="absolute right-0 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-emerald-400/40 to-transparent animate-[sidebar-glow_3s_ease-in-out_infinite]" />

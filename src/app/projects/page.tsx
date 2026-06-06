@@ -63,7 +63,7 @@ function ScrapbookCard({
       />
 
       {/* Card */}
-      <div className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3">
+      <div className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3 h-full">
         {/* Polaroid image */}
         {project.image && (
           <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
@@ -82,7 +82,7 @@ function ScrapbookCard({
         )}
 
         {/* Content */}
-        <div className="px-1 pt-1 flex flex-col gap-2">
+        <div className="px-1 pt-1 flex flex-col gap-2 flex-1">
           <div className="flex items-start justify-between gap-2">
             <h3 className="font-bold text-gray-900 dark:text-white text-base leading-tight">
               {project.title}
@@ -114,7 +114,7 @@ function ScrapbookCard({
             ))}
           </div>
 
-          <span className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-gray-700 underline decoration-dotted underline-offset-2 transition-colors group-hover:text-gray-900 mt-1 dark:text-[#bbb] dark:group-hover:text-white">
+          <span className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-gray-700 underline decoration-dotted underline-offset-2 transition-colors group-hover:text-gray-900 mt-auto pt-1 dark:text-[#bbb] dark:group-hover:text-white">
             View details
             <ArrowUpRight
               size={11}
@@ -148,7 +148,7 @@ function ProjectsSection({
               Projects
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-600 font-light max-w-lg leading-relaxed">
-              Full-stack apps, Web3 tools, and everything in between 👷🏽‍♂️
+              AI-powered apps, full-stack products, Web3 tools, and everything in between 👷🏽‍♂️
             </p>
           </div>
 

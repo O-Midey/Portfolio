@@ -149,7 +149,7 @@ export default function HomePage() {
           <p className="text-sm sm:text-base text-gray-600 dark:text-[#888] font-light leading-relaxed">
             I build products end-to-end —{" "}
             <span className="text-gray-800 dark:text-[#ccc] font-medium">
-              shipping real apps across the full stack and on-chain.
+              shipping real apps across the full stack, on-chain, and with AI in the loop.
             </span>
           </p>
 

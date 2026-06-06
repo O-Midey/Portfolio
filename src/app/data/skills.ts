@@ -13,6 +13,12 @@ export const skills = [
   "Postgres",
   "GraphQL",
   "Express",
+  "Vercel AI SDK",
+  "Langchain",
+  "LLM Integration",
+  "AI Agents",
+  "Prompt Engineering",
+  "Context Engineering",
 ];
 
 export const skillGroups = [
@@ -30,6 +36,18 @@ export const skillGroups = [
     label: "Backend",
     color: "bg-green-50 text-green-800 border border-green-100",
     skills: ["Node.js", "Express", "GraphQL", "Postgres", "MongoDB"],
+  },
+  {
+    label: "AI",
+    color: "bg-indigo-50 text-indigo-800 border border-indigo-100",
+    skills: [
+      "Vercel AI SDK",
+      "Langchain",
+      "LLM Integration",
+      "AI Agents",
+      "Prompt Engineering",
+      "Context Engineering",
+    ],
   },
   {
     label: "Blockchain",

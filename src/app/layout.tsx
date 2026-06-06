@@ -6,7 +6,19 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Omotosho Ayomide ",
-  description: "Full-Stack & Blockchain Developer building Web3 apps and full-stack products",
+  description:
+    "AI Engineer and Full-Stack & Blockchain Developer building AI-powered, Web3, and full-stack products",
+  keywords: [
+    "AI Engineer",
+    "AI Engineering",
+    "LLM",
+    "AI Agents",
+    "Full-Stack Developer",
+    "Blockchain Developer",
+    "Web3",
+    "Next.js",
+    "Omotosho David",
+  ],
   icons: { icon: "/icon.svg" },
 };
 
