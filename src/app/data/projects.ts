@@ -12,7 +12,7 @@ export const projects = [
       "RainbowKit",
       "Tailwind CSS",
     ],
-    status: "Completed",
+    status: "In Progress",
     liveLink: "https://ledgr-nu.vercel.app/",
     codeLink: "https://github.com/O-Midey/ledgr",
     image:
@@ -30,7 +30,7 @@ export const projects = [
       "Tailwind CSS",
       "IndexedDB",
     ],
-    status: "Completed",
+    status: "In Progress",
     liveLink: "https://ward-zeta.vercel.app/",
     codeLink: "https://github.com/O-Midey/ward",
     image:
