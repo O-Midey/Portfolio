@@ -1,14 +1,40 @@
 export const projects = [
   {
-    title: "Polywallet",
+    title: "Ledgr",
     description:
-      "Polywallet is a fully functional Web3 wallet built for the Polygon network, enabling users to create and import wallets, send MATIC and ERC-20 tokens, and track transaction history with an intuitive interface.",
-    tech: ["React", "Node.js", "Ethers.js", "Alchemy SDK", "Polygon Network"],
-    status: "In Progress",
-    liveLink: "#",
-    codeLink: "https://github.com/O-Midey/Polywallet",
+      "An AI-powered crypto wallet operating system built on Sepolia testnet. Ledgr lets users manage wallet operations through natural language — with every transaction simulated before execution, a full reasoning trace, real-time audit logs, and a security supervisor enforcing spend limits and injection guards. Built for financial-grade reliability.",
+    tech: [
+      "Next.JS",
+      "TypeScript",
+      "Vercel AI SDK",
+      "Viem",
+      "Wagmi",
+      "RainbowKit",
+      "Tailwind CSS",
+    ],
+    status: "Completed",
+    liveLink: "https://ledgr-nu.vercel.app/",
+    codeLink: "https://github.com/O-Midey/ledgr",
     image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330559/Screenshot_2025-11-16_at_23.01.58_x3sebk.png",
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1780237169/Screenshot_2026-05-30_at_11.19.48_xfytpc.png",
+  },
+  {
+    title: "Ward",
+    description:
+      "A non-custodial Ethereum wallet PWA built on Sepolia testnet. Ward handles HD wallet generation, AES-GCM encrypted key storage, and transaction signing entirely client-side — private keys never leave the device. Designed to look and feel like a native mobile app with a clean, minimal UI.",
+    tech: [
+      "Next.JS",
+      "TypeScript",
+      "Viem",
+      "Wagmi",
+      "Tailwind CSS",
+      "IndexedDB",
+    ],
+    status: "Completed",
+    liveLink: "https://ward-zeta.vercel.app/",
+    codeLink: "https://github.com/O-Midey/ward",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1780762294/Screenshot_2026-06-06_at_17.11.23_b2fo8g.png",
   },
   {
     title: "Mankorie Global",
@@ -22,15 +48,15 @@ export const projects = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682616/Screenshot_2026-05-13_at_15.29.53_t97jgt.png",
   },
   {
-    title: "Voting DApp",
+    title: "ChainVote",
     description:
-      "A decentralized voting application built on Ethereum, allowing users to create proposals, cast votes, and view real-time results — all secured on-chain. Features wallet connection via MetaMask, smart contract interaction through Ethers.js, and a clean Next.js frontend with live transaction feedback.",
-    tech: ["Solidity", "Ethers.js", "Next.js", "React Toast"],
+      "A decentralized on-chain voting platform built on Base L2. ChainVote lets users create and vote on polls via smart contracts — with every vote recorded as an immutable transaction. Poll metadata is stored on IPFS, results are publicly verifiable on-chain, and the contract has no admin keys or upgrade mechanism.",
+    tech: ["Next.JS", "Solidity", "Base L2", "IPFS", "Wagmi", "Viem"],
     status: "Completed",
-    liveLink: "https://simple-voting-d-app-sccd.vercel.app/",
-    codeLink: "https://github.com/O-Midey/SimpleVoting-DApp",
+    liveLink: "https://chain-vote-d-app.vercel.app/",
+    codeLink: "https://github.com/O-Midey/ChainVote",
     image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1754324462/Screenshot_2025-08-04_at_17.19.48_hxo67v.png",
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1780237186/Screenshot_2026-05-31_at_15.17.39_tufnqq.png",
   },
   {
     title: "Havesta",
@@ -78,17 +104,5 @@ export const projects = [
     codeLink: "https://github.com/O-Midey/AquaLife",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1756156742/Screenshot_2025-08-25_at_21.55.03_mhphsq.png",
-  },
-
-  {
-    title: "Portfolio Website",
-    description:
-      "A modern developer portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.Features a responsive design, smooth page transitions, interactive project showcases, and a clean UI. Deployed with Vercel.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    status: "Completed",
-    liveLink: "https://omotoshodavid.vercel.app",
-    codeLink: "https://github.com/O-Midey/portfolio-v2",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1756210571/Screenshot_2025-08-26_at_12.40.14_pzbddh.png",
   },
 ];
