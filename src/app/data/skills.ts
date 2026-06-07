@@ -19,6 +19,8 @@ export const skills = [
   "AI Agents",
   "Prompt Engineering",
   "Context Engineering",
+  "RAG",
+  "Vector Databases",
 ];
 
 export const skillGroups = [
@@ -47,6 +49,8 @@ export const skillGroups = [
       "AI Agents",
       "Prompt Engineering",
       "Context Engineering",
+      "RAG",
+      "Vector Databases",
     ],
   },
   {

@@ -31,7 +31,7 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   }
 
-  const inputClass = "w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-[#2a2a2a] text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-[#666] transition rounded-xl";
+  const inputClass = "w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-[#2a2a2a] text-sm font-mono text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] caret-emerald-500 focus:outline-none focus:border-emerald-400 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-400/30 transition-colors rounded-xl";
 
   return (
     <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#111]">
@@ -89,15 +89,28 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form */}
+          {/* Form — terminal window */}
           <div className="mb-14">
             <p className="text-xs font-mono tracking-[0.2em] text-gray-600 dark:text-[#555] uppercase mb-6">send a message ✍️</p>
-            {sent ? (
-              <p className="text-sm text-green-600 font-medium py-4">
-                ✅ Opening your email client — thanks for reaching out!
-              </p>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+
+            <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-[#2a2a2a] shadow-2xl">
+              {/* Title bar */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-[#2a2a2a]">
+                <span className="w-3 h-3 rounded-full bg-rose-400" />
+                <span className="w-3 h-3 rounded-full bg-amber-400" />
+                <span className="w-3 h-3 rounded-full bg-emerald-400" />
+                <span className="ml-3 text-xs font-mono text-gray-400 dark:text-[#555]">omotosho@portfolio ~ contact.sh</span>
+              </div>
+
+              {/* Content */}
+              <div className="bg-white dark:bg-[#0d0d0d] p-6">
+                {sent ? (
+                  <p className="text-sm font-mono text-emerald-600 dark:text-emerald-400 py-4">
+                    <span className="text-gray-400 dark:text-[#555]">$</span> message sent — opening your email client ✅
+                  </p>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <p className="text-xs font-mono text-emerald-500 mb-1">{`// drop me a line — I'll get back to you`}</p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-mono text-gray-600 dark:text-[#999] uppercase tracking-widest mb-2">Name</label>
@@ -141,7 +154,9 @@ export default function Contact() {
                   Send Message
                 </button>
               </form>
-            )}
+                )}
+              </div>
+            </div>
           </div>
 
         </AnimatedDiv>
