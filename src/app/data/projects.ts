@@ -7,7 +7,8 @@ export const projects = [
     status: "Completed",
     liveLink: "https://o-midey.github.io/streamkit/",
     codeLink: "https://github.com/O-Midey/streamkit",
-    image: "", // TODO: add screenshot (Cloudinary URL)
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1781897634/zaurnseghns1ezcljrg6.png",
   },
   {
     title: "Ledgr",
