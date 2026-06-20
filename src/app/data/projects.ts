@@ -1,5 +1,16 @@
 export const projects = [
   {
+    title: "streamkit-ui",
+    description:
+      "A vendor-agnostic React library of rendering and state primitives for streaming LLM UIs — token streaming, incrementally-rendered markdown, tool-call state machines, and multi-stream orchestration. Markdown and code are sanitized at the render boundary with DOMPurify so model output can't inject into the DOM, while a single normalized StreamChunk type lets adapters swap OpenAI, Anthropic, and the Vercel AI SDK without touching UI code. Published to npm with build provenance, 94 passing tests, and a VitePress documentation site.",
+    tech: ["React", "TypeScript", "Vercel AI SDK", "Storybook", "Vitest"],
+    status: "Completed",
+    liveLink: "https://o-midey.github.io/streamkit/",
+    codeLink: "https://github.com/O-Midey/streamkit",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1781897634/zaurnseghns1ezcljrg6.png",
+  },
+  {
     title: "Ledgr",
     description:
       "An AI-powered crypto wallet operating system built on Sepolia testnet. Ledgr lets users manage wallet operations through natural language — with every transaction simulated before execution, a full reasoning trace, real-time audit logs, and a security supervisor enforcing spend limits and injection guards. Built for financial-grade reliability.",
