@@ -14,7 +14,8 @@ export const projects = [
     status: "In Progress",
     liveLink: "",
     codeLink: "https://github.com/O-Midey/proxima",
-    image: "", // TODO: add screenshot (Cloudinary URL)
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1782075746/zlkw9qufnbjgurlptxqs.png",
   },
   {
     title: "Narrate",
