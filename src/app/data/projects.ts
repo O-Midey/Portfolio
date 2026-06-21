@@ -1,5 +1,23 @@
 export const projects = [
   {
+    title: "Proxima",
+    description:
+      "A self-hosted HTTP(S) network inspector shipped as a single Go binary — your own Chrome DevTools Network tab. Proxima intercepts HTTPS traffic via a hand-rolled MITM layer built directly on the Go standard library (CONNECT tunnel hijacking, root CA generation, and per-domain leaf cert issuance — no goproxy wrapper), logs every request/response pair to SQLite with WAL, and streams them live to a Next.js web UI over WebSocket. Supports replay, diffing, request interception with breakpoints, parameterised filter queries, and HAR 1.2 export, plus a Chrome extension for zero-config browser setup.",
+    tech: [
+      "Go",
+      "SQLite",
+      "Next.JS",
+      "TypeScript",
+      "Websocket",
+      "Chrome Extension",
+    ],
+    status: "In Progress",
+    liveLink: "",
+    codeLink: "https://github.com/O-Midey/proxima",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1782075746/zlkw9qufnbjgurlptxqs.png",
+  },
+  {
     title: "Narrate",
     description:
       "A PWA that turns any article or PDF into natural-sounding audio. Paste a link or drop a PDF and Narrate extracts the readable content — Mozilla Readability over a lightweight linkedom DOM on the server, pdf.js for documents — then streams OpenAI text-to-speech with sentence-level highlighting and tap-to-seek. The entire backend runs as same-origin Next.js route handlers with an httpOnly-cookie session signed via jose, Prisma on Neon Postgres, and ships as a single app on Vercel.",
