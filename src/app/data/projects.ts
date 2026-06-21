@@ -1,5 +1,24 @@
 export const projects = [
   {
+    title: "Narrate",
+    description:
+      "A PWA that turns any article or PDF into natural-sounding audio. Paste a link or drop a PDF and Narrate extracts the readable content — Mozilla Readability over a lightweight linkedom DOM on the server, pdf.js for documents — then streams OpenAI text-to-speech with sentence-level highlighting and tap-to-seek. The entire backend runs as same-origin Next.js route handlers with an httpOnly-cookie session signed via jose, Prisma on Neon Postgres, and ships as a single app on Vercel.",
+    tech: [
+      "Next.JS",
+      "TypeScript",
+      "Prisma",
+      "Postgres",
+      "OpenAI",
+      "Tailwind CSS",
+      "PWA",
+    ],
+    status: "In Progress",
+    liveLink: "https://narrate-sigma.vercel.app",
+    codeLink: "https://github.com/O-Midey/narrate",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1782074737/ry7kra41eodzsr6np1qm.png",
+  },
+  {
     title: "streamkit-ui",
     description:
       "A vendor-agnostic React library of rendering and state primitives for streaming LLM UIs — token streaming, incrementally-rendered markdown, tool-call state machines, and multi-stream orchestration. Markdown and code are sanitized at the render boundary with DOMPurify so model output can't inject into the DOM, while a single normalized StreamChunk type lets adapters swap OpenAI, Anthropic, and the Vercel AI SDK without touching UI code. Published to npm with build provenance, 94 passing tests, and a VitePress documentation site.",
