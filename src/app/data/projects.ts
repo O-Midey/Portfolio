@@ -1,5 +1,23 @@
 export const projects = [
   {
+    title: "Beacon",
+    description:
+      "A local-first CLI (npm: beacon-bip) that turns git commits into build-in-public drafts for Twitter/X, LinkedIn, dev.to, Bluesky, and Mastodon. A post-commit hook runs a five-stage pipeline — capture → regex secret scanner → LLM significance scoring → voice-matched drafting → atomic JSON queue — with the scanner guaranteed to run before any model call, so the LLM only ever sees a redacted, truncated diff. A provider abstraction supports the Anthropic SDK or any OpenAI-compatible endpoint (including fully-offline Ollama), with every draft Zod-validated against per-platform schemas. Nothing is ever auto-posted: approving a draft copies it to the clipboard, and the whole footprint is two JSON files under ~/.beacon.",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "Zod",
+      "Anthropic API",
+      "Next.JS",
+      "Vitest",
+    ],
+    status: "Completed",
+    liveLink: "https://beacon-bip.vercel.app",
+    codeLink: "https://github.com/O-Midey/beacon",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1783172524/mxrekormcp8hyf79smyp.png",
+  },
+  {
     title: "Proxima",
     description:
       "A self-hosted HTTP(S) network inspector shipped as a single Go binary — your own Chrome DevTools Network tab. Proxima intercepts HTTPS traffic via a hand-rolled MITM layer built directly on the Go standard library (CONNECT tunnel hijacking, root CA generation, and per-domain leaf cert issuance — no goproxy wrapper), logs every request/response pair to SQLite with WAL, and streams them live to a Next.js web UI over WebSocket. Supports replay, diffing, request interception with breakpoints, parameterised filter queries, and HAR 1.2 export, plus a Chrome extension for zero-config browser setup.",
