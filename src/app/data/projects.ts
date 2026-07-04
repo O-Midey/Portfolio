@@ -15,7 +15,7 @@ export const projects = [
     liveLink: "https://beacon-bip.vercel.app",
     codeLink: "https://github.com/O-Midey/beacon",
     image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1783172524/mxrekormcp8hyf79smyp.png",
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1783175985/h1ntljjudawq963zhueh.png",
   },
   {
     title: "Proxima",
