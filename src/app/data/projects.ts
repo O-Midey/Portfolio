@@ -1,5 +1,16 @@
 export const projects = [
   {
+    title: "rentluxy",
+    description:
+      "A peer-to-peer car rental marketplace connecting hosts and guests across the USA. Book verified cars, manage bookings in real-time, and complete secure transactions with identity verification and insurance options — built for trust and transparency in the sharing economy.",
+    tech: ["React", "SCSS", "Firebase", "GCP", "PayPal", "Didit"],
+    status: "In Progress",
+    liveLink: "https://rentluxy.com",
+    codeLink: "",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1783324428/vlyk2idepimozvlsnkh2.png",
+  },
+  {
     title: "Beacon",
     description:
       "A local-first CLI (npm: beacon-bip) that turns git commits into build-in-public drafts for Twitter/X, LinkedIn, dev.to, Bluesky, and Mastodon. A post-commit hook runs a five-stage pipeline — capture → regex secret scanner → LLM significance scoring → voice-matched drafting → atomic JSON queue — with the scanner guaranteed to run before any model call, so the LLM only ever sees a redacted, truncated diff. A provider abstraction supports the Anthropic SDK or any OpenAI-compatible endpoint (including fully-offline Ollama), with every draft Zod-validated against per-platform schemas. Nothing is ever auto-posted: approving a draft copies it to the clipboard, and the whole footprint is two JSON files under ~/.beacon.",
