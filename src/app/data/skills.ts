@@ -23,11 +23,23 @@ export const skills = [
   "Vector Databases",
 ];
 
+// Short, punchy subset for the mobile home marquee.
+export const marqueeSkills = [
+  "React",
+  "Next.js",
+  "Node.js",
+  "TypeScript",
+  "Golang",
+  "Solidity",
+  "Postgres",
+  "LLM Agents",
+];
+
 export const skillGroups = [
   {
     label: "Languages",
     color: "bg-blue-50 text-blue-800 border border-blue-100",
-    skills: ["JavaScript", "TypeScript", "Golang", "Solidity"],
+    skills: ["JavaScript", "TypeScript", "Golang", "Solidity", "Python"],
   },
   {
     label: "Frontend",

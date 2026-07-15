@@ -1,4 +1,4 @@
-import { Home, User, Code, Mail } from "lucide-react";
+import { Home, User, Code, Library, Mail } from "lucide-react";
 
 const sections = [
   { id: "home", label: "Home", icon: Home, href: "/" },
@@ -10,6 +10,7 @@ const sections = [
   //   href: "/experience",
   // },
   { id: "projects", label: "Projects", icon: Code, href: "/projects" },
+  { id: "library", label: "Library", icon: Library, href: "/library" },
   { id: "contact", label: "Contact", icon: Mail, href: "/contact" },
 ];
 

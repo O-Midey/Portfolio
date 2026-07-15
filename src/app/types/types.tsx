@@ -10,6 +10,8 @@ export type section = {
   href: string;
 };
 
+export type ProjectCategory = "AI" | "FULL-STACK" | "WEB3";
+
 export interface Project {
   title: string;
   description: string;
@@ -20,4 +22,20 @@ export interface Project {
   status: string;
   liveLink: string;
   codeLink: string;
+  categories: ProjectCategory[];
+}
+
+export type LibraryCategory =
+  | "WEB-DEV"
+  | "WEB3"
+  | "AI"
+  | "BACKEND"
+  | "GENERAL";
+
+export interface LibraryResource {
+  title: string;
+  provider: string;
+  concepts: string[];
+  link: string;
+  category: LibraryCategory;
 }

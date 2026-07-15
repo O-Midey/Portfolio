@@ -2,6 +2,95 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+/* ---------------------------------------------------------------------------
+   Mobile "terminal" design system (< md)
+   Theme-aware: the variables flip with next-themes' `.dark` class, so the
+   mobile view honors the same light/dark toggle as desktop.
+   -------------------------------------------------------------------------*/
+:root {
+  --term-bg: #f6f8f7;
+  --term-panel: #ffffff;
+  --term-card: #fbfdfc;
+  --term-overlay: #eef2f0;
+  --term-fg: #101512;
+  --term-muted: #5c6360;
+  --term-accent: #059669;
+  --term-amber: #b45309;
+  --term-dot: rgba(16, 21, 18, 0.1);
+}
+
+.dark {
+  --term-bg: #0a0e0c;
+  --term-panel: #12171a;
+  --term-card: #141a16;
+  --term-overlay: #0c110e;
+  --term-fg: #f2f4f3;
+  --term-muted: #6e7573;
+  --term-accent: #34d399;
+  --term-amber: #ffb224;
+  --term-dot: rgba(148, 163, 158, 0.13);
+}
+
+@theme inline {
+  /* `font-jet` is a mobile-only alias for Tailwind's built-in `--font-mono`
+     (the system monospace stack) — used only on individual accent elements
+     (labels, badges, buttons), never as a page-wide default, so mobile body
+     copy inherits Inter exactly like desktop's. */
+  --font-jet: var(--font-mono);
+
+  --color-term-bg: var(--term-bg);
+  --color-term-panel: var(--term-panel);
+  --color-term-card: var(--term-card);
+  --color-term-overlay: var(--term-overlay);
+  --color-term-fg: var(--term-fg);
+  --color-term-muted: var(--term-muted);
+  --color-term-accent: var(--term-accent);
+  --color-term-amber: var(--term-amber);
+}
+
+@theme {
+  --animate-marquee: marquee 22s linear infinite;
+  --animate-fade-up: fade-up 0.35s ease both;
+  --animate-overlay-in: overlay-in 0.3s ease both;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes overlay-in {
+    from {
+      opacity: 0;
+      transform: translateY(-14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Dot-grid backdrop for the mobile terminal view */
+.term-dot-grid {
+  background-image: radial-gradient(var(--term-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 body {
   background-color: white;
   cursor: none;

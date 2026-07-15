@@ -1,34 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { skillGroups } from "../data/skills";
+import { aboutSections as SECTIONS } from "../data/about";
+import MobileAbout from "../components/mobile/MobileAbout";
 import { MailOpen, ArrowRight } from "lucide-react";
-
-const SECTIONS = [
-  {
-    heading: "Who I am",
-    body: "I'm Omotosho Ayomide — a Full-Stack, AI & Blockchain Developer based in Nigeria. I build complete products from the ground up, handling everything from the database to the user interface.",
-  },
-  {
-    heading: "What I do",
-    body: "I specialise in building web apps, AI-powered tools, and Web3 products. Think marketplaces, dashboards, Ethereum wallets, LLM agents, and smart contracts — shipped end-to-end with React, Node.js, Postgres, Solidity, and Golang.",
-  },
-  {
-    heading: "Building with AI",
-    body: "Lately I've been deep in AI engineering — building LLM agents that call tools, reason step-by-step, and ship with real guardrails. In Ledgr, my AI crypto-wallet OS, every action runs through a security supervisor and gets simulated before it ever touches the chain.",
-  },
-  {
-    heading: "Why Web3",
-    body: "Web3 is one of the few spaces where software can genuinely shift how people own and exchange value. That's the kind of work I want to be part of.",
-  },
-  {
-    heading: "Outside of code",
-    body: "I'm vibing to Afrobeats 🎶✨ — check out my playlist on Spotify.",
-    link: {
-      label: "Open playlist →",
-      href: "https://open.spotify.com/user/31jibew2j4bcfy3edf6ezxorcbxu/playlists",
-    },
-  },
-];
 
 export default function AboutPage() {
   const [visible, setVisible] = useState(0);
@@ -43,7 +18,11 @@ export default function AboutPage() {
   }, [visible]);
 
   return (
-    <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#111] px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+    <>
+    <div className="md:hidden">
+      <MobileAbout />
+    </div>
+    <section className="hidden md:block relative min-h-screen bg-[#fafafa] dark:bg-[#111] px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="mb-10">
@@ -154,5 +133,6 @@ export default function AboutPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

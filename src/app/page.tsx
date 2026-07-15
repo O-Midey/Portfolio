@@ -2,16 +2,13 @@
 
 import AnimatedDiv from "./components/AnimatedDiv";
 import MagneticButton from "./components/MagneticButton";
+import MobileHome from "./components/mobile/MobileHome";
+import HeroPortrait from "./components/HeroPortrait";
+import { heroTitles } from "./data/hero";
+import { useTypewriter } from "./hooks/useTypewriter";
 import { Github, Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 
-const TITLES = [
-  "Full Stack Developer",
-  "AI Engineer",
-  "Blockchain Engineer",
-  "Web3 Builder",
-];
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&";
 
 function useScramble(target: string, trigger: boolean) {
@@ -43,18 +40,23 @@ function useScramble(target: string, trigger: boolean) {
 }
 
 export default function HomePage() {
-  const [currentTitle, setCurrentTitle] = useState(0);
-  const [displayed, setDisplayed] = useState("");
-  const [typing, setTyping] = useState(true);
   const [scrambled, setScrambled] = useState(false);
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const displayed = useTypewriter(heroTitles);
 
   const line1 = useScramble("Omotosho", scrambled);
   const line2 = useScramble("David A.", scrambled);
 
+  // The desktop hero is a fixed, non-scrolling viewport; the mobile terminal
+  // view is a long scrolling page — only lock body scroll on md and up.
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    const mq = window.matchMedia("(min-width: 768px)");
+    const apply = () => {
+      document.body.style.overflow = mq.matches ? "hidden" : "";
+    };
+    apply();
+    mq.addEventListener("change", apply);
     return () => {
+      mq.removeEventListener("change", apply);
       document.body.style.overflow = "";
     };
   }, []);
@@ -64,43 +66,12 @@ export default function HomePage() {
     return () => clearTimeout(t);
   }, []);
 
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      setMouse({
-        x: (e.clientX / window.innerWidth - 0.5) * 2,
-        y: (e.clientY / window.innerHeight - 0.5) * 2,
-      });
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
-  // Typing animation
-  useEffect(() => {
-    const full = TITLES[currentTitle];
-    const i = displayed.length;
-
-    if (typing) {
-      if (i < full.length) {
-        const t = setTimeout(() => setDisplayed(full.slice(0, i + 1)), 60);
-        return () => clearTimeout(t);
-      } else {
-        const t = setTimeout(() => setTyping(false), 2000);
-        return () => clearTimeout(t);
-      }
-    } else {
-      if (i > 0) {
-        const t = setTimeout(() => setDisplayed(full.slice(0, i - 1)), 35);
-        return () => clearTimeout(t);
-      } else {
-        setCurrentTitle((prev) => (prev + 1) % TITLES.length);
-        setTyping(true);
-      }
-    }
-  }, [displayed, typing, currentTitle]);
-
   return (
-    <AnimatedDiv className="h-dvh overflow-hidden flex items-center justify-center md:justify-start px-4 sm:px-6 lg:px-8 bg-[#fafafa] dark:bg-[#111] relative">
+    <>
+      <div className="md:hidden">
+        <MobileHome />
+      </div>
+      <AnimatedDiv className="hidden h-dvh overflow-hidden md:flex items-center justify-center md:justify-start px-4 sm:px-6 lg:px-8 bg-[#fafafa] dark:bg-[#111] relative">
       {/* Animated dot grid */}
       <div className="dot-grid absolute inset-0 opacity-60 pointer-events-none" />
 
@@ -224,57 +195,12 @@ export default function HomePage() {
         </div>
 
         {/* Right: photo with shapes — desktop only */}
-        <div className="hidden lg:block relative flex-shrink-0 w-80 h-[480px]">
-          {/* depth 0.03 — slowest, furthest back */}
-          <div
-            className="absolute -top-14 left-1/2 -translate-x-1/2 w-12 h-32 bg-emerald-400 dark:bg-emerald-500 z-0 transition-transform duration-200 ease-out"
-            style={{
-              transform: `translate(calc(-50% + ${mouse.x * 12}px), ${mouse.y * 12}px)`,
-            }}
-          />
-          {/* depth 0.06 — mid */}
-          <div
-            className="absolute top-[38%] -right-6 w-36 h-11 bg-rose-400 dark:bg-rose-500 z-0 transition-transform duration-200 ease-out"
-            style={{
-              transform: `translate(${mouse.x * 22}px, ${mouse.y * 22}px)`,
-            }}
-          />
-          {/* depth 0.09 — closest, fastest */}
-          <div
-            className="absolute bottom-55 left-2 w-20 h-20 rounded-full bg-amber-400 dark:bg-amber-500 z-0 transition-transform duration-200 ease-out"
-            style={{
-              transform: `translate(${mouse.x * 32}px, ${mouse.y * 32}px)`,
-            }}
-          />
-          {/* Photo with scanlines */}
-          <div className="scanlines absolute inset-0 z-10">
-            <Image
-              src="/profile.png"
-              alt="Omotosho David"
-              fill
-              priority
-              className="object-contain object-[center_18px] grayscale scale-110 contrast-125 brightness-110 drop-shadow-[0_20px_34px_rgba(0,0,0,0.22)]"
-              style={{ clipPath: "inset(0 0 15% 0)" }}
-            />
-            <Image
-              src="/profile.png"
-              alt=""
-              aria-hidden
-              fill
-              className="object-contain object-[center_18px] grayscale scale-110 contrast-125 brightness-110 glitch-layer-top pointer-events-none"
-              style={{ clipPath: "inset(0 0 15% 0)" }}
-            />
-            <Image
-              src="/profile.png"
-              alt=""
-              aria-hidden
-              fill
-              className="object-contain object-[center_18px] grayscale scale-110 contrast-125 brightness-110 glitch-layer-bottom pointer-events-none"
-              style={{ clipPath: "inset(0 0 15% 0)" }}
-            />
-          </div>
-        </div>
+        <HeroPortrait
+          parallax
+          className="hidden lg:block relative flex-shrink-0 w-80 h-[480px]"
+        />
       </div>
-    </AnimatedDiv>
+      </AnimatedDiv>
+    </>
   );
 }

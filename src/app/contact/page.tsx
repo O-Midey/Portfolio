@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { Mail, Twitter, Linkedin, Instagram, Send, ArrowRight, Copy, Check } from "lucide-react";
 import AnimatedDiv from "../components/AnimatedDiv";
-
-const EMAIL = "talk2adeoluwa2310@gmail.com";
+import MobileContact from "../components/mobile/MobileContact";
+import { EMAIL } from "../data/socials";
 
 const socials = [
   { label: "Email", handle: EMAIL, href: `mailto:${EMAIL}`, icon: Mail },
@@ -34,7 +34,11 @@ export default function Contact() {
   const inputClass = "w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-[#2a2a2a] text-sm font-mono text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] caret-emerald-500 focus:outline-none focus:border-emerald-400 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-400/30 transition-colors rounded-xl";
 
   return (
-    <section className="relative min-h-screen bg-[#fafafa] dark:bg-[#111]">
+    <>
+    <div className="md:hidden">
+      <MobileContact />
+    </div>
+    <section className="hidden md:block relative min-h-screen bg-[#fafafa] dark:bg-[#111]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <AnimatedDiv>
 
@@ -162,5 +166,6 @@ export default function Contact() {
         </AnimatedDiv>
       </div>
     </section>
+    </>
   );
 }
