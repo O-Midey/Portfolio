@@ -14,14 +14,14 @@ export function useThemeWipe() {
 }
 
 export default function ThemeWipeProvider({ children }: { children: ReactNode }) {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [wipe, setWipe] = useState<{ x: number; y: number; to: string } | null>(null);
 
   const triggerWipe = useCallback((x: number, y: number) => {
     if (wipe) return;
-    const next = theme === "dark" ? "light" : "dark";
+    const next = resolvedTheme === "dark" ? "light" : "dark";
     setWipe({ x, y, to: next });
-  }, [theme, wipe]);
+  }, [resolvedTheme, wipe]);
 
   const onAnimationComplete = () => {
     if (!wipe) return;

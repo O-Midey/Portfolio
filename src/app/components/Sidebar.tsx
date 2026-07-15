@@ -50,7 +50,7 @@ import { useThemeWipe } from "./ThemeWipeProvider";
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
   const pathname = usePathname();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { triggerWipe } = useThemeWipe();
   const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -132,7 +132,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
             onClick={(e) => triggerWipe(e.clientX, e.clientY)}
             className={`flex items-center gap-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 group ${!expanded && "justify-center w-full"}`}
           >
-            {theme === "dark" ? (
+            {resolvedTheme === "dark" ? (
               <Sun
                 size={14}
                 className="group-hover:rotate-12 transition-transform duration-200 shrink-0"
@@ -145,7 +145,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
             )}
             {expanded && (
               <span className="text-[10px] font-mono tracking-widest uppercase">
-                {theme === "dark" ? "Light mode" : "Dark mode"}
+                {resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
               </span>
             )}
           </button>

@@ -5,34 +5,15 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import sections from "../../data/sections";
-import { socialLinks } from "../../data/socials";
 import { useThemeWipe } from "../ThemeWipeProvider";
+import SocialShortLinks from "./SocialShortLinks";
 
 const BACK_TOP_ROUTES = ["/", "/projects"];
 const BACK_TOP_THRESHOLD = 480;
 
-function SocialShortLinks({ className }: { className?: string }) {
-  return (
-    <div className={`flex gap-4 font-jet text-[11.5px] ${className ?? ""}`}>
-      {socialLinks.map((s) => (
-        <a
-          key={s.id}
-          href={s.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={s.label}
-          className="transition-opacity active:opacity-60"
-        >
-          {s.short}
-        </a>
-      ))}
-    </div>
-  );
-}
-
 export default function MobileHeader() {
   const pathname = usePathname();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const { triggerWipe } = useThemeWipe();
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -108,78 +89,93 @@ export default function MobileHeader() {
 
       {/* ── Fullscreen menu overlay ── */}
       {menuOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-[72px] z-30 flex animate-overlay-in flex-col bg-term-overlay text-term-fg">
-          <nav className="flex flex-1 flex-col justify-center px-5 py-8">
-            {sections.map((section, i) => {
-              const isActive = pathname === section.href;
-              return (
-                <Link
-                  key={section.id}
-                  href={section.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`flex animate-fade-up items-center gap-4 border-term-fg/10 py-5 transition-opacity active:opacity-60 ${
-                    i < sections.length - 1 ? "border-b" : ""
-                  }`}
-                  style={{ animationDelay: `${i * 0.05}s` }}
+        <div className="fixed inset-x-0 bottom-0 top-[72px] z-30 animate-overlay-in overflow-y-auto overscroll-contain bg-term-overlay text-term-fg">
+          <div className="flex min-h-full flex-col">
+            <nav className="flex flex-1 flex-col justify-center px-5 py-8">
+              {sections.map((section, i) => {
+                const isActive = pathname === section.href;
+                return (
+                  <Link
+                    key={section.id}
+                    href={section.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex animate-fade-up items-center gap-4 border-term-fg/10 py-5 transition-opacity active:opacity-60 ${
+                      i < sections.length - 1 ? "border-b" : ""
+                    }`}
+                    style={{ animationDelay: `${i * 0.05}s` }}
+                  >
+                    <span
+                      className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg/40"}`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`font-jet text-[40px] font-extrabold tracking-[-0.02em] ${isActive ? "text-term-accent" : ""}`}
+                    >
+                      {section.label}
+                    </span>
+                    {isActive && (
+                      <span className="ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-term-fg text-base text-term-bg">
+                        →
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="flex flex-col gap-3.5 px-5 pb-[calc(1.75rem+env(safe-area-inset-bottom))]">
+              {mounted && (
+                <div
+                  role="group"
+                  aria-label="Color theme"
+                  className="relative flex rounded-full border border-term-fg/12 bg-term-panel p-1"
                 >
                   <span
-                    className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg/40"}`}
+                    aria-hidden
+                    className="absolute inset-y-1 left-1 w-[calc(50%-0.25rem)] rounded-full bg-term-fg transition-transform duration-300 ease-out"
+                    style={{
+                      transform:
+                        resolvedTheme === "dark"
+                          ? "translateX(100%)"
+                          : "translateX(0)",
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      if (resolvedTheme === "dark")
+                        triggerWipe(e.clientX, e.clientY);
+                    }}
+                    aria-pressed={resolvedTheme !== "dark"}
+                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-jet text-[11.5px] transition-colors ${
+                      resolvedTheme !== "dark" ? "text-term-bg" : "text-term-fg/55"
+                    }`}
                   >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`font-jet text-[40px] font-extrabold tracking-[-0.02em] ${isActive ? "text-term-accent" : ""}`}
+                    <Sun size={14} strokeWidth={2} />
+                    Light
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      if (resolvedTheme !== "dark")
+                        triggerWipe(e.clientX, e.clientY);
+                    }}
+                    aria-pressed={resolvedTheme === "dark"}
+                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-jet text-[11.5px] transition-colors ${
+                      resolvedTheme === "dark" ? "text-term-bg" : "text-term-fg/55"
+                    }`}
                   >
-                    {section.label}
-                  </span>
-                  {isActive && (
-                    <span className="ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-term-fg text-base text-term-bg">
-                      →
-                    </span>
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
-          <div className="flex flex-col gap-3.5 px-5 pb-7">
-            {mounted && (
-              <button
-                type="button"
-                onClick={(e) => triggerWipe(e.clientX, e.clientY)}
-                aria-label={
-                  theme === "dark"
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-                }
-                className="flex items-center justify-between rounded-lg border border-term-fg/12 bg-term-panel px-3.5 py-3 font-jet text-[11.5px] transition-opacity active:opacity-70"
-              >
-                <span className="text-term-fg/70">
-                  <span className="text-term-accent">$</span> theme --
-                  {theme === "dark" ? "light" : "dark"}
+                    <Moon size={14} strokeWidth={2} />
+                    Dark
+                  </button>
+                </div>
+              )}
+              <div className="flex items-center justify-between">
+                <SocialShortLinks className="text-term-fg/60" />
+                <span className="font-jet text-[10.5px] text-term-fg/40">
+                  © {new Date().getFullYear()}
                 </span>
-                {theme === "dark" ? (
-                  <Sun size={15} strokeWidth={2} className="text-term-fg/70" />
-                ) : (
-                  <Moon size={15} strokeWidth={2} className="text-term-fg/70" />
-                )}
-              </button>
-            )}
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-2 rounded-lg border border-term-fg/12 bg-term-panel px-3.5 py-3 font-jet text-[11.5px] transition-opacity active:opacity-70"
-            >
-              <span className="text-term-accent">$</span>
-              <span className="text-term-fg/70">open contact.sh</span>
-              <span className="animate-[blink_1.1s_steps(1)_infinite] text-term-accent">
-                _
-              </span>
-            </Link>
-            <div className="flex items-center justify-between">
-              <SocialShortLinks className="text-term-fg/60" />
-              <span className="font-jet text-[10.5px] text-term-fg/40">
-                © {new Date().getFullYear()}
-              </span>
+              </div>
             </div>
           </div>
         </div>

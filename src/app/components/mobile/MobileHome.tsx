@@ -5,11 +5,12 @@ import { AnimatePresence } from "framer-motion";
 import { projects } from "../../data/projects";
 import { heroTitles } from "../../data/hero";
 import { marqueeSkills } from "../../data/skills";
-import { SITE_HANDLE, socialLinks } from "../../data/socials";
+import { SITE_HANDLE } from "../../data/socials";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import HeroPortrait from "../HeroPortrait";
 import MobileProjectCard from "./MobileProjectCard";
 import MobileProjectSheet from "./MobileProjectSheet";
+import SocialShortLinks from "./SocialShortLinks";
 
 const SELECTED_COUNT = 2;
 
@@ -22,14 +23,12 @@ export default function MobileHome() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col overflow-x-clip bg-term-bg text-term-fg">
       {/* ── Hero ── */}
       <section className="flex flex-col gap-5 px-5 pt-12">
-        <p className="font-jet text-xs tracking-[0.3em] text-term-fg/55">
-          HEY, I&apos;M 👋
-        </p>
+        <p className="font-jet text-xs tracking-[0.3em]">HEY, I&apos;M 👋</p>
         <h1 className="font-jet text-[clamp(44px,13vw,57px)] font-extrabold leading-[1.02] tracking-[-0.04em]">
           Omotosho
           <span className="block text-term-muted">David A.</span>
         </h1>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 my-6">
           <span className="h-px flex-1 bg-term-fg/20" />
           <span className="whitespace-nowrap font-jet text-[11.5px] tracking-[0.22em]">
             {title.toUpperCase()}
@@ -39,7 +38,10 @@ export default function MobileHome() {
           </span>
           <span className="h-px flex-1 bg-term-fg/20" />
         </div>
-        <p className="mt-1 text-[17px] leading-[1.68] text-term-fg/60">
+        <div className="pt-16">
+          <HeroPortrait showBadges className="relative aspect-[4/5] w-full" />
+        </div>
+        <p className="text-[17px] leading-[1.68] text-center italic">
           I build products end-to-end —{" "}
           <strong className="font-semibold text-term-fg">
             shipping real apps across the full stack, on-chain, and with AI in
@@ -76,11 +78,6 @@ export default function MobileHome() {
         </div>
       </section>
 
-      {/* ── Portrait with decorative shapes ── */}
-      <section className="px-5 pt-16">
-        <HeroPortrait showBadges className="relative aspect-[4/5] w-full" />
-      </section>
-
       {/* ── Skills marquee (tap to pause) ── */}
       <button
         type="button"
@@ -88,7 +85,7 @@ export default function MobileHome() {
         aria-label={
           marqueePaused ? "Resume skills ticker" : "Pause skills ticker"
         }
-        className="overflow-hidden whitespace-nowrap border-y border-term-fg/10 py-3.5"
+        className="overflow-hidden whitespace-nowrap border-y border-term-fg/10 py-4"
       >
         <div
           className="inline-flex animate-marquee gap-[26px] pr-[26px] font-jet text-[12.5px] text-term-accent"
@@ -101,26 +98,24 @@ export default function MobileHome() {
       </button>
 
       {/* ── whoami strip ── */}
-      <section className="px-5 pt-11">
+      {/* <section className="px-5 pt-11">
         <Link
           href="/about"
           className="flex items-center justify-between gap-3 rounded-[10px] border border-term-fg/12 bg-term-panel px-4.5 py-4 font-jet text-[12.5px] transition-opacity active:opacity-70"
         >
-          <span className="text-term-fg/60">
+          <span className="text-term-fg">
             <span className="text-term-accent">$</span> whoami → full-stack, AI
             &amp; blockchain dev
           </span>
           <span className="text-term-accent">/about</span>
         </Link>
-      </section>
+      </section> */}
 
       {/* ── Selected projects ── */}
       <section className="flex flex-col gap-8 px-5 pb-2 pt-13">
         <div className="flex items-end justify-between">
           <div className="flex flex-col gap-2">
-            <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
-              MY WORK 🛠️
-            </p>
+            <p className="font-jet text-[11px] tracking-[0.3em] ">MY WORK 🛠️</p>
             <h2 className="text-[42px] font-bold leading-none tracking-[-0.02em]">
               Selected<span className="text-term-accent">.</span>
             </h2>
@@ -143,7 +138,7 @@ export default function MobileHome() {
 
         <Link
           href="/projects"
-          className="flex items-center justify-center gap-2 rounded-full border border-term-fg/22 py-[15px] font-jet text-xs tracking-[0.12em] text-term-fg/80 transition-opacity active:opacity-60"
+          className="flex items-center justify-center gap-2 rounded-full border border-term-fg py-[15px] font-jet text-xs tracking-[0.12em] text-term-fg transition-opacity active:opacity-60"
         >
           ALL PROJECTS ({String(projects.length).padStart(2, "0")}) →
         </Link>
@@ -151,39 +146,24 @@ export default function MobileHome() {
 
       {/* ── Contact CTA + footer ── */}
       <footer className="mt-13 flex flex-col gap-[18px] border-t border-term-fg/10 px-5 pb-8 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
-          CONTACT 📬
-        </p>
+        <p className="font-jet text-[11px] tracking-[0.3em] ">CONTACT 📬</p>
         <h2 className="text-[46px] font-bold leading-[1.02] tracking-[-0.03em]">
           Get in <span className="text-term-muted">Touch.</span>
         </h2>
-        <p className="text-[15.5px] text-term-fg/60">
+        <p className="text-[15.5px] text-term-fg">
           Open to new opportunities and interesting projects ✨
         </p>
         <Link
           href="/contact"
-          className="flex items-center justify-center rounded-full bg-term-accent py-[17px] font-jet text-[13px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
+          className="flex items-center justify-center rounded-full bg-term-fg py-[17px] font-jet text-[13px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
         >
           SEND A MESSAGE ✍️
         </Link>
-        <div className="flex items-center justify-between pt-2 font-jet text-[11px] text-term-fg/40">
+        <div className="flex items-center justify-between pt-2 font-jet text-[11px] text-term-fg">
           <span>
             © {new Date().getFullYear()} {SITE_HANDLE}
           </span>
-          <div className="flex gap-3.5">
-            {socialLinks.map((s) => (
-              <a
-                key={s.id}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
-                className="text-term-fg/60 transition-opacity active:opacity-60"
-              >
-                {s.short}
-              </a>
-            ))}
-          </div>
+          <SocialShortLinks className="text-term-fg" />
         </div>
       </footer>
 

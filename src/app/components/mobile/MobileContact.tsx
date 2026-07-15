@@ -126,7 +126,7 @@ export default function MobileContact() {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center rounded-full bg-term-accent py-[15px] font-jet text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
+              className="flex items-center justify-center rounded-full bg-term-fg py-[15px] font-jet text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
             >
               $ ./send_message →
             </button>

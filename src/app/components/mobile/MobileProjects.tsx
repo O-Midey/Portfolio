@@ -82,7 +82,7 @@ export default function MobileProjects() {
         </h2>
         <Link
           href="/contact"
-          className="flex items-center justify-center rounded-full bg-term-accent py-4 font-jet text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
+          className="flex items-center justify-center rounded-full bg-term-fg py-4 font-jet text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
         >
           LET&apos;S TALK →
         </Link>
