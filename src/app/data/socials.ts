@@ -1,7 +1,7 @@
 // Single source of truth for contact identity + social links.
 export const EMAIL = "talk2adeoluwa2310@gmail.com";
 export const SITE_HANDLE = "omotosho.xyz";
-export const LOCATION = "lagos · remote";
+export const LOCATION = "lagos";
 
 export type SocialLink = {
   id: string;
