@@ -91,40 +91,8 @@ export default function MobileHeader() {
       {menuOpen && (
         <div className="fixed inset-x-0 bottom-0 top-[72px] z-30 animate-overlay-in overflow-y-auto overscroll-contain bg-term-overlay text-term-fg">
           <div className="flex min-h-full flex-col">
-            <nav className="flex flex-1 flex-col justify-center px-5 py-8">
-              {sections.map((section, i) => {
-                const isActive = pathname === section.href;
-                return (
-                  <Link
-                    key={section.id}
-                    href={section.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`flex animate-fade-up items-center gap-4 border-term-fg/10 py-5 transition-opacity active:opacity-60 ${
-                      i < sections.length - 1 ? "border-b" : ""
-                    }`}
-                    style={{ animationDelay: `${i * 0.05}s` }}
-                  >
-                    <span
-                      className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg"}`}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span
-                      className={`font-jet text-[40px] font-extrabold tracking-[-0.02em] ${isActive ? "text-term-accent" : ""}`}
-                    >
-                      {section.label}
-                    </span>
-                    {isActive && (
-                      <span className="ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-term-fg text-base text-term-bg">
-                        →
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
-            <div className="flex flex-col gap-3.5 px-5 pb-[calc(1.75rem+env(safe-area-inset-bottom))]">
-              {mounted && (
+            {mounted && (
+              <div className="px-5 pt-6">
                 <div
                   role="group"
                   aria-label="Color theme"
@@ -169,13 +137,45 @@ export default function MobileHeader() {
                     Dark
                   </button>
                 </div>
-              )}
-              <div className="flex items-center justify-between">
-                <SocialShortLinks className="text-term-fg" />
-                <span className="font-jet text-[10.5px] text-term-fg">
-                  © {new Date().getFullYear()}
-                </span>
               </div>
+            )}
+            <nav className="flex flex-1 flex-col justify-center px-5 py-8">
+              {sections.map((section, i) => {
+                const isActive = pathname === section.href;
+                return (
+                  <Link
+                    key={section.id}
+                    href={section.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex animate-fade-up items-center gap-4 border-term-fg/10 py-5 transition-opacity active:opacity-60 ${
+                      i < sections.length - 1 ? "border-b" : ""
+                    }`}
+                    style={{ animationDelay: `${i * 0.05}s` }}
+                  >
+                    <span
+                      className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg"}`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`font-jet text-[40px] font-extrabold tracking-[-0.02em] ${isActive ? "text-term-accent" : ""}`}
+                    >
+                      {section.label}
+                    </span>
+                    {isActive && (
+                      <span className="ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-term-fg text-base text-term-bg">
+                        →
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div className="flex items-center justify-between px-5 pb-[calc(1.75rem+env(safe-area-inset-bottom))]">
+              <SocialShortLinks className="text-term-fg" />
+              <span className="font-jet text-[10.5px] text-term-fg">
+                © {new Date().getFullYear()}
+              </span>
             </div>
           </div>
         </div>
