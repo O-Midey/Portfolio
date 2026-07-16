@@ -56,13 +56,13 @@ export default function MobileHeader() {
           href="/"
           className="flex flex-col gap-px transition-opacity active:opacity-70"
         >
-          <span className="font-jet text-[9px] tracking-[0.22em] text-term-fg/45">
+          <span className="font-jet text-[9px] tracking-[0.22em] text-term-fg">
             PORTFOLIO
           </span>
           <span className="text-[15px] font-bold">Omotosho David</span>
         </Link>
         <div className="flex items-center gap-3">
-          <span className="font-jet text-[10.5px] text-term-fg/45">
+          <span className="font-jet text-[10.5px] text-term-fg">
             ~/{pathLabel}
           </span>
           <button
@@ -70,7 +70,7 @@ export default function MobileHeader() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
-            className="relative h-11 w-11 rounded-full border border-term-fg/20 transition-opacity active:opacity-60"
+            className="relative h-11 w-11 rounded-full border border-term-fg transition-opacity active:opacity-60"
           >
             {menuOpen ? (
               <>
@@ -105,7 +105,7 @@ export default function MobileHeader() {
                     style={{ animationDelay: `${i * 0.05}s` }}
                   >
                     <span
-                      className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg/40"}`}
+                      className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg"}`}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -128,7 +128,7 @@ export default function MobileHeader() {
                 <div
                   role="group"
                   aria-label="Color theme"
-                  className="relative flex rounded-full border border-term-fg/12 bg-term-panel p-1"
+                  className="relative flex rounded-full border border-term-fg bg-term-panel p-1"
                 >
                   <span
                     aria-hidden
@@ -148,7 +148,7 @@ export default function MobileHeader() {
                     }}
                     aria-pressed={resolvedTheme !== "dark"}
                     className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-jet text-[11.5px] transition-colors ${
-                      resolvedTheme !== "dark" ? "text-term-bg" : "text-term-fg/55"
+                      resolvedTheme !== "dark" ? "text-term-bg" : "text-term-fg"
                     }`}
                   >
                     <Sun size={14} strokeWidth={2} />
@@ -162,7 +162,7 @@ export default function MobileHeader() {
                     }}
                     aria-pressed={resolvedTheme === "dark"}
                     className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-jet text-[11.5px] transition-colors ${
-                      resolvedTheme === "dark" ? "text-term-bg" : "text-term-fg/55"
+                      resolvedTheme === "dark" ? "text-term-bg" : "text-term-fg"
                     }`}
                   >
                     <Moon size={14} strokeWidth={2} />
@@ -171,8 +171,8 @@ export default function MobileHeader() {
                 </div>
               )}
               <div className="flex items-center justify-between">
-                <SocialShortLinks className="text-term-fg/60" />
-                <span className="font-jet text-[10.5px] text-term-fg/40">
+                <SocialShortLinks className="text-term-fg" />
+                <span className="font-jet text-[10.5px] text-term-fg">
                   © {new Date().getFullYear()}
                 </span>
               </div>

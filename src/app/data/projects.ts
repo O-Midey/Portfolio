@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: "Beacon",
     description:
-      "A local-first CLI (npm: beacon-bip) that turns git commits into build-in-public drafts for Twitter/X, LinkedIn, dev.to, Bluesky, and Mastodon. A post-commit hook runs a five-stage pipeline — capture → regex secret scanner → LLM significance scoring → voice-matched drafting → atomic JSON queue — with the scanner guaranteed to run before any model call, so the LLM only ever sees a redacted, truncated diff. A provider abstraction supports the Anthropic SDK or any OpenAI-compatible endpoint (including fully-offline Ollama), with every draft Zod-validated against per-platform schemas. Nothing is ever auto-posted: approving a draft copies it to the clipboard, and the whole footprint is two JSON files under ~/.beacon.",
+      "A local-first CLI (npm: beacon-bip) that turns git commits into build-in-public drafts for Twitter/X, LinkedIn, dev.to, Reddit, and Medium. A post-commit hook runs a five-stage pipeline — capture → regex secret scanner → LLM significance scoring → voice-matched drafting → atomic JSON queue — with the scanner guaranteed to run before any model call, so the LLM only ever sees a redacted, truncated diff. A provider abstraction supports the Anthropic SDK or any OpenAI-compatible endpoint (including fully-offline Ollama), with every draft Zod-validated against per-platform schemas. Nothing is ever auto-posted: approving a draft copies it to the clipboard, and the whole footprint is two JSON files under ~/.beacon.",
     tech: [
       "TypeScript",
       "Node.js",
@@ -71,18 +71,7 @@ export const projects: Project[] = [
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1781897634/zaurnseghns1ezcljrg6.png",
   },
-  {
-    title: "Polywallet",
-    description:
-      "A fully functional Web3 wallet for Polygon — create & import wallets, send MATIC and ERC-20 tokens, and track transaction history.",
-    tech: ["React", "Node.js", "Ethers.js", "Alchemy", "Polygon"],
-    status: "In Progress",
-    categories: ["WEB3"],
-    liveLink: "",
-    codeLink: "https://github.com/o-midey",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1763330559/Screenshot_2025-11-16_at_23.01.58_x3sebk.png",
-  },
+
   {
     title: "rentluxy",
     description:
@@ -142,7 +131,7 @@ export const projects: Project[] = [
     status: "Completed",
     categories: ["FULL-STACK"],
     liveLink: "https://mankorieglobal.com",
-    codeLink: "https://github.com/O-Midey/mankorie-global",
+    codeLink: "",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682616/Screenshot_2026-05-13_at_15.29.53_t97jgt.png",
   },

@@ -70,7 +70,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
       <div
         className={`pt-10 mb-8 transition-all duration-200 ${expanded ? "opacity-100 px-3" : "opacity-0 px-0 h-0 mb-0 overflow-hidden"}`}
       >
-        <p className="text-[9px] font-mono tracking-[0.2em] text-gray-400 uppercase mb-1">
+        <p className="text-[9px] font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-1">
           Portfolio
         </p>
         <p className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
@@ -95,7 +95,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
           return (
             <Link key={section.id} href={section.href}>
               <div
-                className={`relative flex items-center gap-3 py-2.5 rounded-lg transition-all duration-200 ${expanded ? "px-3" : "px-2 justify-center"} ${isActive ? "text-gray-900 dark:text-white font-semibold" : "text-gray-400 hover:text-gray-700 dark:hover:text-[#ccc]"}`}
+                className={`relative flex items-center gap-3 py-2.5 rounded-lg transition-all duration-200 ${expanded ? "px-3" : "px-2 justify-center"} ${isActive ? "text-gray-900 dark:text-white font-semibold" : "text-gray-500 dark:text-[#777] hover:text-gray-900 dark:hover:text-white"}`}
               >
                 {/* Active indicator dot */}
                 {isActive && (
@@ -105,7 +105,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
                 {/* Number prefix — only when expanded */}
                 {expanded && (
                   <span
-                    className={`text-[9px] font-mono tabular-nums ${isActive ? "text-emerald-400" : "text-gray-300 dark:text-[#444]"}`}
+                    className={`text-[9px] font-mono tabular-nums ${isActive ? "text-emerald-400" : "text-gray-400 dark:text-[#555]"}`}
                   >
                     {num}
                   </span>
@@ -130,7 +130,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
         {mounted && (
           <button
             onClick={(e) => triggerWipe(e.clientX, e.clientY)}
-            className={`flex items-center gap-2 text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 group ${!expanded && "justify-center w-full"}`}
+            className={`flex items-center gap-2 text-gray-900 dark:text-white transition-colors duration-200 group ${!expanded && "justify-center w-full"}`}
           >
             {resolvedTheme === "dark" ? (
               <Sun

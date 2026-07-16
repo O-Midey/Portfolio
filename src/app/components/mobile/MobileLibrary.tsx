@@ -20,13 +20,13 @@ export default function MobileLibrary() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-3.5 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
           WHAT I LEARNED FROM 📚
         </p>
         <h1 className="text-[44px] font-bold leading-none tracking-[-0.02em]">
           Library<span className="text-term-accent">.</span>
         </h1>
-        <p className="mt-0.5 text-base leading-[1.55] text-term-fg/60">
+        <p className="mt-0.5 text-base leading-[1.55] text-term-fg">
           Courses, docs, and channels that shaped how I build — kept here as a
           running reference.
         </p>
@@ -45,7 +45,7 @@ export default function MobileLibrary() {
               className={`rounded-full border px-[15px] py-[9px] font-jet text-[11px] tracking-[0.05em] transition-opacity active:opacity-70 ${
                 isActive
                   ? "border-term-fg bg-term-fg font-semibold text-term-bg"
-                  : "border-term-fg/22 text-term-fg/60"
+                  : "border-term-fg text-term-fg"
               }`}
             >
               {f}
@@ -62,20 +62,20 @@ export default function MobileLibrary() {
             href={resource.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col gap-2.5 rounded-xl border border-term-fg/12 bg-term-panel px-4 py-4 transition-opacity active:opacity-70"
+            className="flex flex-col gap-2.5 rounded-xl border border-term-fg bg-term-panel px-4 py-4 transition-opacity active:opacity-70"
           >
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-[15px] font-bold leading-tight">
                   {resource.title}
                 </h3>
-                <p className="mt-1 font-jet text-[10.5px] text-term-fg/50">
+                <p className="mt-1 font-jet text-[10.5px] text-term-fg">
                   {resource.provider}
                 </p>
               </div>
               <ArrowUpRight
                 size={15}
-                className="mt-0.5 shrink-0 text-term-fg/40"
+                className="mt-0.5 shrink-0 text-term-fg"
               />
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -91,7 +91,7 @@ export default function MobileLibrary() {
           </a>
         ))}
         {visibleResources.length === 0 && (
-          <p className="py-8 text-center font-jet text-xs text-term-fg/45">
+          <p className="py-8 text-center font-jet text-xs text-term-fg">
             $ no resources match this filter
           </p>
         )}

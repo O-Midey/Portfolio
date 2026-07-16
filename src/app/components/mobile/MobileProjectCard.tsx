@@ -17,7 +17,7 @@ export default function MobileProjectCard({
       type="button"
       onClick={onSelect}
       aria-label={`View details for ${project.title}`}
-      className="relative w-full rounded-lg border border-term-fg/10 bg-term-card p-3 pb-4 text-left shadow-[0_10px_24px_rgba(0,0,0,0.35)] transition-opacity active:opacity-85"
+      className="relative w-full rounded-lg border border-term-fg bg-term-card p-3 pb-4 text-left shadow-[0_10px_24px_rgba(0,0,0,0.35)] transition-opacity active:opacity-85"
     >
       {project.image && (
         <div className="relative aspect-video w-full overflow-hidden rounded">
@@ -37,7 +37,7 @@ export default function MobileProjectCard({
           </span>
           <StatusPill status={project.status} />
         </div>
-        <p className="text-sm leading-relaxed text-term-fg/60 line-clamp-3">
+        <p className="text-sm leading-relaxed text-term-fg line-clamp-3">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-1.5">

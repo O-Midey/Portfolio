@@ -24,13 +24,13 @@ export default function MobileProjects() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-3.5 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
           MY WORK 🛠️
         </p>
         <h1 className="text-[44px] font-bold leading-none tracking-[-0.02em]">
           Projects<span className="text-term-accent">.</span>
         </h1>
-        <p className="mt-0.5 text-base leading-[1.55] text-term-fg/60">
+        <p className="mt-0.5 text-base leading-[1.55] text-term-fg">
           AI-powered apps, full-stack products, Web3 tools, and everything in
           between 👷
         </p>
@@ -49,7 +49,7 @@ export default function MobileProjects() {
               className={`rounded-full border px-[15px] py-[9px] font-jet text-[11px] tracking-[0.05em] transition-opacity active:opacity-70 ${
                 isActive
                   ? "border-term-fg bg-term-fg font-semibold text-term-bg"
-                  : "border-term-fg/22 text-term-fg/60"
+                  : "border-term-fg text-term-fg"
               }`}
             >
               {f}
@@ -69,7 +69,7 @@ export default function MobileProjects() {
           />
         ))}
         {visibleProjects.length === 0 && (
-          <p className="py-8 text-center font-jet text-xs text-term-fg/45">
+          <p className="py-8 text-center font-jet text-xs text-term-fg">
             $ no projects match this filter
           </p>
         )}

@@ -30,20 +30,20 @@ export default function MobileContact() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-4 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
           CONTACT 📬
         </p>
         <h1 className="text-[46px] font-bold leading-[1.02] tracking-[-0.02em]">
           Get in <span className="text-term-muted">Touch.</span>
         </h1>
-        <p className="text-base leading-relaxed text-term-fg/60">
+        <p className="text-base leading-relaxed text-term-fg">
           Open to new opportunities and interesting projects ✨
         </p>
       </section>
 
       {/* ── Social links ── */}
       <section className="flex flex-col px-5 pt-10">
-        <p className="pb-1.5 font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="pb-1.5 font-jet text-[11px] tracking-[0.3em] text-term-fg">
           FIND ME ON 🔍
         </p>
         {contactRows.map((row) => (
@@ -62,7 +62,7 @@ export default function MobileContact() {
 
       {/* ── Message form ── */}
       <section className="flex flex-col gap-4 px-5 pb-2.5 pt-11">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
           SEND A MESSAGE ✍️
         </p>
         <TerminalWindow title="omotosho@portfolio ~ contact.sh">
@@ -76,7 +76,7 @@ export default function MobileContact() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-name"
-                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg/50"
+                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg"
               >
                 NAME
               </label>
@@ -93,7 +93,7 @@ export default function MobileContact() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-email"
-                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg/50"
+                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg"
               >
                 EMAIL
               </label>
@@ -110,7 +110,7 @@ export default function MobileContact() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-message"
-                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg/50"
+                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg"
               >
                 MESSAGE
               </label>
@@ -135,7 +135,7 @@ export default function MobileContact() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="flex justify-between px-5 pb-8 pt-7 font-jet text-[11px] text-term-fg/40">
+      <footer className="flex justify-between px-5 pb-8 pt-7 font-jet text-[11px] text-term-fg">
         <span>
           © {new Date().getFullYear()} {SITE_HANDLE}
         </span>

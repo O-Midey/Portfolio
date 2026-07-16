@@ -64,7 +64,7 @@ function ScrapbookCard({
       />
 
       {/* Card */}
-      <div className="bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3 h-full">
+      <div className="bg-white dark:bg-[#1a1a1a] border border-gray-900 dark:border-white shadow-[4px_4px_14px_rgba(0,0,0,0.08)] p-3 pb-5 flex flex-col gap-3 h-full">
         {/* Polaroid image */}
         {project.image && (
           <div className="relative w-full aspect-video bg-gray-100 overflow-hidden">
@@ -99,7 +99,7 @@ function ScrapbookCard({
             </span>
           </div>
 
-          <p className="text-gray-600 dark:text-[#bbb] text-xs leading-relaxed line-clamp-3">
+          <p className="text-gray-900 dark:text-white text-xs leading-relaxed line-clamp-3">
             {project.description}
           </p>
 
@@ -115,7 +115,7 @@ function ScrapbookCard({
             ))}
           </div>
 
-          <span className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-gray-700 underline decoration-dotted underline-offset-2 transition-colors group-hover:text-gray-900 mt-auto pt-1 dark:text-[#bbb] dark:group-hover:text-white">
+          <span className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-gray-900 underline decoration-dotted underline-offset-2 transition-colors mt-auto pt-1 dark:text-white">
             View details
             <ArrowUpRight
               size={11}
@@ -142,13 +142,13 @@ function ProjectsSection({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
           {/* Header */}
           <div className="mb-14 sm:mb-20">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-500 uppercase mb-3">
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-3">
               my work 🛠️
             </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
               Projects
             </h1>
-            <p className="mt-4 text-sm sm:text-base text-gray-600 font-light max-w-lg leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               AI-powered apps, full-stack products, Web3 tools, and everything in between 👷🏽‍♂️
             </p>
           </div>
@@ -184,7 +184,6 @@ export default function Projects(): JSX.Element {
         {selectedIndex !== null && (
           <ProjectDetailPanel
             project={projects[selectedIndex]}
-            index={selectedIndex}
             onClose={() => setSelectedIndex(null)}
           />
         )}

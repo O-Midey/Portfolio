@@ -80,10 +80,10 @@ export default function HeroPortrait({
       </div>
       {showBadges && (
         <>
-          <span className="absolute bottom-[12%] left-1 z-20 rounded bg-term-bg/80 px-2.5 py-1.5 font-jet text-[10px] text-term-fg/80">
+          <span className="absolute bottom-0 left-0 z-20 bg-term-bg/80 px-2.5 py-1.5 font-jet text-[10px] text-term-fg/80">
             BASED IN NIGERIA 🇳🇬
           </span>
-          <span className="absolute bottom-[12%] right-1 z-20 rounded bg-term-bg/80 px-2.5 py-1.5 font-jet text-[10px] text-term-accent">
+          <span className="absolute bottom-0 right-0 z-20 bg-term-bg/80 px-2.5 py-1.5 font-jet text-[10px] text-term-accent">
             ● OPEN TO WORK
           </span>
         </>

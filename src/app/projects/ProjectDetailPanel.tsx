@@ -9,11 +9,9 @@ import { withProtocol, sameHost } from "../lib/url";
 
 export default function ProjectDetailPanel({
   project,
-  index,
   onClose,
 }: {
   project: Project;
-  index: number;
   onClose: () => void;
 }) {
   const [mounted, setMounted] = useState(false);
@@ -39,7 +37,6 @@ export default function ProjectDetailPanel({
   const code = withProtocol(project.codeLink);
   const showCode = !!code && !sameHost(code, live);
   const isCompleted = project.status === "Completed";
-  const num = String(index + 1).padStart(2, "0");
 
   return createPortal(
     <>
@@ -70,13 +67,13 @@ export default function ProjectDetailPanel({
 
         {/* Header */}
         <div className="flex shrink-0 items-center justify-between px-6 pb-4 pt-6">
-          <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-gray-400">
-            <span className="text-emerald-400">{num}</span> — Project
+          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-gray-900 dark:text-white">
+            <ArrowUpRight size={11} className="text-emerald-400" /> Project
           </span>
           <button
             onClick={onClose}
             aria-label="Close panel"
-            className="grid h-8 w-8 place-items-center rounded-full border border-gray-200 text-gray-500 transition-all duration-300 hover:rotate-90 hover:border-emerald-400/60 hover:text-gray-900 dark:border-[#2a2a2a] dark:text-[#999] dark:hover:text-white"
+            className="grid h-8 w-8 place-items-center rounded-full border border-gray-900 text-gray-900 transition-all duration-300 hover:rotate-90 hover:border-emerald-400/60 dark:border-white dark:text-white"
           >
             <X size={15} />
           </button>
@@ -113,13 +110,13 @@ export default function ProjectDetailPanel({
           </div>
 
           {/* Full description — no clamping */}
-          <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-[#bbb]">
+          <p className="mt-4 text-sm leading-relaxed text-gray-900 dark:text-white">
             {project.description}
           </p>
 
           {/* Tech */}
           <div className="mt-7">
-            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-400">
+            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900 dark:text-white">
               Built with
             </p>
             <div className="flex flex-wrap gap-2">
@@ -152,7 +149,7 @@ export default function ProjectDetailPanel({
               href={code}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 px-4 py-2.5 text-xs font-medium text-gray-700 transition-colors hover:border-emerald-400/60 hover:text-gray-900 dark:border-[#2a2a2a] dark:text-[#bbb] dark:hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-900 px-4 py-2.5 text-xs font-medium text-gray-900 transition-colors hover:border-emerald-400/60 dark:border-white dark:text-white"
             >
               <Github size={14} /> Code
             </a>

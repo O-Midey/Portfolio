@@ -44,19 +44,19 @@ export default function Contact() {
 
           {/* Header */}
           <div className="mb-14">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-600 dark:text-[#555] uppercase mb-3">contact 📩</p>
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-3">contact 📩</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Get in<br />
               <span className="text-gray-500 dark:text-[#999]">Touch.</span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-700 dark:text-[#888] font-light max-w-lg leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               Open to new opportunities and interesting projects ✨
             </p>
           </div>
 
           {/* Socials */}
           <div className="mb-14">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-600 dark:text-[#555] uppercase mb-6">find me on 🔍</p>
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">find me on 🔍</p>
             <div className="space-y-1">
               {socials.map(({ label, handle, href, icon: Icon }) => (
                 <a
@@ -67,11 +67,11 @@ export default function Contact() {
                   className="group flex items-center justify-between py-3.5 border-b border-gray-200 dark:border-[#2a2a2a] hover:border-gray-400 dark:hover:border-[#444] transition-colors duration-200"
                 >
                   <div className="flex items-center gap-4">
-                    <Icon className="w-4 h-4 text-gray-500 dark:text-[#999] group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200" />
+                    <Icon className="w-4 h-4 text-gray-900 dark:text-white transition-colors duration-200" />
                     <span className="text-sm font-medium text-gray-900 dark:text-white">{label}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-gray-600 dark:text-[#999] group-hover:text-gray-900 dark:group-hover:text-[#ccc] transition-colors duration-200">
+                    <span className="text-xs font-mono text-gray-900 dark:text-white transition-colors duration-200">
                       {handle}
                     </span>
                     {label === "Email" ? (
@@ -82,10 +82,10 @@ export default function Contact() {
                       >
                         {copied
                           ? <Check className="w-3.5 h-3.5 text-emerald-500" />
-                          : <Copy className="w-3.5 h-3.5 text-gray-500 dark:text-[#666]" />}
+                          : <Copy className="w-3.5 h-3.5 text-gray-900 dark:text-white" />}
                       </button>
                     ) : (
-                      <ArrowRight className="w-3.5 h-3.5 text-gray-400 dark:text-gray-600 group-hover:text-gray-700 dark:group-hover:text-[#ccc] group-hover:translate-x-0.5 transition-all duration-200" />
+                      <ArrowRight className="w-3.5 h-3.5 text-gray-900 dark:text-white group-hover:translate-x-0.5 transition-all duration-200" />
                     )}
                   </div>
                 </a>
@@ -95,29 +95,29 @@ export default function Contact() {
 
           {/* Form — terminal window */}
           <div className="mb-14">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-600 dark:text-[#555] uppercase mb-6">send a message ✍️</p>
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">send a message ✍️</p>
 
-            <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-[#2a2a2a] shadow-2xl">
+            <div className="rounded-xl overflow-hidden border border-gray-900 dark:border-white shadow-2xl">
               {/* Title bar */}
               <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-[#2a2a2a]">
                 <span className="w-3 h-3 rounded-full bg-rose-400" />
                 <span className="w-3 h-3 rounded-full bg-amber-400" />
                 <span className="w-3 h-3 rounded-full bg-emerald-400" />
-                <span className="ml-3 text-xs font-mono text-gray-400 dark:text-[#555]">omotosho@portfolio ~ contact.sh</span>
+                <span className="ml-3 text-xs font-mono text-gray-900 dark:text-white">omotosho@portfolio ~ contact.sh</span>
               </div>
 
               {/* Content */}
               <div className="bg-white dark:bg-[#0d0d0d] p-6">
                 {sent ? (
                   <p className="text-sm font-mono text-emerald-600 dark:text-emerald-400 py-4">
-                    <span className="text-gray-400 dark:text-[#555]">$</span> message sent — opening your email client ✅
+                    <span className="text-gray-900 dark:text-white">$</span> message sent — opening your email client ✅
                   </p>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <p className="text-xs font-mono text-emerald-500 mb-1">{`// drop me a line — I'll get back to you`}</p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-gray-600 dark:text-[#999] uppercase tracking-widest mb-2">Name</label>
+                    <label className="block text-xs font-mono text-gray-900 dark:text-white uppercase tracking-widest mb-2">Name</label>
                     <input
                       type="text"
                       required
@@ -128,7 +128,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-mono text-gray-600 dark:text-[#999] uppercase tracking-widest mb-2">Email</label>
+                    <label className="block text-xs font-mono text-gray-900 dark:text-white uppercase tracking-widest mb-2">Email</label>
                     <input
                       type="email"
                       required
@@ -140,7 +140,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-mono text-gray-600 dark:text-[#999] uppercase tracking-widest mb-2">Message</label>
+                  <label className="block text-xs font-mono text-gray-900 dark:text-white uppercase tracking-widest mb-2">Message</label>
                   <textarea
                     required
                     rows={5}

@@ -61,14 +61,14 @@ export default function MobileProjectSheet({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-term-fg/10 px-4.5 py-3.5">
-          <span className="font-jet text-[11px] text-term-fg/50">
+          <span className="font-jet text-[11px] text-term-fg">
             omotosho@portfolio ~ {slug}
           </span>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close details"
-            className="relative h-8 w-8 rounded-full border border-term-fg/20 transition-opacity active:opacity-60"
+            className="relative h-8 w-8 rounded-full border border-term-fg transition-opacity active:opacity-60"
           >
             <span className="absolute left-[9px] top-[15px] h-[1.5px] w-3.5 rotate-45 bg-term-fg" />
             <span className="absolute left-[9px] top-[15px] h-[1.5px] w-3.5 -rotate-45 bg-term-fg" />
@@ -94,7 +94,7 @@ export default function MobileProjectSheet({
               </h2>
               <StatusPill status={project.status} />
             </div>
-            <p className="text-[15px] leading-relaxed text-term-fg/65">
+            <p className="text-[15px] leading-relaxed text-term-fg">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-1.5">
@@ -123,7 +123,7 @@ export default function MobileProjectSheet({
                   href={code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center rounded-full border border-term-fg/25 py-3.5 font-jet text-[12.5px] font-semibold tracking-[0.1em] text-term-fg/85 transition-opacity active:opacity-60"
+                  className="flex flex-1 items-center justify-center rounded-full border border-term-fg py-3.5 font-jet text-[12.5px] font-semibold tracking-[0.1em] text-term-fg transition-opacity active:opacity-60"
                 >
                   GITHUB ↗
                 </a>

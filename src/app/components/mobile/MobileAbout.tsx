@@ -9,7 +9,7 @@ export default function MobileAbout() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-3.5 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
           ABOUT ME
         </p>
         <h1 className="text-[41px] font-bold leading-[1.12] tracking-[-0.02em]">
@@ -25,7 +25,7 @@ export default function MobileAbout() {
             {aboutSections.map((section, i) => (
               <div key={section.heading} className={i > 0 ? "mt-3.5" : ""}>
                 <p className="text-term-accent">{`// ${section.heading}`}</p>
-                <p className="text-term-fg/75">
+                <p className="text-term-fg">
                   {section.body}
                   {section.link && (
                     <>
@@ -49,14 +49,14 @@ export default function MobileAbout() {
 
       {/* ── Tech stack ── */}
       <section className="flex flex-col gap-4 px-5 pt-11">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg/50">
+        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
           TECH STACK
         </p>
         <div className="flex flex-wrap gap-2 font-jet text-[11.5px]">
           {skills.map((skill) => (
             <span
               key={skill}
-              className="rounded-full border border-term-fg/20 bg-term-fg/5 px-3 py-[7px] text-term-fg/75 transition-opacity active:opacity-70"
+              className="rounded-full border border-term-fg bg-term-fg/5 px-3 py-[7px] text-term-fg transition-opacity active:opacity-70"
             >
               {skill}
             </span>
@@ -79,7 +79,7 @@ export default function MobileAbout() {
           </Link>
           <Link
             href="/projects"
-            className="flex flex-1 items-center justify-center rounded-full border border-term-fg/25 py-[15px] font-jet text-xs tracking-[0.12em] text-term-fg/80 transition-opacity active:opacity-60"
+            className="flex flex-1 items-center justify-center rounded-full border border-term-fg py-[15px] font-jet text-xs tracking-[0.12em] text-term-fg transition-opacity active:opacity-60"
           >
             MY WORK →
           </Link>

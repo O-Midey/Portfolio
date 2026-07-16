@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import { projects } from "../../data/projects";
@@ -7,6 +7,7 @@ import { heroTitles } from "../../data/hero";
 import { marqueeSkills } from "../../data/skills";
 import { SITE_HANDLE } from "../../data/socials";
 import { useTypewriter } from "../../hooks/useTypewriter";
+import { useScramble } from "../../hooks/useScramble";
 import HeroPortrait from "../HeroPortrait";
 import MobileProjectCard from "./MobileProjectCard";
 import MobileProjectSheet from "./MobileProjectSheet";
@@ -17,16 +18,24 @@ const SELECTED_COUNT = 2;
 export default function MobileHome() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [marqueePaused, setMarqueePaused] = useState(false);
+  const [scrambled, setScrambled] = useState(false);
   const title = useTypewriter(heroTitles);
+  const line1 = useScramble("Omotosho", scrambled);
+  const line2 = useScramble("David A.", scrambled);
+
+  useEffect(() => {
+    const t = setTimeout(() => setScrambled(true), 400);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col overflow-x-clip bg-term-bg text-term-fg">
       {/* ── Hero ── */}
       <section className="flex flex-col gap-5 px-5 pt-12">
         <p className="font-jet text-xs tracking-[0.3em]">HEY, I&apos;M 👋</p>
-        <h1 className="font-jet text-[clamp(44px,13vw,57px)] font-extrabold leading-[1.02] tracking-[-0.04em]">
-          Omotosho
-          <span className="block text-term-muted">David A.</span>
+        <h1 className="font-jet text-[clamp(44px,13vw,57px)] font-extrabold leading-[1.02] tracking-[-0.04em] select-none">
+          {line1}
+          <span className="block text-term-muted">{line2}</span>
         </h1>
         <div className="flex items-center gap-3 my-6">
           <span className="h-px flex-1 bg-term-fg/20" />
@@ -42,10 +51,9 @@ export default function MobileHome() {
           <HeroPortrait showBadges className="relative aspect-[4/5] w-full" />
         </div>
         <p className="text-[17px] leading-[1.68] text-center italic">
-          I build products end-to-end —{" "}
           <strong className="font-semibold text-term-fg">
-            shipping real apps across the full stack, on-chain, and with AI in
-            the loop.
+            I build products end-to-end — shipping real apps across the full
+            stack, on-chain, and with AI in the loop.
           </strong>
         </p>
         <div className="flex gap-2.5">
@@ -58,7 +66,7 @@ export default function MobileHome() {
           <Link
             href="/contact"
             aria-label="Contact me"
-            className="flex w-[54px] items-center justify-center rounded-full border border-term-fg/25 transition-opacity active:opacity-60"
+            className="flex w-[54px] items-center justify-center rounded-full border border-term-fg transition-opacity active:opacity-60"
           >
             <svg
               width="19"
@@ -85,7 +93,7 @@ export default function MobileHome() {
         aria-label={
           marqueePaused ? "Resume skills ticker" : "Pause skills ticker"
         }
-        className="overflow-hidden whitespace-nowrap border-y border-term-fg/10 py-4"
+        className="mt-8 overflow-hidden whitespace-nowrap border-y border-term-fg py-4"
       >
         <div
           className="inline-flex animate-marquee gap-[26px] pr-[26px] font-jet text-[12.5px] text-term-accent"
@@ -122,7 +130,7 @@ export default function MobileHome() {
           </div>
           <Link
             href="/projects"
-            className="pb-1 font-jet text-[11px] text-term-fg/55 transition-opacity active:opacity-60"
+            className="pb-1 font-jet text-[11px] text-term-fg transition-opacity active:opacity-60"
           >
             ALL →
           </Link>
@@ -140,7 +148,7 @@ export default function MobileHome() {
           href="/projects"
           className="flex items-center justify-center gap-2 rounded-full border border-term-fg py-[15px] font-jet text-xs tracking-[0.12em] text-term-fg transition-opacity active:opacity-60"
         >
-          ALL PROJECTS ({String(projects.length).padStart(2, "0")}) →
+          ALL PROJECTS →
         </Link>
       </section>
 
@@ -159,7 +167,7 @@ export default function MobileHome() {
         >
           SEND A MESSAGE ✍️
         </Link>
-        <div className="flex items-center justify-between pt-2 font-jet text-[11px] text-term-fg">
+        <div className="flex flex-col gap-3 pt-2 font-jet text-[11px] text-term-fg">
           <span>
             © {new Date().getFullYear()} {SITE_HANDLE}
           </span>
