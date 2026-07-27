@@ -2,6 +2,26 @@ import { Project } from "../types/types";
 
 export const projects: Project[] = [
   {
+    title: "Folio",
+    description:
+      "A private, multi-user budget ledger PWA with a leaf-green paper-and-ink aesthetic. Budgets and income resolve through a template-plus-monthly-override model — editing a category updates its recurring default while past months keep their exact historical values, with carry-forward for anything left unset. Recurring expenses auto-log on the 1st, a hand-written service worker caches the app shell for offline viewing, and every mutation is a Server Action wrapped in a typed error contract with IDOR-safe, userId-scoped repositories throughout.",
+    tech: [
+      "Next.JS",
+      "TypeScript",
+      "Prisma",
+      "Postgres",
+      "Clerk",
+      "Tailwind CSS",
+      "PWA",
+    ],
+    status: "In Progress",
+    categories: ["FULL-STACK"],
+    liveLink: "",
+    codeLink: "https://github.com/O-Midey/folio",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1785176347/a8rjcvtyniys66x6fh2n.png",
+  },
+  {
     title: "Beacon",
     description:
       "A local-first CLI (npm: beacon-bip) that turns git commits into build-in-public drafts for Twitter/X, LinkedIn, dev.to, Reddit, and Medium. A post-commit hook runs a five-stage pipeline — capture → regex secret scanner → LLM significance scoring → voice-matched drafting → atomic JSON queue — with the scanner guaranteed to run before any model call, so the LLM only ever sees a redacted, truncated diff. A provider abstraction supports the Anthropic SDK or any OpenAI-compatible endpoint (including fully-offline Ollama), with every draft Zod-validated against per-platform schemas. Nothing is ever auto-posted: approving a draft copies it to the clipboard, and the whole footprint is two JSON files under ~/.beacon.",
