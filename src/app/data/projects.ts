@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: "Folio",
     description:
-      "A private, multi-user budget ledger PWA with a leaf-green paper-and-ink aesthetic. Budgets and income resolve through a template-plus-monthly-override model — editing a category updates its recurring default while past months keep their exact historical values, with carry-forward for anything left unset. Recurring expenses auto-log on the 1st, a hand-written service worker caches the app shell for offline viewing, and every mutation is a Server Action wrapped in a typed error contract with IDOR-safe, userId-scoped repositories throughout.",
+      "A full multi-tenant budgeting SaaS rebuilt from a single-user HTML prototype into a production-grade PWA — real accounts, private per-user ledgers, and a hand-built leaf-green design system with a custom logo, animated hero, and native-app navigation. Budgets and income resolve through a template-plus-monthly-override model, so editing a category updates its recurring default while past months keep their exact historical values. Beyond the core ledger: recurring expenses that auto-log monthly, savings goals with contribution tracking, CSV export, month-over-month spend comparison, per-category settlement tracking, and swipe-to-delete/keyboard-shortcut UX. Every mutation runs through a layered schema → repository → service → Server Action pipeline with IDOR-safe, userId-scoped queries and a typed error contract end to end.",
     tech: [
       "Next.JS",
       "TypeScript",
@@ -16,7 +16,7 @@ export const projects: Project[] = [
     ],
     status: "In Progress",
     categories: ["FULL-STACK"],
-    liveLink: "",
+    liveLink: "https://folio-azure-omega.vercel.app",
     codeLink: "https://github.com/O-Midey/folio",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1785176347/a8rjcvtyniys66x6fh2n.png",
