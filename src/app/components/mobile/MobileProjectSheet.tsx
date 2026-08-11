@@ -89,24 +89,17 @@ export default function MobileProjectSheet({
           )}
           <div className="flex flex-col gap-3 px-5 pb-6 pt-5">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="text-2xl font-bold text-term-fg">
+              <h2 className="font-jet text-2xl font-bold text-term-fg">
                 {project.title}
               </h2>
               <StatusPill status={project.status} />
             </div>
-            <p className="text-[15px] leading-relaxed text-term-fg">
+            <p className="font-jet text-[15px] leading-relaxed text-term-fg">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-1.5">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded border border-term-accent/25 bg-term-accent/10 px-2.5 py-1 font-jet text-[11px] font-medium text-term-accent"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <p className="font-jet text-[11px] font-medium text-term-muted mt-1 leading-relaxed">
+              {project.tech.join(' · ')}
+            </p>
             <div className="flex gap-2.5 pt-1.5">
               {live && (
                 <a

@@ -95,7 +95,7 @@ export default function ProjectDetailPanel({
 
           {/* Title + status */}
           <div className="mt-6 flex items-start justify-between gap-3">
-            <h2 className="text-2xl font-black leading-tight tracking-tight text-gray-900 dark:text-white">
+            <h2 className="font-mono text-2xl font-black leading-tight tracking-tight text-gray-900 dark:text-white">
               {project.title}
             </h2>
             <span
@@ -110,7 +110,7 @@ export default function ProjectDetailPanel({
           </div>
 
           {/* Full description — no clamping */}
-          <p className="mt-4 text-sm leading-relaxed text-gray-900 dark:text-white">
+          <p className="mt-4 font-mono text-sm leading-relaxed text-gray-900 dark:text-white">
             {project.description}
           </p>
 
@@ -119,16 +119,9 @@ export default function ProjectDetailPanel({
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900 dark:text-white">
               Built with
             </p>
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded border border-emerald-200 bg-emerald-100 px-2.5 py-1 font-mono text-[11px] font-medium text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-[#555] mt-2 leading-relaxed">
+              {project.tech.join(' · ')}
+            </p>
           </div>
         </div>
 
@@ -139,7 +132,7 @@ export default function ProjectDetailPanel({
               href={live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gray-900 px-4 py-2.5 text-xs font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#111] dark:bg-white dark:text-black text-white px-4 py-2.5 font-mono text-xs tracking-widest uppercase transition-all duration-300 hover:bg-[#333] dark:hover:bg-gray-200 hover:scale-[1.02]"
             >
               Visit Live Site <ArrowUpRight size={14} />
             </a>
@@ -149,7 +142,7 @@ export default function ProjectDetailPanel({
               href={code}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-900 px-4 py-2.5 text-xs font-medium text-gray-900 transition-colors hover:border-emerald-400/60 dark:border-white dark:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-900 dark:border-white px-4 py-2.5 font-mono text-xs tracking-widest uppercase text-gray-900 dark:text-white transition-all duration-300 hover:bg-gray-50 dark:hover:bg-[#1a1a1a]"
             >
               <Github size={14} /> Code
             </a>

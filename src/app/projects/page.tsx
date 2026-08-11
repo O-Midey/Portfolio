@@ -85,7 +85,7 @@ function ScrapbookCard({
         {/* Content */}
         <div className="px-1 pt-1 flex flex-col gap-2 flex-1">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="font-bold text-gray-900 dark:text-white text-base leading-tight">
+            <h3 className="font-mono font-bold text-gray-900 dark:text-white text-base leading-tight">
               {project.title}
             </h3>
             <span
@@ -99,26 +99,19 @@ function ScrapbookCard({
             </span>
           </div>
 
-          <p className="text-gray-900 dark:text-white text-xs leading-relaxed line-clamp-3">
+          <p className="font-mono text-gray-900 dark:text-white text-xs leading-relaxed line-clamp-3">
             {project.description}
           </p>
 
-          {/* Tech tags — look like stickers */}
-          <div className="flex flex-wrap gap-1.5">
-            {project.tech.map((tech) => (
-              <span
-                key={tech}
-                className="rounded border border-emerald-200 bg-emerald-100 px-2 py-0.5 font-mono text-[11px] font-medium text-emerald-700 shadow-sm dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+          {/* Tech tags */}
+          <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-[#555] mt-2 leading-relaxed">
+            {project.tech.join(' · ')}
+          </p>
 
-          <span className="inline-flex w-fit items-center gap-1.5 text-xs font-medium text-gray-900 underline decoration-dotted underline-offset-2 transition-colors mt-auto pt-1 dark:text-white">
+          <span className="inline-flex w-fit items-center gap-1 font-mono text-[10px] tracking-widest uppercase text-gray-900 dark:text-white mt-auto pt-1 transition-colors">
             View details
             <ArrowUpRight
-              size={11}
+              size={10}
               className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
           </span>

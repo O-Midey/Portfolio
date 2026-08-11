@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
 type Filter = "ALL" | LibraryCategory;
 
-const FILTERS: Filter[] = ["ALL", "WEB-DEV", "WEB3", "AI", "BACKEND", "GENERAL"];
+const FILTERS: Filter[] = ["ALL", "WEB-DEV", "WEB3/BLOCKCHAIN", "AI", "BACKEND", "GENERAL"];
 
 export default function MobileLibrary() {
   const [filter, setFilter] = useState<Filter>("ALL");
@@ -78,16 +78,9 @@ export default function MobileLibrary() {
                 className="mt-0.5 shrink-0 text-term-fg"
               />
             </div>
-            <div className="flex flex-wrap gap-1.5">
-              {resource.concepts.map((concept) => (
-                <span
-                  key={concept}
-                  className="rounded border border-term-accent/25 bg-term-accent/10 px-2 py-0.5 font-jet text-[10px] font-medium text-term-accent"
-                >
-                  {concept}
-                </span>
-              ))}
-            </div>
+            <p className="font-jet text-[10px] font-medium text-term-muted mt-1 leading-relaxed">
+              {resource.concepts.join(' · ')}
+            </p>
           </a>
         ))}
         {visibleResources.length === 0 && (

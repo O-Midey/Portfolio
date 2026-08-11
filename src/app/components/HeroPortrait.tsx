@@ -81,7 +81,7 @@ export default function HeroPortrait({
       {showBadges && (
         <>
           <span className="absolute bottom-0 left-0 z-20 bg-term-bg/80 px-2.5 py-1.5 font-jet text-[10px] text-term-fg/80">
-            BASED IN NIGERIA 🇳🇬
+            LAGOS, NIGERIA 🇳🇬
           </span>
           <span className="absolute bottom-0 right-0 z-20 bg-term-bg/80 px-2.5 py-1.5 font-jet text-[10px] text-term-accent">
             ● OPEN TO WORK

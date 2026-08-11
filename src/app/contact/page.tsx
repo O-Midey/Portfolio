@@ -152,7 +152,7 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111] dark:bg-white dark:text-black text-white text-sm font-medium rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-200 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111] dark:bg-white dark:text-black text-white font-mono text-xs tracking-widest uppercase rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 hover:scale-105"
                 >
                   <Send className="w-3.5 h-3.5" />
                   Send Message

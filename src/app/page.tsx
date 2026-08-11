@@ -88,11 +88,9 @@ export default function HomePage() {
               <span className="flex-1 h-px bg-gray-500 dark:bg-[#333]" />
             </div>
 
-            <p className="text-sm sm:text-base text-gray-900 dark:text-white font-light leading-relaxed">
-              <span className="text-gray-900 dark:text-white font-medium">
-                I build products end-to-end — shipping real apps across the full
-                stack, on-chain, and with AI in the loop.
-              </span>
+            <p className="text-sm sm:text-base text-gray-900 dark:text-white font-light leading-relaxed italic">
+              I build products end-to-end — shipping real apps across the full
+              stack, on-chain, and with AI in the loop.
             </p>
 
             <div className="w-full max-w-xs h-px bg-gray-100 dark:bg-[#222]" />

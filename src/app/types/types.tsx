@@ -27,7 +27,7 @@ export interface Project {
 
 export type LibraryCategory =
   | "WEB-DEV"
-  | "WEB3"
+| "WEB3/BLOCKCHAIN"
   | "AI"
   | "BACKEND"
   | "GENERAL";

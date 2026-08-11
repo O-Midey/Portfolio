@@ -8,28 +8,27 @@ export type AboutSection = {
 export const aboutSections: AboutSection[] = [
   {
     heading: "Who I am",
-    body: "I'm Omotosho David Ayomide — a fullstack, AI, and Web3 engineer based in Lagos. I build systems end-to-end: database to UI, smart contract to agent.",
+    body: "I'm Omotosho David Ayomide, a full-stack, AI, and Web3 engineer based in Lagos. I build production-ready products across the entire stack—from interfaces and infrastructure to AI agents and smart contracts.",
   },
   {
-    heading: "What I do",
-    body: "I specialise in building web apps, AI-powered tools, and Web3 products. Think marketplaces, dashboards, Ethereum wallets, LLM agents, and smart contracts — shipped end-to-end with React, Node.js, Postgres, Solidity, Python and Golang.",
+    heading: "What I build",
+    body: "I build marketplaces, dashboards, wallets, AI-powered applications, and developer tools. My work spans React and Next.js, backend systems in Node.js and Go, PostgreSQL, Solidity, and modern AI infrastructure.",
   },
   {
     heading: "Building with AI",
-    body: "I build the system around the model — LLM agents that call tools, reason step-by-step, and ship with real guardrails. In Ledgr, my agentic crypto-wallet OS (Next.js, Vercel AI SDK, viem, Sepolia), every action runs through a security supervisor and gets simulated before it touches the chain. I also maintain streamkit, a published npm library for vendor-agnostic AI streaming UI.",
+    body: "I build the systems around the model: tool orchestration, structured outputs, memory, validation, observability, and safety controls. In Ledgr, an agentic crypto-wallet OS, every proposed transaction passes through a security supervisor and is simulated before reaching the chain. I also maintain streamkit, a vendor-agnostic npm library for streaming AI interfaces.",
   },
   {
     heading: "Shipping in public",
-    body: "I built Beacon, a git-hook tool that drafts platform-specific social posts straight from your commits — so build-in-public stops being a chore you forget to do.",
+    body: "I built Beacon, a Git-powered tool that turns commits into platform-specific social posts—making it easier for developers to share their work consistently.",
   },
   {
     heading: "Why Web3",
-    body: "Web3 is one of the few spaces where software can genuinely shift how people own and exchange value. That's the kind of work I want to be part of.",
+    body: "Web3 makes ownership and value programmable. I'm interested in building products that make those capabilities secure, understandable, and useful to real people.",
   },
-
   {
     heading: "Outside of code",
-    body: "I'm vibing to Afrobeats 🎶✨ — check out my playlist on Spotify.",
+    body: "Usually listening to Afrobeats. Check out what's currently in rotation.",
     link: {
       label: "Open playlist →",
       href: "https://open.spotify.com/user/31jibew2j4bcfy3edf6ezxorcbxu/playlists",

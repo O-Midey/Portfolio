@@ -28,14 +28,14 @@ export const libraryResources: LibraryResource[] = [
     provider: "Alchemy",
     concepts: ["Solidity", "Smart Contracts", "EVM", "Ethereum"],
     link: "https://www.alchemy.com/university",
-    category: "WEB3",
+    category: "WEB3/BLOCKCHAIN",
   },
   {
     title: "Cyfrin Updraft — Solidity & Smart Contract Security",
     provider: "Cyfrin",
     concepts: ["Solidity", "Foundry", "Smart Contract Security", "Auditing"],
     link: "https://updraft.cyfrin.io",
-    category: "WEB3",
+    category: "WEB3/BLOCKCHAIN",
   },
   {
     title: "AI Engineer Path",
@@ -70,14 +70,14 @@ export const libraryResources: LibraryResource[] = [
     provider: "Cosmos",
     concepts: ["Cosmos SDK", "IBC", "Tendermint", "Blockchain Modules"],
     link: "https://docs.cosmos.network",
-    category: "WEB3",
+    category: "WEB3/BLOCKCHAIN",
   },
   {
     title: "0xLearnBlockchain",
     provider: "YouTube",
     concepts: ["Blockchain Dev", "Solidity", "Web3 Tutorials"],
     link: "https://www.youtube.com/@0xlearnblockchain",
-    category: "WEB3",
+    category: "WEB3/BLOCKCHAIN",
   },
   {
     title: "roadmap.sh",

@@ -119,13 +119,13 @@ export default function AboutPage() {
           <div className="flex gap-3">
             <a
               href="mailto:talk2adeoluwa2310@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111] dark:bg-white dark:text-black text-white text-sm font-medium rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111] dark:bg-white dark:text-black text-white font-mono text-xs tracking-widest uppercase rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 hover:scale-105"
             >
               <MailOpen className="w-3.5 h-3.5" /> Get in touch
             </a>
             <a
               href="/projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-900 dark:border-white text-gray-900 dark:text-white text-sm font-medium rounded-full hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-all duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-900 dark:border-white text-gray-900 dark:text-white font-mono text-xs tracking-widest uppercase rounded-full hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-all duration-300"
             >
               My work <ArrowRight className="w-3.5 h-3.5" />
             </a>

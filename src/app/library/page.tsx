@@ -32,16 +32,9 @@ function ResourceCard({ resource }: { resource: LibraryResource }) {
         />
       </div>
 
-      <div className="flex flex-wrap gap-1.5">
-        {resource.concepts.map((concept) => (
-          <span
-            key={concept}
-            className="rounded border border-emerald-200 bg-emerald-100 px-2 py-0.5 font-mono text-[11px] font-medium text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300"
-          >
-            {concept}
-          </span>
-        ))}
-      </div>
+      <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-[#555] mt-2 leading-relaxed">
+        {resource.concepts.join(' · ')}
+      </p>
     </a>
   );
 }
