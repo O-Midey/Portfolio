@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 
 type Filter = "ALL" | LibraryCategory;
 
-const FILTERS: Filter[] = ["ALL", "WEB-DEV", "WEB3", "AI", "BACKEND", "GENERAL"];
+const FILTERS: Filter[] = ["ALL", "WEB-DEV", "WEB3/BLOCKCHAIN", "AI", "BACKEND", "GENERAL"];
 
 function ResourceCard({ resource }: { resource: LibraryResource }) {
   return (
