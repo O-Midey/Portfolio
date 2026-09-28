@@ -1,9 +1,13 @@
 import "./globals.css";
 import Layout from "./components/Layout";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 export const metadata = {
   title: "Omotosho Ayomide ",
@@ -31,10 +35,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} bg-gray-200/10`}
+      className={`${geist.variable} ${geistMono.variable} bg-gray-200/10`}
       suppressHydrationWarning
     >
-      <body className="">
+      <body className="font-sans">
         <Layout>{children}</Layout>
         <Analytics />
       </body>

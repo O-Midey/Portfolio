@@ -6,6 +6,9 @@ import sections from "../data/sections";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
+import { useThemeWipe } from "./ThemeWipeProvider";
+
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function ScrambleLabel({ label }: { label: string }) {
   const [output, setOutput] = useState(label);
@@ -37,7 +40,7 @@ function ScrambleLabel({ label }: { label: string }) {
 
   return (
     <span
-      className="text-sm font-mono tracking-wide"
+      className="text-sm font-sans tracking-wide"
       onMouseEnter={scramble}
       onMouseLeave={reset}
     >
@@ -46,9 +49,7 @@ function ScrambleLabel({ label }: { label: string }) {
   );
 }
 
-import { useThemeWipe } from "./ThemeWipeProvider";
-
-const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
+export default function Sidebar() {
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
   const { triggerWipe } = useThemeWipe();
@@ -61,7 +62,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
     <div
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
-      className={`hidden md:flex fixed top-0 left-0 h-screen flex-col bg-[#fafafa]/80 dark:bg-[#111]/80 backdrop-blur-sm border-r border-gray-100/50 dark:border-[#1a1a1a]/50 z-40 transition-all duration-300 ease-in-out overflow-hidden select-none ${expanded ? "w-52 px-4" : "w-14 px-2"}`}
+      className={`hidden md:flex fixed top-0 left-0 h-screen flex-col bg-[#fafafa]/80 dark:bg-[#111]/80 backdrop-blur-sm border-r border-gray-100/50 dark:border-[#1a1a1a]/50 z-40 transition-all duration-300 ease-in-out overflow-hidden select-none font-sans ${expanded ? "w-52 px-4" : "w-14 px-2"}`}
     >
       {/* Animated gradient border on right edge */}
       <div className="absolute right-0 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-emerald-400/40 to-transparent animate-[sidebar-glow_3s_ease-in-out_infinite]" />
@@ -70,7 +71,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
       <div
         className={`pt-10 mb-8 transition-all duration-200 ${expanded ? "opacity-100 px-3" : "opacity-0 px-0 h-0 mb-0 overflow-hidden"}`}
       >
-        <p className="text-[9px] font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-1">
+        <p className="text-[9px] font-sans tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-1">
           Portfolio
         </p>
         <p className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
@@ -95,7 +96,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
           return (
             <Link key={section.id} href={section.href}>
               <div
-                className={`relative flex items-center gap-3 py-2.5 rounded-lg transition-all duration-200 ${expanded ? "px-3" : "px-2 justify-center"} ${isActive ? "text-gray-900 dark:text-white font-semibold" : "text-gray-500 dark:text-[#777] hover:text-gray-900 dark:hover:text-white"}`}
+                className={`relative flex items-center gap-3 py-2.5 rounded-lg transition-all duration-200 ${expanded ? "px-3" : "px-2 justify-center"} ${isActive ? "text-gray-900 dark:text-white font-semibold" : "text-gray-500 dark:text-term-muted hover:text-gray-900 dark:hover:text-white"}`}
               >
                 {/* Active indicator dot */}
                 {isActive && (
@@ -105,7 +106,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
                 {/* Number prefix — only when expanded */}
                 {expanded && (
                   <span
-                    className={`text-[9px] font-mono tabular-nums ${isActive ? "text-emerald-400" : "text-gray-400 dark:text-[#555]"}`}
+                    className={`text-[9px] font-sans tabular-nums ${isActive ? "text-emerald-400" : "text-gray-400 dark:text-term-muted"}`}
                   >
                     {num}
                   </span>
@@ -144,7 +145,7 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";export default function Sidebar() {
               />
             )}
             {expanded && (
-              <span className="text-[10px] font-mono tracking-widest uppercase">
+              <span className="text-[10px] font-sans tracking-widest uppercase">
                 {resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
               </span>
             )}

@@ -16,7 +16,7 @@ export default function SocialShortLinks({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-term-fg font-jet text-[10.5px] uppercase transition-opacity active:opacity-60"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-term-fg font-mono text-[10.5px] uppercase transition-opacity active:opacity-60"
         >
           {s.short}
         </a>

@@ -6,6 +6,8 @@ import Image from "next/image";
 import { X, Github, ArrowUpRight } from "lucide-react";
 import { Project } from "../types/types";
 import { withProtocol, sameHost } from "../lib/url";
+import { ScribbledText, scribbleColorFor } from "../components/Scribble";
+import { projectStatusStyles } from "../components/projectStatusStyles";
 
 export default function ProjectDetailPanel({
   project,
@@ -36,7 +38,6 @@ export default function ProjectDetailPanel({
   const live = withProtocol(project.liveLink);
   const code = withProtocol(project.codeLink);
   const showCode = !!code && !sameHost(code, live);
-  const isCompleted = project.status === "Completed";
 
   return createPortal(
     <>
@@ -87,7 +88,7 @@ export default function ProjectDetailPanel({
                 src={project.image.trim()}
                 alt={project.title}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 640px) 100vw, 500px"
               />
             </div>
@@ -95,22 +96,18 @@ export default function ProjectDetailPanel({
 
           {/* Title + status */}
           <div className="mt-6 flex items-start justify-between gap-3">
-            <h2 className="font-mono text-2xl font-black leading-tight tracking-tight text-gray-900 dark:text-white">
-              {project.title}
+            <h2 className="font-sans text-2xl font-black leading-tight tracking-tight text-gray-900 dark:text-white">
+              <ScribbledText color={scribbleColorFor(project.title)}>{project.title}</ScribbledText>
             </h2>
             <span
-              className={`mt-1 shrink-0 rounded-full px-2.5 py-1 text-[10px] font-medium ${
-                isCompleted
-                  ? "bg-green-100 text-green-700"
-                  : "bg-amber-100 text-amber-700"
-              }`}
+              className={`mt-1 shrink-0 rounded-full px-2.5 py-1 text-[10px] font-medium ${projectStatusStyles(project.status)}`}
             >
               {project.status}
             </span>
           </div>
 
           {/* Full description — no clamping */}
-          <p className="mt-4 font-mono text-sm leading-relaxed text-gray-900 dark:text-white">
+          <p className="mt-4 font-sans text-sm leading-relaxed text-gray-900 dark:text-white">
             {project.description}
           </p>
 
@@ -119,7 +116,7 @@ export default function ProjectDetailPanel({
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900 dark:text-white">
               Built with
             </p>
-            <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-[#555] mt-2 leading-relaxed">
+            <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-term-muted mt-2 leading-relaxed">
               {project.tech.join(' · ')}
             </p>
           </div>

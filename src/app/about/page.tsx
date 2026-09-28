@@ -1,21 +1,25 @@
 "use client";
 import { useEffect, useState } from "react";
-import { skillGroups } from "../data/skills";
+import { skills } from "../data/skills";
+import TechBubbleStack from "../components/TechBubbleStack";
+import Scribble, { ScribbledText } from "../components/Scribble";
 import { aboutSections as SECTIONS } from "../data/about";
 import MobileAbout from "../components/mobile/MobileAbout";
 import { MailOpen, ArrowRight } from "lucide-react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function AboutPage() {
   const [visible, setVisible] = useState(0);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
-    if (visible >= SECTIONS.length) return;
+    if (!isDesktop || visible >= SECTIONS.length) return;
     const t = setTimeout(
       () => setVisible((v) => v + 1),
       visible === 0 ? 300 : 600,
     );
     return () => clearTimeout(t);
-  }, [visible]);
+  }, [isDesktop, visible]);
 
   return (
     <>
@@ -32,7 +36,7 @@ export default function AboutPage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
             Full-Stack, AI &<br />
             <span className="text-gray-400 dark:text-[#999]">
-              Blockchain Dev.
+              Blockchain <ScribbledText color="pink">Dev.</ScribbledText>
             </span>
           </h1>
         </div>
@@ -57,7 +61,7 @@ export default function AboutPage() {
                 className={`transition-all duration-500 ${i < visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
               >
                 <p className="text-xs font-mono text-emerald-500 mb-1">{`// ${s.heading}`}</p>
-                <p className="text-sm text-gray-900 dark:text-white leading-relaxed font-mono">
+                <p className="text-sm text-gray-900 dark:text-white leading-relaxed font-sans">
                   {s.body}
                 </p>
                 {s.link && (
@@ -82,28 +86,11 @@ export default function AboutPage() {
 
         {/* Skills */}
         <div className="mb-12">
-          <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">
+          <p className="flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">
             tech stack 🛠️
+            <Scribble variant="spark" color="amber" className="size-5 rotate-12" />
           </p>
-          <div className="space-y-5">
-            {skillGroups.map((group) => (
-              <div key={group.label} className="flex gap-4 items-start">
-                <p className="text-xs text-gray-900 dark:text-white font-mono w-20 shrink-0 pt-1.5">
-                  {group.label}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-gray-100 dark:bg-[#1a1a1a] border border-gray-900 dark:border-white text-gray-900 dark:text-white text-xs font-mono rounded-full hover:bg-gray-200 dark:hover:bg-[#222] transition-colors duration-200 cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <TechBubbleStack skills={skills} />
         </div>
 
         {/* CTA */}
@@ -113,7 +100,7 @@ export default function AboutPage() {
               what&apos;s next
             </p>
             <p className="text-gray-900 dark:text-white font-semibold text-lg">
-              Let&apos;s build something. 👏
+              Let&apos;s <ScribbledText color="emerald">build</ScribbledText> something. 👏
             </p>
           </div>
           <div className="flex gap-3">

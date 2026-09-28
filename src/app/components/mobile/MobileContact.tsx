@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { EMAIL, LOCATION, SITE_HANDLE, socialLinks } from "../../data/socials";
 import TerminalWindow from "./TerminalWindow";
+import Scribble, { ScribbledText } from "../Scribble";
 
 const inputClass =
-  "rounded-md border border-term-fg/15 bg-term-bg px-3.5 py-[13px] font-jet text-[13px] text-term-fg placeholder-term-fg/35 caret-term-accent focus:border-term-accent/60 focus:outline-none";
+  "rounded-md border border-term-fg/15 bg-term-bg px-3.5 py-[13px] font-mono text-[13px] text-term-fg placeholder-term-fg/35 dark:border-term-input-border dark:placeholder-term-muted caret-term-accent focus:border-term-accent/60 dark:focus:border-term-accent focus:outline-none";
 
 export default function MobileContact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -30,11 +31,11 @@ export default function MobileContact() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-4 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
+        <p className="font-mono text-[11px] tracking-[0.3em] text-term-fg">
           CONTACT 📬
         </p>
         <h1 className="text-[46px] font-bold leading-[1.02] tracking-[-0.02em]">
-          Get in <span className="text-term-muted">Touch.</span>
+          Get in <ScribbledText color="pink" className="text-term-muted">Touch.</ScribbledText>
         </h1>
         <p className="text-base leading-relaxed text-term-fg">
           Open to new opportunities and interesting projects ✨
@@ -43,8 +44,9 @@ export default function MobileContact() {
 
       {/* ── Social links ── */}
       <section className="flex flex-col px-5 pt-10">
-        <p className="pb-1.5 font-jet text-[11px] tracking-[0.3em] text-term-fg">
+        <p className="flex items-center gap-2 pb-1.5 font-mono text-[11px] tracking-[0.3em] text-term-fg">
           FIND ME ON 🔍
+          <Scribble variant="rays" color="emerald" className="size-5 rotate-12" />
         </p>
         {contactRows.map((row) => (
           <a
@@ -62,21 +64,21 @@ export default function MobileContact() {
 
       {/* ── Message form ── */}
       <section className="flex flex-col gap-4 px-5 pb-2.5 pt-11">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
-          SEND A MESSAGE ✍️
+        <p className="font-mono text-[11px] tracking-[0.3em] text-term-fg">
+          <ScribbledText color="amber">SEND A MESSAGE ✍️</ScribbledText>
         </p>
         <TerminalWindow title="omotosho@portfolio ~ contact.sh">
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-3.5 p-4"
           >
-            <p className="font-jet text-xs text-term-accent">
+            <p className="font-mono text-xs text-term-accent">
               {`// drop me a line — I'll get back to you`}
             </p>
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-name"
-                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg"
+                className="font-mono text-[10.5px] tracking-[0.14em] text-term-fg"
               >
                 NAME
               </label>
@@ -93,7 +95,7 @@ export default function MobileContact() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-email"
-                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg"
+                className="font-mono text-[10.5px] tracking-[0.14em] text-term-fg"
               >
                 EMAIL
               </label>
@@ -110,7 +112,7 @@ export default function MobileContact() {
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="contact-message"
-                className="font-jet text-[10.5px] tracking-[0.14em] text-term-fg"
+                className="font-mono text-[10.5px] tracking-[0.14em] text-term-fg"
               >
                 MESSAGE
               </label>
@@ -126,7 +128,7 @@ export default function MobileContact() {
             </div>
             <button
               type="submit"
-              className="flex items-center justify-center rounded-full bg-term-fg py-[15px] font-jet text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
+              className="flex items-center justify-center rounded-full bg-term-fg py-[15px] font-mono text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
             >
               $ ./send_message →
             </button>
@@ -135,7 +137,7 @@ export default function MobileContact() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="flex justify-between px-5 pb-8 pt-7 font-jet text-[11px] text-term-fg">
+      <footer className="flex justify-between px-5 pb-8 pt-7 font-mono text-[11px] text-term-fg">
         <span>
           © {new Date().getFullYear()} {SITE_HANDLE}
         </span>

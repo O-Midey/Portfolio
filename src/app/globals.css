@@ -3,9 +3,8 @@
 @variant dark (&:where(.dark, .dark *));
 
 /* ---------------------------------------------------------------------------
-   Mobile "terminal" design system (< md)
-   Theme-aware: the variables flip with next-themes' `.dark` class, so the
-   mobile view honors the same light/dark toggle as desktop.
+   Shared theme colors. The variables flip with next-themes' `.dark` class,
+   keeping mobile surfaces and desktop accents consistent.
    -------------------------------------------------------------------------*/
 :root {
   --term-bg: #f6f8f7;
@@ -14,9 +13,13 @@
   --term-overlay: #eef2f0;
   --term-fg: #101512;
   --term-muted: #5c6360;
+  --term-input-border: rgba(16, 21, 18, 0.15);
   --term-accent: #059669;
   --term-amber: #b45309;
   --term-dot: rgba(16, 21, 18, 0.1);
+  --scribble-emerald: #34d399;
+  --scribble-pink: #fb7185;
+  --scribble-amber: #fbbf24;
 }
 
 .dark {
@@ -25,18 +28,19 @@
   --term-card: #141a16;
   --term-overlay: #0c110e;
   --term-fg: #f2f4f3;
-  --term-muted: #6e7573;
+  --term-muted: #adb7b1;
+  --term-input-border: #6a766f;
   --term-accent: #34d399;
   --term-amber: #ffb224;
   --term-dot: rgba(148, 163, 158, 0.13);
+  --scribble-emerald: #10b981;
+  --scribble-pink: #f43f5e;
+  --scribble-amber: #f59e0b;
 }
 
 @theme inline {
-  /* `font-jet` is a mobile-only alias for Tailwind's built-in `--font-mono`
-     (the system monospace stack) — used only on individual accent elements
-     (labels, badges, buttons), never as a page-wide default, so mobile body
-     copy inherits Inter exactly like desktop's. */
-  --font-jet: var(--font-mono);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 
   --color-term-bg: var(--term-bg);
   --color-term-panel: var(--term-panel);
@@ -44,8 +48,12 @@
   --color-term-overlay: var(--term-overlay);
   --color-term-fg: var(--term-fg);
   --color-term-muted: var(--term-muted);
+  --color-term-input-border: var(--term-input-border);
   --color-term-accent: var(--term-accent);
   --color-term-amber: var(--term-amber);
+  --color-scribble-emerald: var(--scribble-emerald);
+  --color-scribble-pink: var(--scribble-pink);
+  --color-scribble-amber: var(--scribble-amber);
 }
 
 @theme {
@@ -91,10 +99,71 @@
   background-size: 24px 24px;
 }
 
+.tech-bubble-stack {
+  --tech-bubble-room: 1.08;
+  --tech-bubble-min-height: 280px;
+}
+
+@media (min-width: 768px) {
+  .tech-bubble-stack {
+    --tech-bubble-room: 1.35;
+    --tech-bubble-min-height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-bubble-controls {
+    display: none;
+  }
+}
+
+/* A small end gutter lets the final card overlap the earlier cards without
+   delaying the link below the stack. Keep the card surface opaque. */
+.project-card-stack {
+  --project-stack-top: 24px;
+  --project-stack-step: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  isolation: isolate;
+}
+
+.project-card-stack::after {
+  content: "";
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.project-card-stack-item {
+  position: sticky;
+  z-index: 1;
+}
+
+.project-card-stack-item:focus-within {
+  z-index: 2;
+}
+
+/* Use normal flow when motion is reduced or the screen is too short to show
+   a pinned card comfortably. */
+@media (prefers-reduced-motion: reduce), (max-height: 480px) {
+  .project-card-stack::after {
+    display: none;
+  }
+
+  .project-card-stack-item {
+    position: static;
+  }
+}
+
 body {
   background-color: white;
   cursor: none;
   color: #111;
+}
+
+.dark body {
+  background-color: var(--term-bg);
+  color: var(--term-fg);
 }
 
 @media (max-width: 768px) {
@@ -191,7 +260,7 @@ body {
 
 /* Link cursor — arrow inside the filled ring (→ internal, ↗ external) */
 .cursor-arrow {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-geist-mono);
   font-size: 14px;
   font-weight: 700;
   line-height: 1;

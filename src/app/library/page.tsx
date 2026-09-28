@@ -4,6 +4,7 @@ import { libraryResources } from "../data/library";
 import { LibraryCategory, LibraryResource } from "../types/types";
 import MobileLibrary from "../components/mobile/MobileLibrary";
 import { ArrowUpRight } from "lucide-react";
+import { ScribbledText } from "../components/Scribble";
 
 type Filter = "ALL" | LibraryCategory;
 
@@ -32,7 +33,7 @@ function ResourceCard({ resource }: { resource: LibraryResource }) {
         />
       </div>
 
-      <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-[#555] mt-2 leading-relaxed">
+      <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-term-muted mt-2 leading-relaxed">
         {resource.concepts.join(' · ')}
       </p>
     </a>
@@ -61,7 +62,7 @@ export default function LibraryPage() {
               what i learned from 📚
             </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
-              Library
+              <ScribbledText color="emerald">Library</ScribbledText>
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               Courses, docs, and channels that shaped how I build — kept here

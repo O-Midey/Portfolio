@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 
 type TypewriterOptions = {
+  /** Run the timer only when this title is currently relevant. */
+  enabled?: boolean;
   /** ms per character while typing */
   typeMs?: number;
   /** ms per character while deleting */
@@ -13,13 +15,14 @@ type TypewriterOptions = {
 // Types each title out, holds it, deletes it, then moves to the next.
 export function useTypewriter(
   titles: readonly string[],
-  { typeMs = 60, deleteMs = 35, holdMs = 2000 }: TypewriterOptions = {},
+  { enabled = true, typeMs = 60, deleteMs = 35, holdMs = 2000 }: TypewriterOptions = {},
 ) {
   const [current, setCurrent] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
+    if (!enabled || titles.length === 0) return;
     const full = titles[current];
     const i = displayed.length;
 
@@ -38,7 +41,7 @@ export function useTypewriter(
     }
     setCurrent((prev) => (prev + 1) % titles.length);
     setTyping(true);
-  }, [displayed, typing, current, titles, typeMs, deleteMs, holdMs]);
+  }, [enabled, displayed, typing, current, titles, typeMs, deleteMs, holdMs]);
 
-  return displayed;
+  return enabled ? displayed : (titles[0] ?? "");
 }

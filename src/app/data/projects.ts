@@ -1,28 +1,10 @@
 import { Project } from "../types/types";
 
+// Portfolio order balances relevance, engineering depth, and delivery evidence.
 export const projects: Project[] = [
   {
-    title: "Folio",
-    description:
-      "Folio is a multi-tenant personal budgeting SaaS — rebuilt from a single-user prototype into a production-grade PWA with private, isolated workspaces per user. Budgets follow a template-plus-override model: editing a category updates its recurring default while past months keep their exact historical values. Includes recurring expenses, savings goals with contribution tracking, month-over-month spend comparison, per-category settlement, and CSV export — wrapped in a custom design system with a native-app feel. Built with secure per-user data isolation and a fully typed end-to-end architecture.",
-    tech: [
-      "Next.JS",
-      "TypeScript",
-      "Prisma",
-      "Postgres",
-      "Clerk",
-      "Tailwind CSS",
-      "PWA",
-    ],
-    status: "In Progress",
-    categories: ["FULL-STACK"],
-    liveLink: "https://folio-azure-omega.vercel.app",
-    codeLink: "https://github.com/O-Midey/folio",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1785176347/a8rjcvtyniys66x6fh2n.png",
-  },
-  {
     title: "Beacon",
+    selectedOrder: 1,
     description:
       "A local-first CLI (npm: beacon-bip) that turns git commits into build-in-public drafts for Twitter/X, LinkedIn, dev.to, Reddit, and Medium. A post-commit hook runs a five-stage pipeline — capture → regex secret scanner → LLM significance scoring → voice-matched drafting → atomic JSON queue — with the scanner guaranteed to run before any model call, so the LLM only ever sees a redacted, truncated diff. A provider abstraction supports the Anthropic SDK or any OpenAI-compatible endpoint (including fully-offline Ollama), with every draft Zod-validated against per-platform schemas. Nothing is ever auto-posted: approving a draft copies it to the clipboard, and the whole footprint is two JSON files under ~/.beacon.",
     tech: [
@@ -39,6 +21,30 @@ export const projects: Project[] = [
     codeLink: "https://github.com/O-Midey/beacon",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1786441936/p0g3ranuy7d3d7mcbr2e.png",
+  },
+  {
+    title: "rentluxy",
+    selectedOrder: 2,
+    description:
+      "A peer-to-peer car rental marketplace connecting hosts and guests across the USA. Book verified cars, manage bookings in real-time, and complete secure transactions with identity verification and insurance options — built for trust and transparency in the sharing economy.",
+    tech: ["React", "SCSS", "Firebase", "GCP", "PayPal", "Didit"],
+    status: "In Progress",
+    categories: ["FULL-STACK"],
+    liveLink: "https://rentluxy.com",
+    codeLink: "",
+    image: "/projects/rentluxy-homepage.png",
+  },
+  {
+    title: "streamkit-ui",
+    description:
+      "A vendor-agnostic React library of rendering and state primitives for streaming LLM UIs — token streaming, incrementally-rendered markdown, tool-call state machines, and multi-stream orchestration. Markdown and code are sanitized at the render boundary with DOMPurify so model output can't inject into the DOM, while a single normalized StreamChunk type lets adapters swap OpenAI, Anthropic, and the Vercel AI SDK without touching UI code. Published to npm with build provenance, 94 passing tests, and a VitePress documentation site.",
+    tech: ["React", "TypeScript", "Vercel AI SDK", "Storybook", "Vitest"],
+    status: "Completed",
+    categories: ["AI"],
+    liveLink: "https://o-midey.github.io/streamkit/",
+    codeLink: "https://github.com/O-Midey/streamkit",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1781897634/zaurnseghns1ezcljrg6.png",
   },
   {
     title: "Proxima",
@@ -58,6 +64,47 @@ export const projects: Project[] = [
     codeLink: "https://github.com/O-Midey/proxima",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1782075746/zlkw9qufnbjgurlptxqs.png",
+  },
+  {
+    title: "Ledgr",
+    selectedOrder: 3,
+    description:
+      "An AI-powered crypto wallet operating system built on Sepolia testnet. Ledgr lets users manage wallet operations through natural language — with every transaction simulated before execution, a full reasoning trace, real-time audit logs, and a security supervisor enforcing spend limits and injection guards. Built for financial-grade reliability.",
+    tech: [
+      "Next.JS",
+      "TypeScript",
+      "Vercel AI SDK",
+      "Viem",
+      "Wagmi",
+      "RainbowKit",
+      "Tailwind CSS",
+    ],
+    status: "In Progress",
+    categories: ["AI", "WEB3"],
+    liveLink: "https://ledgr-nu.vercel.app/",
+    codeLink: "https://github.com/O-Midey/ledgr",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1780237169/Screenshot_2026-05-30_at_11.19.48_xfytpc.png",
+  },
+  {
+    title: "Folio",
+    description:
+      "Folio is a multi-tenant personal budgeting SaaS — rebuilt from a single-user prototype into a production-grade PWA with private, isolated workspaces per user. Budgets follow a template-plus-override model: editing a category updates its recurring default while past months keep their exact historical values. Includes recurring expenses, savings goals with contribution tracking, month-over-month spend comparison, per-category settlement, and CSV export — wrapped in a custom design system with a native-app feel. Built with secure per-user data isolation and a fully typed end-to-end architecture.",
+    tech: [
+      "Next.JS",
+      "TypeScript",
+      "Prisma",
+      "Postgres",
+      "Clerk",
+      "Tailwind CSS",
+      "PWA",
+    ],
+    status: "In Progress",
+    categories: ["FULL-STACK"],
+    liveLink: "https://folio-azure-omega.vercel.app",
+    codeLink: "https://github.com/O-Midey/folio",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1785176347/a8rjcvtyniys66x6fh2n.png",
   },
   {
     title: "Narrate",
@@ -80,49 +127,23 @@ export const projects: Project[] = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1782074737/ry7kra41eodzsr6np1qm.png",
   },
   {
-    title: "streamkit-ui",
+    title: "Havesta",
     description:
-      "A vendor-agnostic React library of rendering and state primitives for streaming LLM UIs — token streaming, incrementally-rendered markdown, tool-call state machines, and multi-stream orchestration. Markdown and code are sanitized at the render boundary with DOMPurify so model output can't inject into the DOM, while a single normalized StreamChunk type lets adapters swap OpenAI, Anthropic, and the Vercel AI SDK without touching UI code. Published to npm with build provenance, 94 passing tests, and a VitePress documentation site.",
-    tech: ["React", "TypeScript", "Vercel AI SDK", "Storybook", "Vitest"],
+      "Havesta is a full-stack AgriTech marketplace platform that connects farmers directly with customers, featuring vendor product management, secure payment processing via Paystack, and a comprehensive admin dashboard for business analytics. Built with React, Node.js, PostgreSQL, and modern web technologies.",
+    tech: [
+      "React",
+      "Node.js",
+      "Framer Motion",
+      "Postgres",
+      "Sequelize",
+      "Paystack API",
+    ],
     status: "Completed",
-    categories: ["AI"],
-    liveLink: "https://o-midey.github.io/streamkit/",
-    codeLink: "https://github.com/O-Midey/streamkit",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1781897634/zaurnseghns1ezcljrg6.png",
-  },
-
-  {
-    title: "rentluxy",
-    description:
-      "A peer-to-peer car rental marketplace connecting hosts and guests across the USA. Book verified cars, manage bookings in real-time, and complete secure transactions with identity verification and insurance options — built for trust and transparency in the sharing economy.",
-    tech: ["React", "SCSS", "Firebase", "GCP", "PayPal", "Didit"],
-    status: "In Progress",
     categories: ["FULL-STACK"],
-    liveLink: "https://rentluxy.com",
+    liveLink: "https://havesta.com",
     codeLink: "",
     image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1783324428/vlyk2idepimozvlsnkh2.png",
-  },
-  {
-    title: "Ledgr",
-    description:
-      "An AI-powered crypto wallet operating system built on Sepolia testnet. Ledgr lets users manage wallet operations through natural language — with every transaction simulated before execution, a full reasoning trace, real-time audit logs, and a security supervisor enforcing spend limits and injection guards. Built for financial-grade reliability.",
-    tech: [
-      "Next.JS",
-      "TypeScript",
-      "Vercel AI SDK",
-      "Viem",
-      "Wagmi",
-      "RainbowKit",
-      "Tailwind CSS",
-    ],
-    status: "In Progress",
-    categories: ["AI", "WEB3"],
-    liveLink: "https://ledgr-nu.vercel.app/",
-    codeLink: "https://github.com/O-Midey/ledgr",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1780237169/Screenshot_2026-05-30_at_11.19.48_xfytpc.png",
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682597/Screenshot_2026-05-13_at_15.29.36_vlmkji.png",
   },
   {
     title: "Ward",
@@ -144,18 +165,6 @@ export const projects: Project[] = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1780762294/Screenshot_2026-06-06_at_17.11.23_b2fo8g.png",
   },
   {
-    title: "Mankorie Global",
-    description:
-      "A professional energy and infrastructure company website built with Next.js. Mankorie Global Energy showcases integrated solar, electrical, and security solutions with a clean service-focused layout, client testimonials, and a streamlined consultation flow — serving residential and commercial clients across Nigeria.",
-    tech: ["Next.JS", "Tailwind CSS", "Zustand"],
-    status: "Completed",
-    categories: ["FULL-STACK"],
-    liveLink: "https://mankorieglobal.com",
-    codeLink: "",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682616/Screenshot_2026-05-13_at_15.29.53_t97jgt.png",
-  },
-  {
     title: "ChainVote",
     description:
       "A decentralized on-chain voting platform built on Base L2. ChainVote lets users create and vote on polls via smart contracts — with every vote recorded as an immutable transaction. Poll metadata is stored on IPFS, results are publicly verifiable on-chain, and the contract has no admin keys or upgrade mechanism.",
@@ -166,25 +175,6 @@ export const projects: Project[] = [
     codeLink: "https://github.com/O-Midey/ChainVote",
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1780237186/Screenshot_2026-05-31_at_15.17.39_tufnqq.png",
-  },
-  {
-    title: "Havesta",
-    description:
-      "Havesta is a full-stack AgriTech marketplace platform that connects farmers directly with customers, featuring vendor product management, secure payment processing via Paystack, and a comprehensive admin dashboard for business analytics. Built with React, Node.js, PostgreSQL, and modern web technologies.",
-    tech: [
-      "React",
-      "Node.js",
-      "Framer Motion",
-      "Postgres",
-      "Sequelize",
-      "Paystack API",
-    ],
-    status: "Completed",
-    categories: ["FULL-STACK"],
-    liveLink: "https://havesta.com",
-    codeLink: "",
-    image:
-      "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682597/Screenshot_2026-05-13_at_15.29.36_vlmkji.png",
   },
   {
     title: "SwipeJobb",
@@ -198,7 +188,18 @@ export const projects: Project[] = [
     image:
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1760979777/Screenshot_2025-10-20_at_18.00.51_inclpg.png",
   },
-
+  {
+    title: "Mankorie Global",
+    description:
+      "A professional energy and infrastructure company website built with Next.js. Mankorie Global Energy showcases integrated solar, electrical, and security solutions with a clean service-focused layout, client testimonials, and a streamlined consultation flow — serving residential and commercial clients across Nigeria.",
+    tech: ["Next.JS", "Tailwind CSS", "Zustand"],
+    status: "Completed",
+    categories: ["FULL-STACK"],
+    liveLink: "https://mankorieglobal.com",
+    codeLink: "",
+    image:
+      "https://res.cloudinary.com/daypv7q8r/image/upload/v1778682616/Screenshot_2026-05-13_at_15.29.53_t97jgt.png",
+  },
   {
     title: "AquaLife",
     description:
@@ -218,3 +219,10 @@ export const projects: Project[] = [
       "https://res.cloudinary.com/daypv7q8r/image/upload/v1756156742/Screenshot_2025-08-25_at_21.55.03_mhphsq.png",
   },
 ];
+
+export const selectedProjects = projects
+  .filter(
+    (project): project is Project & { selectedOrder: number } =>
+      project.selectedOrder !== undefined,
+  )
+  .sort((left, right) => left.selectedOrder - right.selectedOrder);

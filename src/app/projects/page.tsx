@@ -8,6 +8,8 @@ import ProjectDetailPanel from "./ProjectDetailPanel";
 import MobileProjects from "../components/mobile/MobileProjects";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { ScribbledText, scribbleColorFor } from "../components/Scribble";
+import { projectStatusStyles } from "../components/projectStatusStyles";
 
 // Slight rotations to give each card a pinned/tossed feel
 const rotations = [
@@ -75,7 +77,7 @@ function ScrapbookCard({
               src={project.image.trim()}
               alt={project.title}
               fill
-              className={`object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+              className={`object-cover object-top transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
               sizes="(max-width: 768px) 100vw, 50vw"
               onLoad={() => setLoaded(true)}
             />
@@ -85,26 +87,22 @@ function ScrapbookCard({
         {/* Content */}
         <div className="px-1 pt-1 flex flex-col gap-2 flex-1">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="font-mono font-bold text-gray-900 dark:text-white text-base leading-tight">
-              {project.title}
+            <h3 className="font-sans font-bold text-gray-900 dark:text-white text-base leading-tight">
+              <ScribbledText color={scribbleColorFor(project.title)}>{project.title}</ScribbledText>
             </h3>
             <span
-              className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full font-medium ${
-                project.status === "Completed"
-                  ? "bg-green-100 text-green-700"
-                  : "bg-amber-100 text-amber-700"
-              }`}
+              className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full font-medium ${projectStatusStyles(project.status)}`}
             >
               {project.status}
             </span>
           </div>
 
-          <p className="font-mono text-gray-900 dark:text-white text-xs leading-relaxed line-clamp-3">
+          <p className="font-sans text-gray-900 dark:text-white text-xs leading-relaxed line-clamp-3">
             {project.description}
           </p>
 
           {/* Tech tags */}
-          <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-[#555] mt-2 leading-relaxed">
+          <p className="font-mono text-[11px] font-medium text-gray-500 dark:text-term-muted mt-2 leading-relaxed">
             {project.tech.join(' · ')}
           </p>
 
@@ -139,7 +137,7 @@ function ProjectsSection({
               my work 🛠️
             </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
-              Projects
+              <ScribbledText color="amber">Projects</ScribbledText>
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               AI-powered apps, full-stack products, Web3 tools, and everything in between 👷🏽‍♂️

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function CursorTrailer() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -7,11 +8,16 @@ export default function CursorTrailer() {
   const arrowRef = useRef<HTMLSpanElement>(null);
   const pos = useRef({ x: 0, y: 0 });
   const ring = useRef({ x: 0, y: 0 });
-  const raf = useRef<number>(0);
+  const raf = useRef<number | null>(null);
+  const enabled = useMediaQuery("(min-width: 769px)");
 
   useEffect(() => {
+    if (!enabled) return;
     const onMove = (e: MouseEvent) => {
       pos.current = { x: e.clientX, y: e.clientY };
+      if (raf.current === null && !document.hidden) {
+        raf.current = requestAnimationFrame(animate);
+      }
     };
 
     const setHover = (kind: "link" | "button" | null, external = false) => {
@@ -66,16 +72,28 @@ export default function CursorTrailer() {
       if (ringRef.current)
         ringRef.current.style.transform = `translate(${ring.current.x - 16}px, ${ring.current.y - 16}px)`;
 
-      raf.current = requestAnimationFrame(animate);
+      // Stop once the ring catches up instead of running an idle frame loop.
+      raf.current = Math.abs(pos.current.x - ring.current.x) > 0.1 || Math.abs(pos.current.y - ring.current.y) > 0.1
+        ? requestAnimationFrame(animate)
+        : null;
     };
-    raf.current = requestAnimationFrame(animate);
+
+    const stopWhenHidden = () => {
+      if (document.hidden && raf.current !== null) {
+        cancelAnimationFrame(raf.current);
+        raf.current = null;
+      }
+    };
+    document.addEventListener("visibilitychange", stopWhenHidden);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseover", onOver);
-      cancelAnimationFrame(raf.current);
+      document.removeEventListener("visibilitychange", stopWhenHidden);
+      if (raf.current !== null) cancelAnimationFrame(raf.current);
+      raf.current = null;
     };
-  }, []);
+  }, [enabled]);
 
   return (
     <>

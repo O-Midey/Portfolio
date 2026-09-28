@@ -1,28 +1,3 @@
-export const skills = [
-  "JavaScript",
-  "TypeScript",
-  "Golang",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Solidity",
-  "Hardhat",
-  "Ethers.js",
-  "MongoDB",
-  "TailwindCSS",
-  "Postgres",
-  "GraphQL",
-  "Express",
-  "Vercel AI SDK",
-  "Langchain",
-  "LLM Integration",
-  "AI Agents",
-  "Prompt Engineering",
-  "Context Engineering",
-  "RAG",
-  "Vector Databases",
-];
-
 // Short, punchy subset for the mobile home marquee.
 export const marqueeSkills = [
   "React",
@@ -71,3 +46,6 @@ export const skillGroups = [
     skills: ["Solidity", "Hardhat", "Ethers.js"],
   },
 ];
+
+// One distinct list for the shared mobile and desktop About presentation.
+export const skills = Array.from(new Set(skillGroups.flatMap((group) => group.skills)));

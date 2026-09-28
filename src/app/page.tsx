@@ -4,19 +4,13 @@ import AnimatedDiv from "./components/AnimatedDiv";
 import MagneticButton from "./components/MagneticButton";
 import MobileHome from "./components/mobile/MobileHome";
 import HeroPortrait from "./components/HeroPortrait";
-import { heroTitles } from "./data/hero";
-import { useTypewriter } from "./hooks/useTypewriter";
-import { useScramble } from "./hooks/useScramble";
-import { Github, Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import HeroIntroduction from "./components/HeroIntroduction";
+import HeroName from "./components/HeroName";
+import HeroTitle from "./components/HeroTitle";
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { useEffect } from "react";
 
 export default function HomePage() {
-  const [scrambled, setScrambled] = useState(false);
-  const displayed = useTypewriter(heroTitles);
-
-  const line1 = useScramble("Omotosho", scrambled);
-  const line2 = useScramble("David A.", scrambled);
-
   // The desktop hero is a fixed, non-scrolling viewport; the mobile terminal
   // view is a long scrolling page — only lock body scroll on md and up.
   useEffect(() => {
@@ -30,11 +24,6 @@ export default function HomePage() {
       mq.removeEventListener("change", apply);
       document.body.style.overflow = "";
     };
-  }, []);
-
-  useEffect(() => {
-    const t = setTimeout(() => setScrambled(true), 400);
-    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -54,46 +43,16 @@ export default function HomePage() {
             </p>
 
             {/* Name with scramble + hover glitch */}
-            <div className="space-y-1">
-              <div className="group relative">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white tracking-tighter leading-none select-none font-mono">
-                  {line1}
-                </h1>
-                <h1
-                  aria-hidden
-                  className="name-glitch-layer text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-emerald-400 tracking-tighter leading-none font-mono"
-                >
-                  {line1}
-                </h1>
-              </div>
-              <div className="group relative">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-500 dark:text-[#999] tracking-tighter leading-none select-none font-mono">
-                  {line2}
-                </h1>
-                <h1
-                  aria-hidden
-                  className="name-glitch-layer text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-rose-400 tracking-tighter leading-none font-mono"
-                >
-                  {line2}
-                </h1>
-              </div>
-            </div>
+            <HeroName variant="desktop" />
 
             {/* Typing animation */}
             <div className="flex items-center gap-3 w-full">
               <span className="flex-1 h-px bg-gray-500 dark:bg-[#333]" />
-              <span className="text-sm font-mono tracking-widest text-gray-900 dark:text-white uppercase typing-cursor whitespace-nowrap">
-                {displayed}
-              </span>
+              <HeroTitle variant="desktop" />
               <span className="flex-1 h-px bg-gray-500 dark:bg-[#333]" />
             </div>
 
-            <p className="text-sm sm:text-base text-gray-900 dark:text-white font-light leading-relaxed italic">
-              I build products end-to-end — shipping real apps across the full
-              stack, on-chain, and with AI in the loop.
-            </p>
-
-            <div className="w-full max-w-xs h-px bg-gray-100 dark:bg-[#222]" />
+            <HeroIntroduction />
 
             {/* Magnetic social buttons */}
             <div className="flex items-center gap-3">
@@ -119,7 +78,7 @@ export default function HomePage() {
                 >
                   <Linkedin
                     size={18}
-                    className="text-[#0077B5] group-hover:text-white transition-colors"
+                    className="text-[#0077B5] dark:text-sky-400 group-hover:text-white dark:group-hover:text-white transition-colors"
                   />
                 </a>
               </MagneticButton>
@@ -151,16 +110,6 @@ export default function HomePage() {
               </MagneticButton>
             </div>
 
-            <a
-              href="/projects"
-              className="group inline-flex items-center gap-2 w-fit px-6 py-3 bg-[#111] dark:bg-white dark:text-black text-white rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 font-mono text-xs tracking-widest uppercase"
-            >
-              View My Work
-              <ArrowRight
-                className="transform transition-transform duration-300 group-hover:translate-x-1"
-                size={14}
-              />
-            </a>
           </div>
 
           {/* Right: photo with shapes — desktop only */}

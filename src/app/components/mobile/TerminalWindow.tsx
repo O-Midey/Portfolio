@@ -12,7 +12,7 @@ export default function TerminalWindow({
         <span className="inline-block h-[11px] w-[11px] rounded-full bg-[#FF5F57]" />
         <span className="inline-block h-[11px] w-[11px] rounded-full bg-[#FEBC2E]" />
         <span className="inline-block h-[11px] w-[11px] rounded-full bg-[#28C840]" />
-        <span className="ml-1.5 font-jet text-[11px] text-term-fg">
+        <span className="ml-1.5 font-mono text-[11px] text-term-fg">
           {title}
         </span>
       </div>

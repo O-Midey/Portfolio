@@ -14,6 +14,7 @@ export type ProjectCategory = "AI" | "FULL-STACK" | "WEB3";
 
 export interface Project {
   title: string;
+  selectedOrder?: number;
   description: string;
   image?: string;
   demoUrl?: string;

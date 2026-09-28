@@ -4,6 +4,7 @@ import { Mail, Twitter, Linkedin, Instagram, Send, ArrowRight, Copy, Check } fro
 import AnimatedDiv from "../components/AnimatedDiv";
 import MobileContact from "../components/mobile/MobileContact";
 import { EMAIL } from "../data/socials";
+import Scribble, { ScribbledText } from "../components/Scribble";
 
 const socials = [
   { label: "Email", handle: EMAIL, href: `mailto:${EMAIL}`, icon: Mail },
@@ -31,7 +32,7 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   }
 
-  const inputClass = "w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-[#2a2a2a] text-sm font-mono text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#555] caret-emerald-500 focus:outline-none focus:border-emerald-400 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-400/30 transition-colors rounded-xl";
+  const inputClass = "w-full px-4 py-3 bg-white dark:bg-[#1a1a1a] border border-gray-300 dark:border-term-input-border text-sm font-mono text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-term-muted caret-emerald-500 focus:outline-none focus:border-emerald-400 dark:focus:border-emerald-500 focus:ring-2 focus:ring-emerald-400/30 transition-colors rounded-xl";
 
   return (
     <>
@@ -47,7 +48,7 @@ export default function Contact() {
             <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-3">contact 📩</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Get in<br />
-              <span className="text-gray-500 dark:text-[#999]">Touch.</span>
+              <ScribbledText color="pink" className="text-gray-500 dark:text-[#999]">Touch.</ScribbledText>
             </h1>
             <p className="text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               Open to new opportunities and interesting projects ✨
@@ -56,7 +57,10 @@ export default function Contact() {
 
           {/* Socials */}
           <div className="mb-14">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">find me on 🔍</p>
+            <p className="flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">
+              find me on 🔍
+              <Scribble variant="rays" color="emerald" className="size-5 rotate-12" />
+            </p>
             <div className="space-y-1">
               {socials.map(({ label, handle, href, icon: Icon }) => (
                 <a
@@ -95,7 +99,7 @@ export default function Contact() {
 
           {/* Form — terminal window */}
           <div className="mb-14">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">send a message ✍️</p>
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6"><ScribbledText color="amber">send a message ✍️</ScribbledText></p>
 
             <div className="rounded-xl overflow-hidden border border-gray-900 dark:border-white shadow-2xl">
               {/* Title bar */}

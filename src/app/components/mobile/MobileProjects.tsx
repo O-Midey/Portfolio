@@ -6,6 +6,8 @@ import { projects } from "../../data/projects";
 import { Project, ProjectCategory } from "../../types/types";
 import MobileProjectCard from "./MobileProjectCard";
 import MobileProjectSheet from "./MobileProjectSheet";
+import ProjectCardStack from "../ProjectCardStack";
+import { ScribbledText } from "../Scribble";
 
 type Filter = "ALL" | ProjectCategory;
 
@@ -24,11 +26,11 @@ export default function MobileProjects() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-3.5 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
+        <p className="font-mono text-[11px] tracking-[0.3em] text-term-fg">
           MY WORK 🛠️
         </p>
         <h1 className="text-[44px] font-bold leading-none tracking-[-0.02em]">
-          Projects<span className="text-term-accent">.</span>
+          <ScribbledText color="amber">Projects</ScribbledText><span className="text-term-accent">.</span>
         </h1>
         <p className="mt-0.5 text-base leading-[1.55] text-term-fg">
           AI-powered apps, full-stack products, Web3 tools, and everything in
@@ -46,7 +48,7 @@ export default function MobileProjects() {
               type="button"
               onClick={() => setFilter(f)}
               aria-pressed={isActive}
-              className={`rounded-full border px-[15px] py-[9px] font-jet text-[11px] tracking-[0.05em] transition-opacity active:opacity-70 ${
+              className={`rounded-full border px-[15px] py-[9px] font-mono text-[11px] tracking-[0.05em] transition-opacity active:opacity-70 ${
                 isActive
                   ? "border-term-fg bg-term-fg font-semibold text-term-bg"
                   : "border-term-fg text-term-fg"
@@ -59,17 +61,19 @@ export default function MobileProjects() {
       </div>
 
       {/* ── Project cards ── */}
-      <section className="flex flex-col gap-[30px] px-5 pb-2 pt-6">
-        {visibleProjects.map((project) => (
-          <MobileProjectCard
-            key={project.title}
-            project={project}
-            showDetailsHint
-            onSelect={() => setSelected(project)}
-          />
-        ))}
+      <section className="px-5 pb-2 pt-6">
+        <ProjectCardStack>
+          {visibleProjects.map((project) => (
+            <MobileProjectCard
+              key={project.title}
+              project={project}
+              showDetailsHint
+              onSelect={() => setSelected(project)}
+            />
+          ))}
+        </ProjectCardStack>
         {visibleProjects.length === 0 && (
-          <p className="py-8 text-center font-jet text-xs text-term-fg">
+          <p className="py-8 text-center font-mono text-xs text-term-fg">
             $ no projects match this filter
           </p>
         )}
@@ -78,11 +82,11 @@ export default function MobileProjects() {
       {/* ── CTA ── */}
       <footer className="mt-10 flex flex-col gap-[18px] border-t border-term-fg/10 px-5 pb-8 pt-11">
         <h2 className="text-[28px] font-bold leading-[1.15] tracking-[-0.01em]">
-          Got a project in mind<span className="text-term-accent">?</span>
+          Got a <ScribbledText color="pink">project</ScribbledText> in mind<span className="text-term-accent">?</span>
         </h2>
         <Link
           href="/contact"
-          className="flex items-center justify-center rounded-full bg-term-fg py-4 font-jet text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
+          className="flex items-center justify-center rounded-full bg-term-fg py-4 font-mono text-[12.5px] font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
         >
           LET&apos;S TALK →
         </Link>

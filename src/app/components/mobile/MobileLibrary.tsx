@@ -3,6 +3,7 @@ import { useState } from "react";
 import { libraryResources } from "../../data/library";
 import { LibraryCategory } from "../../types/types";
 import { ArrowUpRight } from "lucide-react";
+import { ScribbledText } from "../Scribble";
 
 type Filter = "ALL" | LibraryCategory;
 
@@ -20,11 +21,11 @@ export default function MobileLibrary() {
     <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
       {/* ── Heading ── */}
       <section className="flex flex-col gap-3.5 px-5 pt-12">
-        <p className="font-jet text-[11px] tracking-[0.3em] text-term-fg">
+        <p className="font-mono text-[11px] tracking-[0.3em] text-term-fg">
           WHAT I LEARNED FROM 📚
         </p>
         <h1 className="text-[44px] font-bold leading-none tracking-[-0.02em]">
-          Library<span className="text-term-accent">.</span>
+          <ScribbledText color="emerald">Library</ScribbledText><span className="text-term-accent">.</span>
         </h1>
         <p className="mt-0.5 text-base leading-[1.55] text-term-fg">
           Courses, docs, and channels that shaped how I build — kept here as a
@@ -42,7 +43,7 @@ export default function MobileLibrary() {
               type="button"
               onClick={() => setFilter(f)}
               aria-pressed={isActive}
-              className={`rounded-full border px-[15px] py-[9px] font-jet text-[11px] tracking-[0.05em] transition-opacity active:opacity-70 ${
+              className={`rounded-full border px-[15px] py-[9px] font-mono text-[11px] tracking-[0.05em] transition-opacity active:opacity-70 ${
                 isActive
                   ? "border-term-fg bg-term-fg font-semibold text-term-bg"
                   : "border-term-fg text-term-fg"
@@ -69,7 +70,7 @@ export default function MobileLibrary() {
                 <h3 className="text-[15px] font-bold leading-tight">
                   {resource.title}
                 </h3>
-                <p className="mt-1 font-jet text-[10.5px] text-term-fg">
+                <p className="mt-1 font-mono text-[10.5px] text-term-fg">
                   {resource.provider}
                 </p>
               </div>
@@ -78,13 +79,13 @@ export default function MobileLibrary() {
                 className="mt-0.5 shrink-0 text-term-fg"
               />
             </div>
-            <p className="font-jet text-[10px] font-medium text-term-muted mt-1 leading-relaxed">
+            <p className="font-mono text-[10px] font-medium text-term-muted mt-1 leading-relaxed">
               {resource.concepts.join(' · ')}
             </p>
           </a>
         ))}
         {visibleResources.length === 0 && (
-          <p className="py-8 text-center font-jet text-xs text-term-fg">
+          <p className="py-8 text-center font-mono text-xs text-term-fg">
             $ no resources match this filter
           </p>
         )}

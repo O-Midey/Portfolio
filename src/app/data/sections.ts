@@ -10,8 +10,9 @@ const sections = [
   //   href: "/experience",
   // },
   { id: "projects", label: "Projects", icon: Code, href: "/projects" },
-  { id: "library", label: "Library", icon: Library, href: "/library" },
+  // Keep the page available while temporarily hiding it from both menus.
+  { id: "library", label: "Library", icon: Library, href: "/library", hidden: true },
   { id: "contact", label: "Contact", icon: Mail, href: "/contact" },
-];
+].filter((section) => !section.hidden);
 
 export default sections;

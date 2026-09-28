@@ -56,13 +56,13 @@ export default function MobileHeader() {
           href="/"
           className="flex flex-col gap-px transition-opacity active:opacity-70"
         >
-          <span className="font-jet text-[9px] tracking-[0.22em] text-term-fg">
+          <span className="font-mono text-[9px] tracking-[0.22em] text-term-fg">
             PORTFOLIO
           </span>
           <span className="text-[15px] font-bold">Omotosho David</span>
         </Link>
         <div className="flex items-center gap-3">
-          <span className="font-jet text-[10.5px] text-term-fg">
+          <span className="font-mono text-[10.5px] text-term-fg">
             ~/{pathLabel}
           </span>
           <button
@@ -115,7 +115,7 @@ export default function MobileHeader() {
                         triggerWipe(e.clientX, e.clientY);
                     }}
                     aria-pressed={resolvedTheme !== "dark"}
-                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-jet text-[11.5px] transition-colors ${
+                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-mono text-[11.5px] transition-colors ${
                       resolvedTheme !== "dark" ? "text-term-bg" : "text-term-fg"
                     }`}
                   >
@@ -129,7 +129,7 @@ export default function MobileHeader() {
                         triggerWipe(e.clientX, e.clientY);
                     }}
                     aria-pressed={resolvedTheme === "dark"}
-                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-jet text-[11.5px] transition-colors ${
+                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-mono text-[11.5px] transition-colors ${
                       resolvedTheme === "dark" ? "text-term-bg" : "text-term-fg"
                     }`}
                   >
@@ -153,12 +153,12 @@ export default function MobileHeader() {
                     style={{ animationDelay: `${i * 0.05}s` }}
                   >
                     <span
-                      className={`font-jet text-[11px] ${isActive ? "text-term-accent" : "text-term-fg"}`}
+                      className={`font-mono text-[11px] ${isActive ? "text-term-accent" : "text-term-fg"}`}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span
-                      className={`font-jet text-[40px] font-extrabold tracking-[-0.02em] ${isActive ? "text-term-accent" : ""}`}
+                      className={`font-sans text-[40px] font-extrabold tracking-[-0.02em] ${isActive ? "text-term-accent" : ""}`}
                     >
                       {section.label}
                     </span>
@@ -173,7 +173,7 @@ export default function MobileHeader() {
             </nav>
             <div className="flex items-center justify-between px-5 pb-[calc(1.75rem+env(safe-area-inset-bottom))]">
               <SocialShortLinks className="text-term-fg" />
-              <span className="font-jet text-[10.5px] text-term-fg">
+              <span className="font-mono text-[10.5px] text-term-fg">
                 © {new Date().getFullYear()}
               </span>
             </div>

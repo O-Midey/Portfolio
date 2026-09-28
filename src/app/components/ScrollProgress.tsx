@@ -1,10 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function ScrollProgress() {
   const [progress, setProgress] = useState(0);
+  const enabled = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
+    if (!enabled) return;
     const onScroll = () => {
       const el = document.documentElement;
       const scrolled = el.scrollTop;
@@ -13,7 +16,7 @@ export default function ScrollProgress() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [enabled]);
 
   return (
     <div className="fixed top-0 left-0 right-0 h-[2px] z-[9999] bg-transparent">
