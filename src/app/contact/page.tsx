@@ -48,7 +48,7 @@ export default function Contact() {
             <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-3">contact 📩</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
               Get in<br />
-              <ScribbledText color="pink" className="text-gray-500 dark:text-[#999]">Touch.</ScribbledText>
+              <ScribbledText color="pink" variant="loop" className="text-gray-500 dark:text-[#999]">Touch.</ScribbledText>
             </h1>
             <p className="text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               Open to new opportunities and interesting projects ✨
@@ -99,7 +99,7 @@ export default function Contact() {
 
           {/* Form — terminal window */}
           <div className="mb-14">
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6"><ScribbledText color="amber">send a message ✍️</ScribbledText></p>
+            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6"><ScribbledText color="amber" variant="brackets">send a message ✍️</ScribbledText></p>
 
             <div className="rounded-xl overflow-hidden border border-gray-900 dark:border-white shadow-2xl">
               {/* Title bar */}

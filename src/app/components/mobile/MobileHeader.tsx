@@ -91,54 +91,6 @@ export default function MobileHeader() {
       {menuOpen && (
         <div className="fixed inset-x-0 bottom-0 top-[72px] z-30 animate-overlay-in overflow-y-auto overscroll-contain bg-term-overlay text-term-fg">
           <div className="flex min-h-full flex-col">
-            {mounted && (
-              <div className="px-5 pt-6">
-                <div
-                  role="group"
-                  aria-label="Color theme"
-                  className="relative flex rounded-full border border-term-fg bg-term-panel p-1"
-                >
-                  <span
-                    aria-hidden
-                    className="absolute inset-y-1 left-1 w-[calc(50%-0.25rem)] rounded-full bg-term-fg transition-transform duration-300 ease-out"
-                    style={{
-                      transform:
-                        resolvedTheme === "dark"
-                          ? "translateX(100%)"
-                          : "translateX(0)",
-                    }}
-                  />
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      if (resolvedTheme === "dark")
-                        triggerWipe(e.clientX, e.clientY);
-                    }}
-                    aria-pressed={resolvedTheme !== "dark"}
-                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-mono text-[11.5px] transition-colors ${
-                      resolvedTheme !== "dark" ? "text-term-bg" : "text-term-fg"
-                    }`}
-                  >
-                    <Sun size={14} strokeWidth={2} />
-                    Light
-                  </button>
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      if (resolvedTheme !== "dark")
-                        triggerWipe(e.clientX, e.clientY);
-                    }}
-                    aria-pressed={resolvedTheme === "dark"}
-                    className={`relative z-10 flex flex-1 items-center justify-center gap-2 rounded-full py-2.5 font-mono text-[11.5px] transition-colors ${
-                      resolvedTheme === "dark" ? "text-term-bg" : "text-term-fg"
-                    }`}
-                  >
-                    <Moon size={14} strokeWidth={2} />
-                    Dark
-                  </button>
-                </div>
-              </div>
-            )}
             <nav className="flex flex-1 flex-col justify-center px-5 py-8">
               {sections.map((section, i) => {
                 const isActive = pathname === section.href;
@@ -170,6 +122,21 @@ export default function MobileHeader() {
                   </Link>
                 );
               })}
+              {mounted && (
+                <button
+                  type="button"
+                  onClick={(event) => triggerWipe(event.clientX, event.clientY)}
+                  aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
+                  className="mt-7 inline-flex min-h-11 w-fit items-center gap-2 text-left font-mono text-xs text-term-muted transition-colors hover:text-term-fg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-term-fg"
+                >
+                  {resolvedTheme === "dark" ? (
+                    <Sun size={15} strokeWidth={1.8} aria-hidden="true" />
+                  ) : (
+                    <Moon size={15} strokeWidth={1.8} aria-hidden="true" />
+                  )}
+                  {resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
+                </button>
+              )}
             </nav>
             <div className="flex items-center justify-between px-5 pb-[calc(1.75rem+env(safe-area-inset-bottom))]">
               <SocialShortLinks className="text-term-fg" />

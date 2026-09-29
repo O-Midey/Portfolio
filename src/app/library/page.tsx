@@ -54,7 +54,7 @@ export default function LibraryPage() {
         <MobileLibrary />
       </div>
 
-      <section className="hidden md:block relative min-h-screen bg-white dark:bg-[#111]">
+      <section className="motion-safe:animate-fade-up relative hidden min-h-screen bg-white dark:bg-[#111] md:block">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
           {/* Header */}
           <div className="mb-10 sm:mb-14">
@@ -62,7 +62,7 @@ export default function LibraryPage() {
               what i learned from 📚
             </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
-              <ScribbledText color="emerald">Library</ScribbledText>
+              <ScribbledText color="emerald" variant="brackets">Library</ScribbledText>
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               Courses, docs, and channels that shaped how I build — kept here

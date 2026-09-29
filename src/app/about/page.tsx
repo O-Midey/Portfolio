@@ -1,125 +1,75 @@
-"use client";
-import { useEffect, useState } from "react";
-import { skills } from "../data/skills";
+import Link from "next/link";
+import { ArrowUpRight, MailOpen } from "lucide-react";
+import AboutStory from "../components/AboutStory";
+import FlexedArmsDoodle from "../components/FlexedArmsDoodle";
 import TechBubbleStack from "../components/TechBubbleStack";
-import Scribble, { ScribbledText } from "../components/Scribble";
-import { aboutSections as SECTIONS } from "../data/about";
+import ToolboxDoodle from "../components/ToolboxDoodle";
+import { ScribbledText } from "../components/Scribble";
 import MobileAbout from "../components/mobile/MobileAbout";
-import { MailOpen, ArrowRight } from "lucide-react";
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import { skills } from "../data/skills";
 
 export default function AboutPage() {
-  const [visible, setVisible] = useState(0);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
-
-  useEffect(() => {
-    if (!isDesktop || visible >= SECTIONS.length) return;
-    const t = setTimeout(
-      () => setVisible((v) => v + 1),
-      visible === 0 ? 300 : 600,
-    );
-    return () => clearTimeout(t);
-  }, [isDesktop, visible]);
-
   return (
     <>
-    <div className="md:hidden">
-      <MobileAbout />
-    </div>
-    <section className="hidden md:block relative min-h-screen bg-[#fafafa] dark:bg-[#111] px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-      <div className="max-w-3xl mx-auto">
-        {/* Header */}
-        <div className="mb-10">
-          <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-3">
-            about me
-          </p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4">
-            Full-Stack, AI &<br />
-            <span className="text-gray-400 dark:text-[#999]">
-              Blockchain <ScribbledText color="pink">Dev.</ScribbledText>
-            </span>
-          </h1>
-        </div>
-
-        {/* Terminal card */}
-        <div className="rounded-xl overflow-hidden border border-gray-900 dark:border-white shadow-2xl mb-12">
-          {/* Title bar */}
-          <div className="flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-[#2a2a2a]">
-            <span className="w-3 h-3 rounded-full bg-rose-400" />
-            <span className="w-3 h-3 rounded-full bg-amber-400" />
-            <span className="w-3 h-3 rounded-full bg-emerald-400" />
-            <span className="ml-3 text-xs font-mono text-gray-900 dark:text-white">
-              omotosho@portfolio ~ about.txt
-            </span>
-          </div>
-
-          {/* Content */}
-          <div className="bg-white dark:bg-[#0d0d0d] p-6 space-y-6 min-h-[320px]">
-            {SECTIONS.map((s, i) => (
-              <div
-                key={i}
-                className={`transition-all duration-500 ${i < visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
-              >
-                <p className="text-xs font-mono text-emerald-500 mb-1">{`// ${s.heading}`}</p>
-                <p className="text-sm text-gray-900 dark:text-white leading-relaxed font-sans">
-                  {s.body}
-                </p>
-                {s.link && (
-                  <a
-                    href={s.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-mono text-gray-900 dark:text-white underline underline-offset-4 transition-colors mt-1 inline-block"
-                  >
-                    {s.link.label}
-                  </a>
-                )}
-              </div>
-            ))}
-            {visible < SECTIONS.length && (
-              <span className="inline-block animate-pulse text-emerald-500 font-mono">
-                ▋
-              </span>
-            )}
-          </div>
-        </div>
-
-        {/* Skills */}
-        <div className="mb-12">
-          <p className="flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-6">
-            tech stack 🛠️
-            <Scribble variant="spark" color="amber" className="size-5 rotate-12" />
-          </p>
-          <TechBubbleStack skills={skills} />
-        </div>
-
-        {/* CTA */}
-        <div className="border-t border-gray-100 dark:border-[#2a2a2a] pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <p className="text-xs font-mono tracking-[0.2em] text-gray-900 dark:text-white uppercase mb-2">
-              what&apos;s next
-            </p>
-            <p className="text-gray-900 dark:text-white font-semibold text-lg">
-              Let&apos;s <ScribbledText color="emerald">build</ScribbledText> something. 👏
-            </p>
-          </div>
-          <div className="flex gap-3">
-            <a
-              href="mailto:talk2adeoluwa2310@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#111] dark:bg-white dark:text-black text-white font-mono text-xs tracking-widest uppercase rounded-full hover:bg-[#333] dark:hover:bg-gray-200 transition-all duration-300 hover:scale-105"
-            >
-              <MailOpen className="w-3.5 h-3.5" /> Get in touch
-            </a>
-            <a
-              href="/projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-900 dark:border-white text-gray-900 dark:text-white font-mono text-xs tracking-widest uppercase rounded-full hover:bg-gray-50 dark:hover:bg-[#1a1a1a] transition-all duration-300"
-            >
-              My work <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </div>
+      <div className="md:hidden">
+        <MobileAbout />
       </div>
-    </section>
+
+      <main className="relative hidden min-h-screen overflow-x-clip bg-[#fafafa] px-6 py-16 text-[#171717] motion-safe:animate-fade-up dark:bg-[#111] dark:text-white md:block lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-5xl">
+          <header className="relative mb-16 max-w-3xl">
+            <p className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
+              Useful products, carefully built
+            </p>
+            <h1 className="text-6xl font-semibold leading-[0.98] tracking-[-0.055em] sm:text-7xl lg:text-[88px]">
+              Full-stack, AI &
+              <br />
+              <ScribbledText color="emerald" variant="loop">Blockchain Dev.</ScribbledText>
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-300 lg:text-xl lg:leading-9">
+              I’m Omotosho David Ayomide, a full-stack, AI, and Web3 engineer based in Lagos. I build production-ready products across the entire stack—from interfaces and infrastructure to AI agents and smart contracts. I care about how they feel to use, how their parts fit together, and what happens when things go wrong.
+            </p>
+          </header>
+
+          <AboutStory />
+
+          <section className="grid gap-8 border-t border-neutral-200 py-10 dark:border-white/15 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
+            <div>
+              <h2 className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
+                Tools I reach for
+                <ToolboxDoodle />
+              </h2>
+              <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-500 dark:text-neutral-400">
+                Tools across product engineering, AI, and blockchain.
+              </p>
+            </div>
+            <TechBubbleStack skills={skills} compact />
+          </section>
+
+          <footer className="flex flex-col items-center gap-6 border-t border-neutral-200 pt-9 dark:border-white/15">
+            <div className="relative isolate flex flex-col items-center">
+              <FlexedArmsDoodle className="relative z-0 h-auto w-20 max-w-full" />
+              <h2 className="relative z-10 -mt-2 text-center text-2xl font-semibold leading-none tracking-tight [paint-order:stroke_fill] [-webkit-text-stroke:4px_#fafafa] dark:[-webkit-text-stroke:4px_#111]">
+                Let&apos;s build something useful.
+              </h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              <a
+                href="mailto:talk2adeoluwa2310@gmail.com"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[#171717] px-5 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-500 dark:bg-white dark:text-[#111] dark:hover:bg-neutral-200"
+              >
+                <MailOpen size={15} aria-hidden="true" /> Get in touch
+              </a>
+              <Link
+                href="/projects"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-neutral-300 px-5 text-sm font-medium transition-colors hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-500 dark:border-white/25 dark:hover:bg-white/10"
+              >
+                See my work <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </div>
+          </footer>
+        </div>
+      </main>
     </>
   );
 }

@@ -8,7 +8,7 @@ import ProjectDetailPanel from "./ProjectDetailPanel";
 import MobileProjects from "../components/mobile/MobileProjects";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { ScribbledText, scribbleColorFor } from "../components/Scribble";
+import { ScribbledText, scribbleColorFor, scribbleVariantFor } from "../components/Scribble";
 import { projectStatusStyles } from "../components/projectStatusStyles";
 
 // Slight rotations to give each card a pinned/tossed feel
@@ -88,7 +88,12 @@ function ScrapbookCard({
         <div className="px-1 pt-1 flex flex-col gap-2 flex-1">
           <div className="flex items-start justify-between gap-2">
             <h3 className="font-sans font-bold text-gray-900 dark:text-white text-base leading-tight">
-              <ScribbledText color={scribbleColorFor(project.title)}>{project.title}</ScribbledText>
+              <ScribbledText
+                color={scribbleColorFor(project.title)}
+                variant={scribbleVariantFor(project.title)}
+              >
+                {project.title}
+              </ScribbledText>
             </h3>
             <span
               className={`shrink-0 text-[10px] px-2 py-0.5 rounded-full font-medium ${projectStatusStyles(project.status)}`}
@@ -137,7 +142,7 @@ function ProjectsSection({
               my work 🛠️
             </p>
             <h1 className="text-5xl sm:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-none">
-              <ScribbledText color="amber">Projects</ScribbledText>
+              <ScribbledText color="amber" variant="brackets">Projects</ScribbledText>
             </h1>
             <p className="mt-4 text-sm sm:text-base text-gray-900 dark:text-white font-light max-w-lg leading-relaxed">
               AI-powered apps, full-stack products, Web3 tools, and everything in between 👷🏽‍♂️

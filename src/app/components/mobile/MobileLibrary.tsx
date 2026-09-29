@@ -25,7 +25,7 @@ export default function MobileLibrary() {
           WHAT I LEARNED FROM 📚
         </p>
         <h1 className="text-[44px] font-bold leading-none tracking-[-0.02em]">
-          <ScribbledText color="emerald">Library</ScribbledText><span className="text-term-accent">.</span>
+          <ScribbledText color="emerald" variant="loop">Library</ScribbledText><span className="text-term-accent">.</span>
         </h1>
         <p className="mt-0.5 text-base leading-[1.55] text-term-fg">
           Courses, docs, and channels that shaped how I build — kept here as a

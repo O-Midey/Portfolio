@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Project } from "../../types/types";
 import { withProtocol, sameHost } from "../../lib/url";
 import StatusPill from "./StatusPill";
-import { ScribbledText, scribbleColorFor } from "../Scribble";
+import { ScribbledText, scribbleColorFor, scribbleVariantFor } from "../Scribble";
 
 // Bottom-sheet project detail for the mobile terminal view.
 // Rendered inside an <AnimatePresence> by the caller.
@@ -91,7 +91,12 @@ export default function MobileProjectSheet({
           <div className="flex flex-col gap-3 px-5 pb-6 pt-5">
             <div className="flex items-center justify-between gap-3">
               <h2 className="font-sans text-2xl font-bold text-term-fg">
-                <ScribbledText color={scribbleColorFor(project.title)}>{project.title}</ScribbledText>
+                <ScribbledText
+                  color={scribbleColorFor(project.title)}
+                  variant={scribbleVariantFor(project.title)}
+                >
+                  {project.title}
+                </ScribbledText>
               </h2>
               <StatusPill status={project.status} />
             </div>

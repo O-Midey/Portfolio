@@ -8,6 +8,7 @@ import MobileProjectCard from "./MobileProjectCard";
 import MobileProjectSheet from "./MobileProjectSheet";
 import ProjectCardStack from "../ProjectCardStack";
 import { ScribbledText } from "../Scribble";
+import ThoughtBubbleDoodle from "../ThoughtBubbleDoodle";
 
 type Filter = "ALL" | ProjectCategory;
 
@@ -30,7 +31,7 @@ export default function MobileProjects() {
           MY WORK 🛠️
         </p>
         <h1 className="text-[44px] font-bold leading-none tracking-[-0.02em]">
-          <ScribbledText color="amber">Projects</ScribbledText><span className="text-term-accent">.</span>
+          <ScribbledText color="amber" variant="brackets">Projects</ScribbledText><span className="text-term-accent">.</span>
         </h1>
         <p className="mt-0.5 text-base leading-[1.55] text-term-fg">
           AI-powered apps, full-stack products, Web3 tools, and everything in
@@ -81,8 +82,12 @@ export default function MobileProjects() {
 
       {/* ── CTA ── */}
       <footer className="mt-10 flex flex-col gap-[18px] border-t border-term-fg/10 px-5 pb-8 pt-11">
-        <h2 className="text-[28px] font-bold leading-[1.15] tracking-[-0.01em]">
-          Got a <ScribbledText color="pink">project</ScribbledText> in mind<span className="text-term-accent">?</span>
+        <h2 className="text-[clamp(1.5rem,7.2vw,1.625rem)] font-bold leading-[1.15] tracking-[-0.01em]">
+          Got a <ScribbledText color="pink" variant="loop">project</ScribbledText> in mind
+          <span className="relative inline-block">
+            <span className="text-term-accent">?</span>
+            <ThoughtBubbleDoodle className="absolute left-full top-[calc(50%-18px)] ml-1 -translate-y-1/2 max-[340px]:h-[21px] max-[340px]:w-7" />
+          </span>
         </h2>
         <Link
           href="/contact"

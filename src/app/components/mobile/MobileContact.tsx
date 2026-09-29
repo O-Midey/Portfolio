@@ -35,7 +35,7 @@ export default function MobileContact() {
           CONTACT 📬
         </p>
         <h1 className="text-[46px] font-bold leading-[1.02] tracking-[-0.02em]">
-          Get in <ScribbledText color="pink" className="text-term-muted">Touch.</ScribbledText>
+          Get in <ScribbledText color="pink" variant="loop" className="text-term-muted">Touch.</ScribbledText>
         </h1>
         <p className="text-base leading-relaxed text-term-fg">
           Open to new opportunities and interesting projects ✨
@@ -65,7 +65,7 @@ export default function MobileContact() {
       {/* ── Message form ── */}
       <section className="flex flex-col gap-4 px-5 pb-2.5 pt-11">
         <p className="font-mono text-[11px] tracking-[0.3em] text-term-fg">
-          <ScribbledText color="amber">SEND A MESSAGE ✍️</ScribbledText>
+          <ScribbledText color="amber" variant="brackets">SEND A MESSAGE ✍️</ScribbledText>
         </p>
         <TerminalWindow title="omotosho@portfolio ~ contact.sh">
           <form

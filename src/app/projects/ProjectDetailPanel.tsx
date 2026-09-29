@@ -6,7 +6,7 @@ import Image from "next/image";
 import { X, Github, ArrowUpRight } from "lucide-react";
 import { Project } from "../types/types";
 import { withProtocol, sameHost } from "../lib/url";
-import { ScribbledText, scribbleColorFor } from "../components/Scribble";
+import { ScribbledText, scribbleColorFor, scribbleVariantFor } from "../components/Scribble";
 import { projectStatusStyles } from "../components/projectStatusStyles";
 
 export default function ProjectDetailPanel({
@@ -97,7 +97,12 @@ export default function ProjectDetailPanel({
           {/* Title + status */}
           <div className="mt-6 flex items-start justify-between gap-3">
             <h2 className="font-sans text-2xl font-black leading-tight tracking-tight text-gray-900 dark:text-white">
-              <ScribbledText color={scribbleColorFor(project.title)}>{project.title}</ScribbledText>
+              <ScribbledText
+                color={scribbleColorFor(project.title)}
+                variant={scribbleVariantFor(project.title)}
+              >
+                {project.title}
+              </ScribbledText>
             </h2>
             <span
               className={`mt-1 shrink-0 rounded-full px-2.5 py-1 text-[10px] font-medium ${projectStatusStyles(project.status)}`}

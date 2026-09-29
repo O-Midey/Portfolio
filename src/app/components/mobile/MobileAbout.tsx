@@ -1,84 +1,61 @@
-"use client";
 import Link from "next/link";
-import { aboutSections } from "../../data/about";
-import { skills } from "../../data/skills";
-import TerminalWindow from "./TerminalWindow";
+import { ArrowUpRight, MailOpen } from "lucide-react";
+import AboutStory from "../AboutStory";
+import FlexedArmsDoodle from "../FlexedArmsDoodle";
 import TechBubbleStack from "../TechBubbleStack";
-import Scribble, { ScribbledText } from "../Scribble";
+import ToolboxDoodle from "../ToolboxDoodle";
+import { ScribbledText } from "../Scribble";
+import { skills } from "../../data/skills";
 
 export default function MobileAbout() {
   return (
-    <div className="term-dot-grid flex min-h-dvh animate-fade-up flex-col bg-term-bg text-term-fg">
-      {/* ── Heading ── */}
-      <section className="flex flex-col gap-3.5 px-5 pt-12">
-        <p className="font-mono text-[11px] tracking-[0.3em] text-term-fg">
-          ABOUT ME
+    <main className="term-dot-grid min-h-dvh animate-fade-up overflow-x-clip bg-term-bg px-5 pb-10 pt-12 text-term-fg">
+      <header className="relative">
+        <p className="mb-4 font-mono text-[11px] tracking-[0.2em] text-term-muted">
+          USEFUL PRODUCTS, CAREFULLY BUILT
         </p>
-        <h1 className="text-[41px] font-bold leading-[1.12] tracking-[-0.02em]">
-          Full-Stack, AI &amp;{" "}
-          <span className="text-term-muted">Blockchain <ScribbledText color="pink">Dev.</ScribbledText></span>
+        <h1 className="max-w-[18ch] text-[clamp(2.45rem,10.2vw,3.2rem)] font-semibold leading-[1.02] tracking-[-0.055em]">
+          Full-stack, AI & <ScribbledText color="emerald" variant="loop">Blockchain Dev.</ScribbledText>
         </h1>
-      </section>
-
-      {/* ── about.txt terminal ── */}
-      <section className="px-5 pt-9">
-        <TerminalWindow title="omotosho@portfolio ~ about.txt">
-          <div className="px-4.5 pb-5.5 pt-4.5 font-sans text-[13px] leading-[1.85]">
-            {aboutSections.map((section, i) => (
-              <div key={section.heading} className={i > 0 ? "mt-3.5" : ""}>
-                <p className="font-mono text-term-accent">{`// ${section.heading}`}</p>
-                <p className="text-term-fg">
-                  {section.body}
-                  {section.link && (
-                    <>
-                      {" "}
-                      <a
-                        href={section.link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-term-accent underline underline-offset-4"
-                      >
-                        {section.link.label}
-                      </a>
-                    </>
-                  )}
-                </p>
-              </div>
-            ))}
-          </div>
-        </TerminalWindow>
-      </section>
-
-      {/* ── Tech stack ── */}
-      <section className="flex flex-col gap-4 px-5 pt-11">
-        <p className="flex items-center gap-2 font-mono text-[11px] tracking-[0.3em] text-term-fg">
-          TECH STACK
-          <Scribble variant="spark" color="amber" className="size-5 rotate-12" />
+        <p className="mt-6 text-[15px] leading-[1.8] text-term-muted">
+          I’m Omotosho David Ayomide, a full-stack, AI, and Web3 engineer based in Lagos. I build production-ready products across the entire stack—from interfaces and infrastructure to AI agents and smart contracts. I care about how they feel to use, how their parts fit together, and what happens when things go wrong.
         </p>
-        <TechBubbleStack skills={skills} />
+      </header>
+
+      <div className="mt-9">
+        <AboutStory />
+      </div>
+
+      <section className="mt-10 border-t border-term-fg/15 pt-6">
+        <h2 className="mb-4 flex items-center gap-3 font-mono text-[11px] tracking-[0.2em] text-term-muted">
+          TOOLS I REACH FOR
+          <ToolboxDoodle />
+        </h2>
+        <TechBubbleStack skills={skills} compact />
       </section>
 
-      {/* ── CTA ── */}
-      <footer className="mt-12 flex flex-col gap-[18px] border-t border-term-fg/10 px-5 pb-8 pt-11">
-        <h2 className="text-[28px] font-bold leading-[1.15] tracking-[-0.01em]">
-          Let&apos;s <ScribbledText color="emerald">build</ScribbledText> something amazing
-          <span className="text-term-accent">.</span>
-        </h2>
-        <div className="flex gap-2.5">
-          <Link
-            href="/contact"
-            className="flex flex-1 items-center justify-center rounded-full bg-term-fg py-[15px] font-mono text-xs font-semibold tracking-[0.12em] text-term-bg transition-opacity active:opacity-75"
+      <footer className="mt-10 border-t border-term-fg/15 pt-7">
+        <div className="relative isolate flex flex-col items-center">
+          <FlexedArmsDoodle className="relative z-0 h-auto w-[4.5rem] max-w-full" />
+          <h2 className="relative z-10 -mt-2 text-center text-[25px] font-semibold leading-none tracking-[-0.035em] [paint-order:stroke_fill] [-webkit-text-stroke:4px_var(--term-bg)]">
+            Let&apos;s build something useful.
+          </h2>
+        </div>
+        <div className="mt-5 flex flex-wrap justify-center gap-2.5">
+          <a
+            href="mailto:talk2adeoluwa2310@gmail.com"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-term-fg px-4.5 text-[13px] font-medium text-term-bg"
           >
-            GET IN TOUCH
-          </Link>
+            <MailOpen size={15} aria-hidden="true" /> Get in touch
+          </a>
           <Link
             href="/projects"
-            className="flex flex-1 items-center justify-center rounded-full border border-term-fg py-[15px] font-mono text-xs tracking-[0.12em] text-term-fg transition-opacity active:opacity-60"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-term-fg/25 px-4 text-[13px] font-medium"
           >
-            MY WORK →
+            See my work <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }

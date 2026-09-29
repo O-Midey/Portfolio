@@ -4,12 +4,18 @@ import { useState } from "react";
 import { Pause, Play } from "lucide-react";
 import { useTechBubbleMotion } from "../hooks/useTechBubbleMotion";
 
-export default function TechBubbleStack({ skills }: { skills: readonly string[] }) {
+export default function TechBubbleStack({
+  skills,
+  compact = false,
+}: {
+  skills: readonly string[];
+  compact?: boolean;
+}) {
   const [paused, setPaused] = useState(false);
   const fieldRef = useTechBubbleMotion(paused, skills);
 
   return (
-    <div className="tech-bubble-stack">
+    <div className={`tech-bubble-stack${compact ? " tech-bubble-stack--compact" : ""}`}>
       <ul
         ref={fieldRef}
         aria-label="Tech stack"

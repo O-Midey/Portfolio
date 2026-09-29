@@ -93,6 +93,35 @@
   }
 }
 
+@keyframes doodle-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+[data-doodle-motion] {
+  animation: doodle-float 4.8s ease-in-out infinite;
+}
+
+[data-doodle-motion="brain"] {
+  animation-delay: -1.8s;
+  animation-duration: 6.4s;
+}
+
+[data-doodle-motion="toolbox"] {
+  animation-delay: -3.1s;
+  animation-duration: 5.2s;
+}
+
+[data-doodle-motion="thought-bubble"] {
+  animation-delay: -2.4s;
+  animation-duration: 6.1s;
+}
+
 /* Dot-grid backdrop for the mobile terminal view */
 .term-dot-grid {
   background-image: radial-gradient(var(--term-dot) 1px, transparent 1px);
@@ -104,16 +133,34 @@
   --tech-bubble-min-height: 280px;
 }
 
+.tech-bubble-stack--compact {
+  --tech-bubble-room: 1.04;
+  --tech-bubble-min-height: 132px;
+}
+
 @media (min-width: 768px) {
   .tech-bubble-stack {
     --tech-bubble-room: 1.35;
     --tech-bubble-min-height: 300px;
+  }
+
+  .tech-bubble-stack--compact {
+    --tech-bubble-room: 1.08;
+    --tech-bubble-min-height: 152px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tech-bubble-controls {
     display: none;
+  }
+
+  [data-doodle-motion],
+  .animate-fade-up,
+  .animate-overlay-in,
+  .animate-marquee {
+    animation: none !important;
+    translate: none !important;
   }
 }
 

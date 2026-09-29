@@ -78,9 +78,12 @@ export default function MobileHome() {
       <section className="flex flex-col gap-8 px-5 pb-2 pt-13">
         <div className="flex items-end justify-between">
           <div className="flex flex-col gap-2">
-            <p className="font-mono text-[11px] tracking-[0.3em] ">MY WORK 🛠️</p>
+            <p className="flex items-center gap-2 font-mono text-[11px] tracking-[0.3em]">
+              MY WORK
+              <Scribble variant="productWindow" color="pink" className="size-5" />
+            </p>
             <h2 className="text-[32px] font-semibold leading-none tracking-[-0.02em]">
-              <ScribbledText color="pink">Selected</ScribbledText><span className="text-term-accent">.</span>
+              <ScribbledText color="pink" variant="loop">Selected</ScribbledText><span className="text-term-accent">.</span>
             </h2>
           </div>
           <Link
@@ -106,16 +109,22 @@ export default function MobileHome() {
           href="/projects"
           className="flex items-center justify-center gap-2 rounded-full border border-term-fg py-[15px] font-mono text-xs tracking-[0.12em] text-term-fg transition-opacity active:opacity-60"
         >
-          <Scribble variant="spark" color="amber" className="size-4" />
+          <Scribble variant="rays" color="amber" className="size-4" />
           ALL PROJECTS →
         </Link>
       </section>
 
       {/* ── Contact CTA + footer ── */}
       <footer className="mt-13 flex flex-col gap-[18px] border-t border-term-fg/10 px-5 pb-8 pt-12">
-        <p className="font-mono text-[11px] tracking-[0.3em] ">CONTACT 📬</p>
+        <p className="flex items-center gap-2 font-mono text-[11px] tracking-[0.3em]">
+          CONTACT
+          <Scribble variant="phone" color="pink" className="size-5 -rotate-12" />
+        </p>
         <h2 className="text-[46px] font-bold leading-[1.02] tracking-[-0.03em]">
-          Get in <ScribbledText color="amber" className="text-term-muted">Touch.</ScribbledText>
+          Get in{" "}
+          <ScribbledText color="amber" variant="loop" className="text-term-muted">
+            Touch.
+          </ScribbledText>
         </h2>
         <p className="text-[15.5px] text-term-fg">
           Open to new opportunities and interesting projects ✨

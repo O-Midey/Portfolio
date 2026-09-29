@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Project } from "../../types/types";
 import StatusPill from "./StatusPill";
-import { ScribbledText, scribbleColorFor } from "../Scribble";
+import { ScribbledText, scribbleColorFor, scribbleVariantFor } from "../Scribble";
 
 export default function MobileProjectCard({
   project,
@@ -49,7 +49,12 @@ export default function MobileProjectCard({
           <span
             className={`min-w-0 font-sans font-bold text-term-fg ${compact ? "text-lg" : "text-[21px]"}`}
           >
-            <ScribbledText color={scribbleColorFor(project.title)}>{project.title}</ScribbledText>
+            <ScribbledText
+              color={scribbleColorFor(project.title)}
+              variant={scribbleVariantFor(project.title)}
+            >
+              {project.title}
+            </ScribbledText>
           </span>
           <StatusPill status={project.status} />
         </div>

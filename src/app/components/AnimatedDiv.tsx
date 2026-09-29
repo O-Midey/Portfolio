@@ -1,5 +1,5 @@
 "use client";
-import { motion, MotionProps } from "framer-motion";
+import { motion, MotionProps, useReducedMotion } from "framer-motion";
 import { HTMLAttributes } from "react";
 
 type AnimatedDivProps = HTMLAttributes<HTMLDivElement> &
@@ -13,11 +13,13 @@ export default function AnimatedDiv({
   className,
   ...rest
 }: AnimatedDivProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: prefersReducedMotion ? 0 : 0.4, ease: "easeOut" }}
       className={className}
       {...rest}
     >
