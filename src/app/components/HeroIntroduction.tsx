@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Scribble, { ScribbledText } from "./Scribble";
 import { buttonStyles } from "./buttonStyles";
 
@@ -15,18 +15,11 @@ export default function HeroIntroduction() {
 
       <div className="flex items-center gap-2.5 pt-1">
         <Link
-          href="/projects"
+          href="/about"
           className={buttonStyles.primary}
         >
-          VIEW MY WORK
+          ABOUT ME
           <ArrowUpRight size={14} aria-hidden="true" />
-        </Link>
-        <Link
-          href="/contact"
-          aria-label="Contact me"
-          className={buttonStyles.icon}
-        >
-          <Mail size={16} strokeWidth={1.5} aria-hidden="true" />
         </Link>
         <Scribble variant="arrow" color="pink" className="-mt-4 size-11" />
       </div>
